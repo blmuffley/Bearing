@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900" width="1800" height="900" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .title { font-size: 24px; font-weight: 700; fill: #1A1A2E; }
+ .subtitle { font-size: 14px; font-weight: 400; fill: #6B7280; }
+ .entity-name { font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+ .pk { font-size: 11px; font-weight: 600; fill: #374151; }
+ .field { font-size: 11px; font-weight: 400; fill: #4B5563; }
+ .fk { font-size: 11px; font-weight: 400; fill: #2563EB; }
+ .type { font-size: 10px; font-weight: 400; fill: #9CA3AF; }
+ .section-label { font-size: 10px; font-weight: 700; fill: #6B7280; letter-spacing: 0.05em; text-transform: uppercase; }
+ .rel-label { font-size: 10px; font-weight: 500; fill: #6B7280; }
+ .process-title { font-size: 16px; font-weight: 700; fill: #1F2937; }
+ .step-text { font-size: 12px; font-weight: 500; fill: #FFFFFF; }
+ .step-desc { font-size: 10px; font-weight: 400; fill: #6B7280; }
+ .decision-text { font-size: 11px; font-weight: 600; fill: #FFFFFF; }
+ .swim-label { font-size: 12px; font-weight: 700; fill: #374151; }
+ .status-text { font-size: 10px; font-weight: 600; }
+ .note-text { font-size: 10px; font-weight: 400; fill: #6B7280; font-style: italic; }
+</style>
+<marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#9CA3AF"/></marker>
+<marker id="arrow-blue" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#3B82F6"/></marker>
+<marker id="diamond" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#9CA3AF"/></marker>
+<marker id="diamond-filled" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#3B82F6"/></marker>
+</defs>
+<rect width="1800" height="900" fill="#FAFBFC"/>
+
+<!-- Title -->
+<text x="900" y="40" text-anchor="middle" class="title">Pathfinder Integration — Data Flow</text>
+<text x="900" y="62" text-anchor="middle" class="subtitle">Behavioral confidence enrichment and fusion finding generation</text>
+
+<!-- ==================== PATHFINDER AGENT (left) ==================== -->
+<rect x="62" y="102" width="380" height="340" rx="12" fill="#D1D5DB" opacity="0.4"/>
+<rect x="60" y="100" width="380" height="340" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="60" y="100" width="380" height="40" rx="12" fill="#3B82F6"/>
+<rect x="60" y="126" width="380" height="14" fill="#3B82F6"/>
+<text x="250" y="126" text-anchor="middle" class="entity-name">PATHFINDER AGENT</text>
+
+<!-- Steps within pathfinder agent -->
+<rect x="90" y="165" width="320" height="40" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+<text x="250" y="185" text-anchor="middle" class="field">eBPF/ETW Observation</text>
+<text x="250" y="195" text-anchor="middle" class="type">Kernel-level traffic capture</text>
+
+<line x1="250" y1="205" x2="250" y2="220" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+<rect x="90" y="220" width="320" height="40" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+<text x="250" y="240" text-anchor="middle" class="field">Traffic Classification</text>
+<text x="250" y="250" text-anchor="middle" class="type">Protocol &amp; service identification</text>
+
+<line x1="250" y1="260" x2="250" y2="275" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+<rect x="90" y="275" width="320" height="40" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+<text x="250" y="295" text-anchor="middle" class="field">CI Resolution</text>
+<text x="250" y="305" text-anchor="middle" class="type">Map to CMDB configuration items</text>
+
+<line x1="250" y1="315" x2="250" y2="330" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+<rect x="90" y="330" width="320" height="40" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+<text x="250" y="350" text-anchor="middle" class="field">Confidence Scoring</text>
+<text x="250" y="360" text-anchor="middle" class="type">0-100 behavioral confidence score</text>
+
+<!-- ==================== WEBHOOK ARROW ==================== -->
+<line x1="440" y1="270" x2="560" y2="270" stroke="#3B82F6" stroke-width="3" marker-end="url(#arrow-blue)"/>
+<rect x="445" y="240" width="110" height="22" rx="4" fill="#3B82F6"/>
+<text x="500" y="255" text-anchor="middle" class="step-text" style="font-size:9px">POST /api/</text>
+<rect x="445" y="262" width="110" height="20" rx="4" fill="#3B82F6"/>
+<text x="500" y="276" text-anchor="middle" class="step-text" style="font-size:9px">webhooks/pathfinder</text>
+
+<!-- ==================== BEARING PLATFORM (center) ==================== -->
+<rect x="562" y="102" width="380" height="340" rx="12" fill="#D1D5DB" opacity="0.4"/>
+<rect x="560" y="100" width="380" height="340" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="560" y="100" width="380" height="40" rx="12" fill="#6366F1"/>
+<rect x="560" y="126" width="380" height="14" fill="#6366F1"/>
+<text x="750" y="126" text-anchor="middle" class="entity-name">BEARING PLATFORM</text>
+
+<rect x="590" y="165" width="320" height="40" rx="6" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+<text x="750" y="185" text-anchor="middle" class="field">Receive Feed</text>
+<text x="750" y="195" text-anchor="middle" class="type">Webhook handler validates payload</text>
+
+<line x1="750" y1="205" x2="750" y2="220" stroke="#6366F1" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="590" y="220" width="320" height="40" rx="6" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+<text x="750" y="240" text-anchor="middle" class="field">Validate</text>
+<text x="750" y="250" text-anchor="middle" class="type">Schema validation + auth check</text>
+
+<line x1="750" y1="260" x2="750" y2="275" stroke="#6366F1" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="590" y="275" width="320" height="40" rx="6" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+<text x="750" y="295" text-anchor="middle" class="field">Upsert to DB</text>
+<text x="750" y="305" text-anchor="middle" class="type">PATHFINDER_CONFIDENCE table (ON CONFLICT)</text>
+
+<line x1="750" y1="315" x2="750" y2="330" stroke="#6366F1" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="590" y="330" width="320" height="40" rx="6" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+<text x="750" y="350" text-anchor="middle" class="field">Match to Assessment</text>
+<text x="750" y="360" text-anchor="middle" class="type">Link via org_id + instance_connection_id</text>
+
+<!-- ==================== FUSION ENGINE (right) ==================== -->
+<rect x="1062" y="102" width="380" height="340" rx="12" fill="#D1D5DB" opacity="0.4"/>
+<rect x="1060" y="100" width="380" height="340" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="1060" y="100" width="380" height="40" rx="12" fill="#10B981"/>
+<rect x="1060" y="126" width="380" height="14" fill="#10B981"/>
+<text x="1250" y="126" text-anchor="middle" class="entity-name">FUSION ENGINE</text>
+
+<!-- Arrow from platform to fusion -->
+<line x1="940" y1="270" x2="1060" y2="270" stroke="#9CA3AF" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="1000" y="260" text-anchor="middle" class="rel-label">triggers</text>
+
+<rect x="1090" y="165" width="320" height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+<text x="1250" y="185" text-anchor="middle" class="field">Cross-reference CMDB State</text>
+<text x="1250" y="195" text-anchor="middle" class="type">Compare Pathfinder vs Discovery data</text>
+
+<line x1="1250" y1="205" x2="1250" y2="220" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="1090" y="220" width="320" height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+<text x="1250" y="240" text-anchor="middle" class="field">Detect Mismatches</text>
+<text x="1250" y="250" text-anchor="middle" class="type">CIs with low confidence or no observation</text>
+
+<line x1="1250" y1="260" x2="1250" y2="275" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="1090" y="275" width="320" height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+<text x="1250" y="295" text-anchor="middle" class="field">Generate Fusion Findings</text>
+<text x="1250" y="305" text-anchor="middle" class="type">New findings from behavioral analysis</text>
+
+<line x1="1250" y1="315" x2="1250" y2="330" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="1090" y="330" width="320" height="40" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+<text x="1250" y="350" text-anchor="middle" class="field">Compute Coverage Zones</text>
+<text x="1250" y="360" text-anchor="middle" class="type">Four-quadrant coverage classification</text>
+
+<!-- ==================== FOUR COVERAGE ZONES ==================== -->
+<text x="900" y="510" text-anchor="middle" class="process-title">Four Coverage Zones</text>
+<text x="900" y="530" text-anchor="middle" class="step-desc">Each CI is classified into one of four coverage zones based on Discovery + Pathfinder data</text>
+
+<!-- Fully Covered -->
+<rect x="102" y="562" width="340" height="120" rx="12" fill="#D1D5DB" opacity="0.3"/>
+<rect x="100" y="560" width="340" height="120" rx="12" fill="#FFFFFF" stroke="#84CC16" stroke-width="2"/>
+<rect x="100" y="560" width="340" height="36" rx="12" fill="#84CC16"/>
+<rect x="100" y="582" width="340" height="14" fill="#84CC16"/>
+<text x="270" y="584" text-anchor="middle" class="entity-name">FULLY COVERED</text>
+<text x="120" y="618" class="field">Discovery: Present</text>
+<text x="120" y="636" class="field">Pathfinder: Confirmed (active traffic)</text>
+<text x="120" y="658" class="status-text" fill="#84CC16">Highest confidence — verified by behavior</text>
+
+<!-- Pathfinder Only -->
+<rect x="502" y="562" width="340" height="120" rx="12" fill="#D1D5DB" opacity="0.3"/>
+<rect x="500" y="560" width="340" height="120" rx="12" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+<rect x="500" y="560" width="340" height="36" rx="12" fill="#3B82F6"/>
+<rect x="500" y="582" width="340" height="14" fill="#3B82F6"/>
+<text x="670" y="584" text-anchor="middle" class="entity-name">PATHFINDER ONLY</text>
+<text x="520" y="618" class="field">Discovery: Missing</text>
+<text x="520" y="636" class="field">Pathfinder: Active traffic observed</text>
+<text x="520" y="658" class="status-text" fill="#3B82F6">Shadow IT — not in CMDB but active</text>
+
+<!-- Discovery Only -->
+<rect x="902" y="562" width="340" height="120" rx="12" fill="#D1D5DB" opacity="0.3"/>
+<rect x="900" y="560" width="340" height="120" rx="12" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+<rect x="900" y="560" width="340" height="36" rx="12" fill="#F59E0B"/>
+<rect x="900" y="582" width="340" height="14" fill="#F59E0B"/>
+<text x="1070" y="584" text-anchor="middle" class="entity-name">DISCOVERY ONLY</text>
+<text x="920" y="618" class="field">Discovery: Present</text>
+<text x="920" y="636" class="field">Pathfinder: No traffic observed</text>
+<text x="920" y="658" class="status-text" fill="#F59E0B">Stale CIs — in CMDB but possibly inactive</text>
+
+<!-- Dark -->
+<rect x="1302" y="562" width="340" height="120" rx="12" fill="#D1D5DB" opacity="0.3"/>
+<rect x="1300" y="560" width="340" height="120" rx="12" fill="#FFFFFF" stroke="#EF4444" stroke-width="2"/>
+<rect x="1300" y="560" width="340" height="36" rx="12" fill="#EF4444"/>
+<rect x="1300" y="582" width="340" height="14" fill="#EF4444"/>
+<text x="1470" y="584" text-anchor="middle" class="entity-name">DARK</text>
+<text x="1320" y="618" class="field">Discovery: Missing</text>
+<text x="1320" y="636" class="field">Pathfinder: No traffic observed</text>
+<text x="1320" y="658" class="status-text" fill="#EF4444">Unknown CIs — gaps in visibility</text>
+
+<!-- Arrows from fusion engine down to coverage zones -->
+<line x1="1250" y1="440" x2="1250" y2="480" stroke="#9CA3AF" stroke-width="2"/>
+<line x1="1250" y1="480" x2="270" y2="480" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4,3"/>
+<line x1="1250" y1="480" x2="1470" y2="480" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4,3"/>
+<line x1="270" y1="480" x2="270" y2="560" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="670" y1="480" x2="670" y2="560" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="1070" y1="480" x2="1070" y2="560" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="1470" y1="480" x2="1470" y2="560" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<!-- Legend -->
+<rect x="100" y="740" width="1540" height="60" rx="8" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1"/>
+<text x="120" y="765" class="section-label">DATA FLOW</text>
+<text x="220" y="765" class="field">Pathfinder Agent</text>
+<text x="340" y="765" class="rel-label">&#8594; webhook &#8594;</text>
+<text x="440" y="765" class="field">Bearing Platform</text>
+<text x="570" y="765" class="rel-label">&#8594; triggers &#8594;</text>
+<text x="670" y="765" class="field">Fusion Engine</text>
+<text x="790" y="765" class="rel-label">&#8594; classifies &#8594;</text>
+<text x="900" y="765" class="field">Coverage Zones</text>
+<text x="120" y="788" class="note-text">Pathfinder feeds arrive via POST /api/webhooks/pathfinder with HMAC authentication. Upserted on (org_id, instance_connection_id, ci_sys_id).</text>
+</svg>

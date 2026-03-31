@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" width="1800" height="1100" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .title { font-size: 24px; font-weight: 700; fill: #1A1A2E; }
+ .subtitle { font-size: 14px; font-weight: 400; fill: #6B7280; }
+ .entity-name { font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+ .pk { font-size: 11px; font-weight: 600; fill: #374151; }
+ .field { font-size: 11px; font-weight: 400; fill: #4B5563; }
+ .fk { font-size: 11px; font-weight: 400; fill: #2563EB; }
+ .type { font-size: 10px; font-weight: 400; fill: #9CA3AF; }
+ .section-label { font-size: 10px; font-weight: 700; fill: #6B7280; letter-spacing: 0.05em; text-transform: uppercase; }
+ .rel-label { font-size: 10px; font-weight: 500; fill: #6B7280; }
+ .process-title { font-size: 16px; font-weight: 700; fill: #1F2937; }
+ .step-text { font-size: 12px; font-weight: 500; fill: #FFFFFF; }
+ .step-desc { font-size: 10px; font-weight: 400; fill: #6B7280; }
+ .decision-text { font-size: 11px; font-weight: 600; fill: #FFFFFF; }
+ .swim-label { font-size: 12px; font-weight: 700; fill: #374151; }
+ .status-text { font-size: 10px; font-weight: 600; }
+ .note-text { font-size: 10px; font-weight: 400; fill: #6B7280; font-style: italic; }
+</style>
+<marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#9CA3AF"/></marker>
+<marker id="arrow-blue" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#3B82F6"/></marker>
+<marker id="diamond" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#9CA3AF"/></marker>
+<marker id="diamond-filled" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#3B82F6"/></marker>
+<marker id="arrow-white" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#FFFFFF"/></marker>
+</defs>
+<rect width="1800" height="1100" fill="#FAFBFC"/>
+
+<!-- Title -->
+<text x="900" y="45" text-anchor="middle" class="title">Assessment Lifecycle — Process Flow</text>
+<text x="900" y="70" text-anchor="middle" class="subtitle">From data ingestion through scoring, reporting, and SOW generation</text>
+
+<!-- ==================== SWIM LANE 1: DATA INGESTION ==================== -->
+<rect x="60" y="100" width="1680" height="200" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+<!-- Lane label -->
+<rect x="60" y="100" width="140" height="200" rx="8" fill="#3B82F6" opacity="0.1"/>
+<text x="130" y="165" text-anchor="middle" class="swim-label" transform="rotate(-90,130,165)">DATA INGESTION</text>
+
+<!-- Upload Export JSON -->
+<rect x="220" y="140" width="150" height="50" rx="8" fill="#3B82F6"/>
+<text x="295" y="163" text-anchor="middle" class="step-text">Upload Export</text>
+<text x="295" y="178" text-anchor="middle" class="step-text" style="font-size:10px">JSON</text>
+
+<line x1="370" y1="165" x2="410" y2="165" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arrow-white)"/>
+
+<!-- Parse & Validate -->
+<rect x="410" y="140" width="150" height="50" rx="8" fill="#3B82F6"/>
+<text x="485" y="163" text-anchor="middle" class="step-text">Parse &amp;</text>
+<text x="485" y="178" text-anchor="middle" class="step-text" style="font-size:10px">Validate</text>
+
+<!-- OR divider -->
+<text x="620" y="168" text-anchor="middle" class="swim-label" fill="#3B82F6">OR</text>
+
+<!-- Connect Instance -->
+<rect x="680" y="140" width="150" height="50" rx="8" fill="#0EA5E9"/>
+<text x="755" y="163" text-anchor="middle" class="step-text">Connect</text>
+<text x="755" y="178" text-anchor="middle" class="step-text" style="font-size:10px">Instance</text>
+
+<line x1="830" y1="165" x2="870" y2="165" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Query Tables -->
+<rect x="870" y="140" width="150" height="50" rx="8" fill="#0EA5E9"/>
+<text x="945" y="163" text-anchor="middle" class="step-text">Query</text>
+<text x="945" y="178" text-anchor="middle" class="step-text" style="font-size:10px">Tables</text>
+
+<line x1="1020" y1="165" x2="1060" y2="165" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Collect Data -->
+<rect x="1060" y="140" width="150" height="50" rx="8" fill="#3B82F6"/>
+<text x="1135" y="163" text-anchor="middle" class="step-text">Collect Data</text>
+
+<!-- Merge arrow from both paths -->
+<path d="M 485 190 L 485 225 Q 485 240 810 240 Q 1135 240 1135 225 L 1135 190" stroke="#9CA3AF" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+
+<text x="295" y="210" text-anchor="middle" class="step-desc">Export JSON upload</text>
+<text x="755" y="210" text-anchor="middle" class="step-desc">Live API connection</text>
+<text x="1135" y="210" text-anchor="middle" class="step-desc">Unified data collection</text>
+
+<!-- ==================== SWIM LANE 2: SCANNING ==================== -->
+<rect x="60" y="310" width="1680" height="200" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+<rect x="60" y="310" width="140" height="200" rx="8" fill="#10B981" opacity="0.1"/>
+<text x="130" y="380" text-anchor="middle" class="swim-label" transform="rotate(-90,130,380)">SCANNING</text>
+
+<!-- Arrow from ingestion to scanning -->
+<line x1="1135" y1="250" x2="1135" y2="282" stroke="#9CA3AF" stroke-width="2"/>
+<line x1="1135" y1="282" x2="295" y2="282" stroke="#9CA3AF" stroke-width="2"/>
+<line x1="295" y1="282" x2="295" y2="355" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Load Scan Rules -->
+<rect x="220" y="350" width="150" height="50" rx="8" fill="#10B981"/>
+<text x="295" y="373" text-anchor="middle" class="step-text">Load Scan</text>
+<text x="295" y="388" text-anchor="middle" class="step-text" style="font-size:10px">Rules (23)</text>
+
+<line x1="370" y1="375" x2="410" y2="375" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Evaluate Rules -->
+<rect x="410" y="350" width="150" height="50" rx="8" fill="#10B981"/>
+<text x="485" y="373" text-anchor="middle" class="step-text">Evaluate</text>
+<text x="485" y="388" text-anchor="middle" class="step-text" style="font-size:10px">Rules</text>
+
+<line x1="560" y1="375" x2="600" y2="375" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Generate Findings -->
+<rect x="600" y="350" width="150" height="50" rx="8" fill="#10B981"/>
+<text x="675" y="373" text-anchor="middle" class="step-text">Generate</text>
+<text x="675" y="388" text-anchor="middle" class="step-text" style="font-size:10px">Findings</text>
+
+<line x1="750" y1="375" x2="810" y2="375" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Decision: Pathfinder Data? -->
+<polygon points="900,345 990,375 900,405 810,375" fill="#3B82F6"/>
+<text x="900" y="373" text-anchor="middle" class="decision-text" style="font-size:9px">Pathfinder</text>
+<text x="900" y="384" text-anchor="middle" class="decision-text" style="font-size:9px">Data?</text>
+
+<!-- Yes path -->
+<line x1="990" y1="375" x2="1040" y2="375" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1015" y="367" text-anchor="middle" class="status-text" fill="#10B981">Yes</text>
+
+<!-- Run Fusion Rules -->
+<rect x="1040" y="350" width="150" height="50" rx="8" fill="#3B82F6"/>
+<text x="1115" y="373" text-anchor="middle" class="step-text">Run Fusion</text>
+<text x="1115" y="388" text-anchor="middle" class="step-text" style="font-size:10px">Rules</text>
+
+<line x1="1190" y1="375" x2="1230" y2="375" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Merge Findings -->
+<rect x="1230" y="350" width="150" height="50" rx="8" fill="#10B981"/>
+<text x="1305" y="373" text-anchor="middle" class="step-text">Merge</text>
+<text x="1305" y="388" text-anchor="middle" class="step-text" style="font-size:10px">Findings</text>
+
+<!-- No path (skip fusion) -->
+<path d="M 900 405 L 900 430 Q 900 440 1305 440 Q 1305 430 1305 400" stroke="#EF4444" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+<text x="1100" y="455" text-anchor="middle" class="status-text" fill="#EF4444">No: skip fusion</text>
+
+<text x="295" y="420" text-anchor="middle" class="step-desc">5 modules of rules</text>
+<text x="675" y="420" text-anchor="middle" class="step-desc">Match to remediation patterns</text>
+
+<!-- ==================== SWIM LANE 3: SCORING ==================== -->
+<rect x="60" y="520" width="1680" height="200" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+<rect x="60" y="520" width="140" height="200" rx="8" fill="#F59E0B" opacity="0.1"/>
+<text x="130" y="590" text-anchor="middle" class="swim-label" transform="rotate(-90,130,590)">SCORING</text>
+
+<!-- Arrow from scanning to scoring -->
+<line x1="1305" y1="400" x2="1305" y2="470" stroke="#9CA3AF" stroke-width="2"/>
+<line x1="1305" y1="470" x2="295" y2="470" stroke="#9CA3AF" stroke-width="2"/>
+<line x1="295" y1="470" x2="295" y2="555" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Compute Composite Scores -->
+<rect x="220" y="560" width="160" height="50" rx="8" fill="#F59E0B"/>
+<text x="300" y="583" text-anchor="middle" class="step-text">Composite</text>
+<text x="300" y="598" text-anchor="middle" class="step-text" style="font-size:10px">Scores</text>
+
+<line x1="380" y1="585" x2="430" y2="585" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Compute Health Index -->
+<rect x="430" y="560" width="160" height="50" rx="8" fill="#F59E0B"/>
+<text x="510" y="583" text-anchor="middle" class="step-text">Health</text>
+<text x="510" y="598" text-anchor="middle" class="step-text" style="font-size:10px">Index</text>
+
+<line x1="590" y1="585" x2="640" y2="585" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Compute Domain Scores -->
+<rect x="640" y="560" width="160" height="50" rx="8" fill="#F59E0B"/>
+<text x="720" y="583" text-anchor="middle" class="step-text">Domain</text>
+<text x="720" y="598" text-anchor="middle" class="step-text" style="font-size:10px">Scores</text>
+
+<line x1="800" y1="585" x2="850" y2="585" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Calculate Revenue -->
+<rect x="850" y="560" width="160" height="50" rx="8" fill="#F59E0B"/>
+<text x="930" y="583" text-anchor="middle" class="step-text">Calculate</text>
+<text x="930" y="598" text-anchor="middle" class="step-text" style="font-size:10px">Revenue</text>
+
+<line x1="1010" y1="585" x2="1060" y2="585" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Identify Quick Wins -->
+<rect x="1060" y="560" width="160" height="50" rx="8" fill="#F59E0B"/>
+<text x="1140" y="583" text-anchor="middle" class="step-text">Identify</text>
+<text x="1140" y="598" text-anchor="middle" class="step-text" style="font-size:10px">Quick Wins</text>
+
+<text x="300" y="630" text-anchor="middle" class="step-desc">sev x 0.4 + effort x 0.3 + risk x 0.3</text>
+<text x="510" y="630" text-anchor="middle" class="step-desc">100 - weighted_penalty</text>
+<text x="720" y="630" text-anchor="middle" class="step-desc">Per-module breakdown</text>
+<text x="930" y="630" text-anchor="middle" class="step-desc">Hours x rate card</text>
+<text x="1140" y="630" text-anchor="middle" class="step-desc">High impact, low effort</text>
+
+<!-- ==================== SWIM LANE 4: REPORTING ==================== -->
+<rect x="60" y="730" width="1680" height="200" rx="8" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1"/>
+<rect x="60" y="730" width="140" height="200" rx="8" fill="#8B5CF6" opacity="0.1"/>
+<text x="130" y="800" text-anchor="middle" class="swim-label" transform="rotate(-90,130,800)">REPORTING</text>
+
+<!-- Arrow from scoring to reporting -->
+<line x1="1140" y1="610" x2="1140" y2="680" stroke="#9CA3AF" stroke-width="2"/>
+<line x1="1140" y1="680" x2="295" y2="680" stroke="#9CA3AF" stroke-width="2"/>
+<line x1="295" y1="680" x2="295" y2="765" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Generate Consultant Report -->
+<rect x="220" y="770" width="160" height="50" rx="8" fill="#8B5CF6"/>
+<text x="300" y="793" text-anchor="middle" class="step-text">Consultant</text>
+<text x="300" y="808" text-anchor="middle" class="step-text" style="font-size:10px">Report</text>
+
+<line x1="380" y1="795" x2="430" y2="795" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Generate Customer Report -->
+<rect x="430" y="770" width="160" height="50" rx="8" fill="#8B5CF6"/>
+<text x="510" y="793" text-anchor="middle" class="step-text">Customer</text>
+<text x="510" y="808" text-anchor="middle" class="step-text" style="font-size:10px">Report</text>
+
+<line x1="590" y1="795" x2="650" y2="795" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Decision: Build SOW? -->
+<polygon points="740,765 830,795 740,825 650,795" fill="#8B5CF6"/>
+<text x="740" y="793" text-anchor="middle" class="decision-text" style="font-size:9px">Build</text>
+<text x="740" y="804" text-anchor="middle" class="decision-text" style="font-size:9px">SOW?</text>
+
+<!-- Yes path -->
+<line x1="830" y1="795" x2="880" y2="795" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="855" y="787" text-anchor="middle" class="status-text" fill="#10B981">Yes</text>
+
+<!-- Select Findings -->
+<rect x="880" y="770" width="160" height="50" rx="8" fill="#8B5CF6"/>
+<text x="960" y="793" text-anchor="middle" class="step-text">Select</text>
+<text x="960" y="808" text-anchor="middle" class="step-text" style="font-size:10px">Findings</text>
+
+<line x1="1040" y1="795" x2="1080" y2="795" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Configure Engagement -->
+<rect x="1080" y="770" width="160" height="50" rx="8" fill="#8B5CF6"/>
+<text x="1160" y="793" text-anchor="middle" class="step-text">Configure</text>
+<text x="1160" y="808" text-anchor="middle" class="step-text" style="font-size:10px">Engagement</text>
+
+<line x1="1240" y1="795" x2="1280" y2="795" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Generate SOW -->
+<rect x="1280" y="770" width="160" height="50" rx="8" fill="#8B5CF6"/>
+<text x="1360" y="793" text-anchor="middle" class="step-text">Generate</text>
+<text x="1360" y="808" text-anchor="middle" class="step-text" style="font-size:10px">SOW</text>
+
+<text x="300" y="840" text-anchor="middle" class="step-desc">Internal analysis view</text>
+<text x="510" y="840" text-anchor="middle" class="step-desc">External-facing report</text>
+<text x="960" y="840" text-anchor="middle" class="step-desc">Cherry-pick findings</text>
+<text x="1160" y="840" text-anchor="middle" class="step-desc">Rate card + type</text>
+<text x="1360" y="840" text-anchor="middle" class="step-desc">PDF/document output</text>
+
+<!-- Status flow at bottom -->
+<rect x="60" y="960" width="1680" height="60" rx="8" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1"/>
+<text x="90" y="990" class="section-label">ASSESSMENT STATUS PIPELINE</text>
+<rect x="320" y="978" width="70" height="24" rx="12" fill="#9CA3AF" opacity="0.2"/>
+<text x="355" y="994" text-anchor="middle" class="status-text" fill="#9CA3AF">queued</text>
+<text x="400" y="994" class="rel-label">&#8594;</text>
+<rect x="415" y="978" width="80" height="24" rx="12" fill="#3B82F6" opacity="0.2"/>
+<text x="455" y="994" text-anchor="middle" class="status-text" fill="#3B82F6">scanning</text>
+<text x="505" y="994" class="rel-label">&#8594;</text>
+<rect x="520" y="978" width="80" height="24" rx="12" fill="#10B981" opacity="0.2"/>
+<text x="560" y="994" text-anchor="middle" class="status-text" fill="#10B981">analyzing</text>
+<text x="610" y="994" class="rel-label">&#8594;</text>
+<rect x="625" y="978" width="70" height="24" rx="12" fill="#F59E0B" opacity="0.2"/>
+<text x="660" y="994" text-anchor="middle" class="status-text" fill="#F59E0B">scoring</text>
+<text x="705" y="994" class="rel-label">&#8594;</text>
+<rect x="720" y="978" width="80" height="24" rx="12" fill="#10B981" opacity="0.2"/>
+<text x="760" y="994" text-anchor="middle" class="status-text" fill="#10B981">complete</text>
+<rect x="820" y="978" width="60" height="24" rx="12" fill="#EF4444" opacity="0.2"/>
+<text x="850" y="994" text-anchor="middle" class="status-text" fill="#EF4444">error</text>
+</svg>

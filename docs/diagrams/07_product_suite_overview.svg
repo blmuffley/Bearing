@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1000" width="2400" height="1000" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .title { font-size: 24px; font-weight: 700; fill: #1A1A2E; }
+ .subtitle { font-size: 14px; font-weight: 400; fill: #6B7280; }
+ .entity-name { font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+ .pk { font-size: 11px; font-weight: 600; fill: #374151; }
+ .field { font-size: 11px; font-weight: 400; fill: #4B5563; }
+ .fk { font-size: 11px; font-weight: 400; fill: #2563EB; }
+ .type { font-size: 10px; font-weight: 400; fill: #9CA3AF; }
+ .section-label { font-size: 10px; font-weight: 700; fill: #6B7280; letter-spacing: 0.05em; text-transform: uppercase; }
+ .rel-label { font-size: 10px; font-weight: 500; fill: #6B7280; }
+ .process-title { font-size: 16px; font-weight: 700; fill: #1F2937; }
+ .step-text { font-size: 12px; font-weight: 500; fill: #FFFFFF; }
+ .step-desc { font-size: 10px; font-weight: 400; fill: #6B7280; }
+ .decision-text { font-size: 11px; font-weight: 600; fill: #FFFFFF; }
+ .swim-label { font-size: 12px; font-weight: 700; fill: #374151; }
+ .status-text { font-size: 10px; font-weight: 600; }
+ .note-text { font-size: 10px; font-weight: 400; fill: #6B7280; font-style: italic; }
+ .product-name { font-size: 22px; font-weight: 800; fill: #FFFFFF; letter-spacing: 0.02em; }
+ .product-tagline { font-size: 13px; font-weight: 500; fill: #FFFFFF; opacity: 0.85; }
+ .product-desc { font-size: 11px; font-weight: 400; fill: #FFFFFF; opacity: 0.7; }
+</style>
+<marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#9CA3AF"/></marker>
+<marker id="arrow-blue" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#3B82F6"/></marker>
+<marker id="diamond" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#9CA3AF"/></marker>
+<marker id="diamond-filled" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#3B82F6"/></marker>
+</defs>
+<rect width="2400" height="1000" fill="#FAFBFC"/>
+
+<!-- Title -->
+<text x="1200" y="45" text-anchor="middle" class="title">Avennorth Product Suite — System Integration Map</text>
+<text x="1200" y="70" text-anchor="middle" class="subtitle">Assess &#8594; Discover &#8594; Map &#8594; Respond &#8594; Guide</text>
+
+<!-- ==================== PRODUCT 1: BEARING ==================== -->
+<rect x="72" y="112" width="380" height="320" rx="16" fill="#D1D5DB" opacity="0.3"/>
+<rect x="70" y="110" width="380" height="320" rx="16" fill="#1A1A2E"/>
+<!-- Accent bar -->
+<rect x="70" y="110" width="380" height="8" rx="4" fill="#CCFF00"/>
+<text x="260" y="160" text-anchor="middle" class="product-name">Bearing</text>
+<text x="260" y="185" text-anchor="middle" class="product-tagline">"Measures where you are"</text>
+<rect x="100" y="200" width="320" height="1" fill="#FFFFFF" opacity="0.1"/>
+<text x="260" y="225" text-anchor="middle" class="product-desc">Tech Debt Assessment</text>
+<text x="120" y="255" class="product-desc">- ServiceNow health scoring</text>
+<text x="120" y="275" class="product-desc">- 23 scan rules across 5 modules</text>
+<text x="120" y="295" class="product-desc">- Composite &amp; domain scoring</text>
+<text x="120" y="315" class="product-desc">- SOW generation pipeline</text>
+<text x="120" y="335" class="product-desc">- Pathfinder fusion analysis</text>
+<text x="120" y="355" class="product-desc">- Revenue calculator</text>
+<!-- Phase badge -->
+<rect x="140" y="380" width="240" height="24" rx="12" fill="#CCFF00" opacity="0.2"/>
+<text x="260" y="396" text-anchor="middle" class="status-text" fill="#CCFF00">ASSESS</text>
+
+<!-- ==================== PRODUCT 2: PATHFINDER ==================== -->
+<rect x="522" y="112" width="380" height="320" rx="16" fill="#D1D5DB" opacity="0.3"/>
+<rect x="520" y="110" width="380" height="320" rx="16" fill="#1E3A5F"/>
+<rect x="520" y="110" width="380" height="8" rx="4" fill="#3B82F6"/>
+<text x="710" y="160" text-anchor="middle" class="product-name">Pathfinder</text>
+<text x="710" y="185" text-anchor="middle" class="product-tagline">"Discovers your terrain"</text>
+<rect x="550" y="200" width="320" height="1" fill="#FFFFFF" opacity="0.1"/>
+<text x="710" y="225" text-anchor="middle" class="product-desc">CMDB-first Service Discovery</text>
+<text x="570" y="255" class="product-desc">- eBPF/ETW kernel observation</text>
+<text x="570" y="275" class="product-desc">- Behavioral CI classification</text>
+<text x="570" y="295" class="product-desc">- Traffic state analysis</text>
+<text x="570" y="315" class="product-desc">- Confidence scoring (0-100)</text>
+<text x="570" y="335" class="product-desc">- Relationship confirmations</text>
+<text x="570" y="355" class="product-desc">- Coverage zone mapping</text>
+<rect x="590" y="380" width="240" height="24" rx="12" fill="#3B82F6" opacity="0.2"/>
+<text x="710" y="396" text-anchor="middle" class="status-text" fill="#3B82F6">DISCOVER</text>
+
+<!-- ==================== PRODUCT 3: CONTOUR ==================== -->
+<rect x="972" y="112" width="380" height="320" rx="16" fill="#D1D5DB" opacity="0.3"/>
+<rect x="970" y="110" width="380" height="320" rx="16" fill="#134E4A"/>
+<rect x="970" y="110" width="380" height="8" rx="4" fill="#10B981"/>
+<text x="1160" y="160" text-anchor="middle" class="product-name">Contour</text>
+<text x="1160" y="185" text-anchor="middle" class="product-tagline">"Plots your waypoints"</text>
+<rect x="1000" y="200" width="320" height="1" fill="#FFFFFF" opacity="0.1"/>
+<text x="1160" y="225" text-anchor="middle" class="product-desc">Service Mapping Intelligence</text>
+<text x="1020" y="255" class="product-desc">- Automated service mapping</text>
+<text x="1020" y="275" class="product-desc">- Dependency visualization</text>
+<text x="1020" y="295" class="product-desc">- Topology analysis</text>
+<text x="1020" y="315" class="product-desc">- Impact assessment</text>
+<text x="1020" y="335" class="product-desc">- Service blueprint generation</text>
+<text x="1020" y="355" class="product-desc">- Change risk scoring</text>
+<rect x="1040" y="380" width="240" height="24" rx="12" fill="#10B981" opacity="0.2"/>
+<text x="1160" y="396" text-anchor="middle" class="status-text" fill="#10B981">MAP</text>
+
+<!-- ==================== PRODUCT 4: VANTAGE ==================== -->
+<rect x="1422" y="112" width="380" height="320" rx="16" fill="#D1D5DB" opacity="0.3"/>
+<rect x="1420" y="110" width="380" height="320" rx="16" fill="#451A03"/>
+<rect x="1420" y="110" width="380" height="8" rx="4" fill="#F59E0B"/>
+<text x="1610" y="160" text-anchor="middle" class="product-name">Vantage</text>
+<text x="1610" y="185" text-anchor="middle" class="product-tagline">"Spots wrong turns"</text>
+<rect x="1450" y="200" width="320" height="1" fill="#FFFFFF" opacity="0.1"/>
+<text x="1610" y="225" text-anchor="middle" class="product-desc">Major Incident Investigation</text>
+<text x="1470" y="255" class="product-desc">- Incident root cause analysis</text>
+<text x="1470" y="275" class="product-desc">- Timeline reconstruction</text>
+<text x="1470" y="295" class="product-desc">- Impact blast radius</text>
+<text x="1470" y="315" class="product-desc">- Remediation playbooks</text>
+<text x="1470" y="335" class="product-desc">- Post-incident reporting</text>
+<text x="1470" y="355" class="product-desc">- Pattern detection</text>
+<rect x="1490" y="380" width="240" height="24" rx="12" fill="#F59E0B" opacity="0.2"/>
+<text x="1610" y="396" text-anchor="middle" class="status-text" fill="#F59E0B">RESPOND</text>
+
+<!-- ==================== PRODUCT 5: COMPASS ==================== -->
+<rect x="1872" y="112" width="380" height="320" rx="16" fill="#D1D5DB" opacity="0.3"/>
+<rect x="1870" y="110" width="380" height="320" rx="16" fill="#2E1065"/>
+<rect x="1870" y="110" width="380" height="8" rx="4" fill="#8B5CF6"/>
+<text x="2060" y="160" text-anchor="middle" class="product-name">Compass</text>
+<text x="2060" y="185" text-anchor="middle" class="product-tagline">"The guide"</text>
+<rect x="1900" y="200" width="320" height="1" fill="#FFFFFF" opacity="0.1"/>
+<text x="2060" y="225" text-anchor="middle" class="product-desc">Collective CRM Platform</text>
+<text x="1920" y="255" class="product-desc">- Multi-org customer management</text>
+<text x="1920" y="275" class="product-desc">- Pipeline &amp; SOW tracking</text>
+<text x="1920" y="295" class="product-desc">- Calibration data collection</text>
+<text x="1920" y="315" class="product-desc">- Benchmarking aggregation</text>
+<text x="1920" y="335" class="product-desc">- Cross-product analytics</text>
+<text x="1920" y="355" class="product-desc">- Revenue forecasting</text>
+<rect x="1940" y="380" width="240" height="24" rx="12" fill="#8B5CF6" opacity="0.2"/>
+<text x="2060" y="396" text-anchor="middle" class="status-text" fill="#8B5CF6">GUIDE</text>
+
+<!-- ==================== INTEGRATION ARROWS ==================== -->
+
+<!-- Bearing → Pathfinder: Deployment recommendations -->
+<path d="M 450 230 Q 490 230 520 230" stroke="#CCFF00" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="450" y="210" width="85" height="16" rx="3" fill="#FFFFFF"/>
+<text x="492" y="222" text-anchor="middle" class="type" fill="#4B5563">Deploy recs</text>
+
+<!-- Pathfinder → Bearing: Confidence feeds -->
+<path d="M 520 280 Q 490 280 450 280" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="450" y="284" width="85" height="16" rx="3" fill="#FFFFFF"/>
+<text x="492" y="296" text-anchor="middle" class="type" fill="#4B5563">Confidence</text>
+
+<!-- Pathfinder → Contour: Discovered services -->
+<path d="M 900 270 Q 935 270 970 270" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="905" y="252" width="60" height="16" rx="3" fill="#FFFFFF"/>
+<text x="935" y="264" text-anchor="middle" class="type" fill="#4B5563">Services</text>
+
+<!-- Contour → Vantage: Service maps -->
+<path d="M 1350 270 Q 1385 270 1420 270" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1355" y="252" width="60" height="16" rx="3" fill="#FFFFFF"/>
+<text x="1385" y="264" text-anchor="middle" class="type" fill="#4B5563">Maps</text>
+
+<!-- Bearing → Compass: SOW pipeline sync -->
+<path d="M 260 430 Q 260 500 700 540 Q 1400 590 2060 500 Q 2060 470 2060 430" stroke="#CCFF00" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="620" y="522" width="110" height="16" rx="3" fill="#FFFFFF"/>
+<text x="675" y="534" text-anchor="middle" class="type" fill="#4B5563">SOW pipeline sync</text>
+
+<!-- Compass → Bearing: Calibration data -->
+<path d="M 2060 440 Q 2060 520 1400 558 Q 700 596 260 520 Q 260 490 260 440" stroke="#8B5CF6" stroke-width="2" fill="none" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+<rect x="1320" y="546" width="120" height="16" rx="3" fill="#FFFFFF"/>
+<text x="1380" y="558" text-anchor="middle" class="type" fill="#4B5563">Calibration (actual hrs)</text>
+
+<!-- All → Compass: Everything flows to the guide -->
+<!-- Pathfinder → Compass -->
+<path d="M 710 430 Q 710 470 1300 490 Q 1870 500 1870 430" stroke="#3B82F6" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.5"/>
+<!-- Contour → Compass -->
+<path d="M 1160 430 Q 1160 460 1600 480 Q 1870 490 1870 430" stroke="#10B981" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.5"/>
+<!-- Vantage → Compass -->
+<path d="M 1800 350 Q 1835 350 1870 350" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5" marker-end="url(#arrow)"/>
+
+<!-- "All → Compass" label -->
+<rect x="1550" y="468" width="160" height="16" rx="3" fill="#FFFFFF" opacity="0.9"/>
+<text x="1630" y="480" text-anchor="middle" class="note-text">Everything flows to the guide</text>
+
+<!-- ==================== FLOW ARROWS AT TOP ==================== -->
+<rect x="90" y="95" width="60" height="18" rx="4" fill="#CCFF00" opacity="0.3"/>
+<text x="120" y="108" text-anchor="middle" class="section-label" fill="#84CC16">1</text>
+<rect x="540" y="95" width="60" height="18" rx="4" fill="#3B82F6" opacity="0.3"/>
+<text x="570" y="108" text-anchor="middle" class="section-label" fill="#3B82F6">2</text>
+<rect x="990" y="95" width="60" height="18" rx="4" fill="#10B981" opacity="0.3"/>
+<text x="1020" y="108" text-anchor="middle" class="section-label" fill="#10B981">3</text>
+<rect x="1440" y="95" width="60" height="18" rx="4" fill="#F59E0B" opacity="0.3"/>
+<text x="1470" y="108" text-anchor="middle" class="section-label" fill="#F59E0B">4</text>
+<rect x="1890" y="95" width="60" height="18" rx="4" fill="#8B5CF6" opacity="0.3"/>
+<text x="1920" y="108" text-anchor="middle" class="section-label" fill="#8B5CF6">5</text>
+
+<!-- ==================== LEGEND ==================== -->
+<rect x="70" y="640" width="2180" height="70" rx="8" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1"/>
+<text x="100" y="665" class="section-label">INTEGRATION PATTERNS</text>
+<line x1="280" y1="660" x2="330" y2="660" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="340" y="665" class="rel-label">Direct integration</text>
+<line x1="480" y1="660" x2="530" y2="660" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+<text x="540" y="665" class="rel-label">Feedback loop</text>
+<line x1="660" y1="660" x2="710" y2="660" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+<text x="720" y="665" class="rel-label">Aggregation feed</text>
+
+<text x="100" y="695" class="note-text">Bearing is the assessment entry point. Pathfinder enriches with behavioral data. All products feed data into Compass as the central orchestration platform.</text>
+</svg>

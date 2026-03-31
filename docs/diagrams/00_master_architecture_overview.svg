@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1600" width="2400" height="1600" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .title { font-size: 24px; font-weight: 700; fill: #1A1A2E; }
+ .subtitle { font-size: 14px; font-weight: 400; fill: #6B7280; }
+ .entity-name { font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+ .pk { font-size: 11px; font-weight: 600; fill: #374151; }
+ .field { font-size: 11px; font-weight: 400; fill: #4B5563; }
+ .fk { font-size: 11px; font-weight: 400; fill: #2563EB; }
+ .type { font-size: 10px; font-weight: 400; fill: #9CA3AF; }
+ .section-label { font-size: 10px; font-weight: 700; fill: #6B7280; letter-spacing: 0.05em; text-transform: uppercase; }
+ .rel-label { font-size: 10px; font-weight: 500; fill: #6B7280; }
+ .process-title { font-size: 16px; font-weight: 700; fill: #1F2937; }
+ .step-text { font-size: 12px; font-weight: 500; fill: #FFFFFF; }
+ .step-desc { font-size: 10px; font-weight: 400; fill: #6B7280; }
+ .decision-text { font-size: 11px; font-weight: 600; fill: #FFFFFF; }
+ .swim-label { font-size: 12px; font-weight: 700; fill: #374151; }
+ .status-text { font-size: 10px; font-weight: 600; }
+ .note-text { font-size: 10px; font-weight: 400; fill: #6B7280; font-style: italic; }
+</style>
+<marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#9CA3AF"/></marker>
+<marker id="arrow-blue" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 3.5 L0 7 Z" fill="#3B82F6"/></marker>
+<marker id="diamond" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#9CA3AF"/></marker>
+<marker id="diamond-filled" viewBox="0 0 12 8" refX="6" refY="4" markerWidth="12" markerHeight="8" orient="auto"><path d="M0 4 L6 0 L12 4 L6 8 Z" fill="#3B82F6"/></marker>
+</defs>
+<rect width="2400" height="1600" fill="#FAFBFC"/>
+
+<!-- Title -->
+<text x="1200" y="50" text-anchor="middle" class="title">Bearing — Master Data Architecture Overview</text>
+<text x="1200" y="75" text-anchor="middle" class="subtitle">Technical debt assessment platform — 10 tables, 23 scan rules, 5 modules, 30 routes</text>
+
+<!-- CORE DOMAIN (#6366F1) -->
+<rect x="98" y="118" width="320" height="290" rx="8" fill="#E0E0E8" opacity="0.5"/>
+<rect x="96" y="116" width="320" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="96" y="116" width="320" height="40" rx="8" fill="#6366F1"/>
+<rect x="96" y="140" width="320" height="16" fill="#6366F1"/>
+<text x="256" y="142" text-anchor="middle" class="entity-name">CORE DOMAIN</text>
+<text x="116" y="185" class="field">ORGANIZATION</text>
+<text x="116" y="210" class="field">USER</text>
+<text x="116" y="235" class="field">INSTANCE_CONNECTION</text>
+<text x="116" y="260" class="field">ASSESSMENT</text>
+<text x="116" y="285" class="field">FINDING</text>
+<rect x="116" y="300" width="280" height="1" fill="#E5E7EB"/>
+<text x="116" y="320" class="type">5 entities | Primary data model</text>
+<text x="116" y="340" class="type">Auth, multi-tenancy, assessment pipeline</text>
+<text x="116" y="360" class="type">Central orchestrator for all modules</text>
+
+<!-- SCANNING ENGINE (#10B981) -->
+<rect x="498" y="118" width="320" height="290" rx="8" fill="#E0E0E8" opacity="0.5"/>
+<rect x="496" y="116" width="320" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="496" y="116" width="320" height="40" rx="8" fill="#10B981"/>
+<rect x="496" y="140" width="320" height="16" fill="#10B981"/>
+<text x="656" y="142" text-anchor="middle" class="entity-name">SCANNING ENGINE</text>
+<text x="516" y="185" class="field">SCAN_RULE (23 rules)</text>
+<text x="516" y="210" class="field">REMEDIATION_PATTERN (12 patterns)</text>
+<text x="516" y="235" class="field">EXPORT_PARSER</text>
+<text x="516" y="260" class="field">LIVE_SCANNER</text>
+<text x="516" y="285" class="field">INSTANCE_SCAN_IMPORTER</text>
+<rect x="516" y="300" width="280" height="1" fill="#E5E7EB"/>
+<text x="516" y="320" class="type">5 components | Rule-based analysis</text>
+<text x="516" y="340" class="type">JSON export, live API, instance scan</text>
+<text x="516" y="360" class="type">3 ingestion modes supported</text>
+
+<!-- SCORING & ANALYSIS (#F59E0B) -->
+<rect x="898" y="118" width="320" height="290" rx="8" fill="#E0E0E8" opacity="0.5"/>
+<rect x="896" y="116" width="320" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="896" y="116" width="320" height="40" rx="8" fill="#F59E0B"/>
+<rect x="896" y="140" width="320" height="16" fill="#F59E0B"/>
+<text x="1056" y="142" text-anchor="middle" class="entity-name">SCORING &amp; ANALYSIS</text>
+<text x="916" y="185" class="field">COMPOSITE_SCORER</text>
+<text x="916" y="210" class="field">HEALTH_INDEX</text>
+<text x="916" y="235" class="field">REVENUE_CALCULATOR</text>
+<text x="916" y="260" class="field">PATHFINDER_FUSION</text>
+<rect x="916" y="278" width="280" height="1" fill="#E5E7EB"/>
+<text x="916" y="298" class="type">4 components | Multi-dimensional scoring</text>
+<text x="916" y="318" class="type">Composite, health, domain, revenue</text>
+<text x="916" y="338" class="type">Pathfinder-enriched fusion scoring</text>
+
+<!-- REPORTING (#8B5CF6) -->
+<rect x="98" y="488" width="320" height="290" rx="8" fill="#E0E0E8" opacity="0.5"/>
+<rect x="96" y="486" width="320" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="96" y="486" width="320" height="40" rx="8" fill="#8B5CF6"/>
+<rect x="96" y="510" width="320" height="16" fill="#8B5CF6"/>
+<text x="256" y="512" text-anchor="middle" class="entity-name">REPORTING</text>
+<text x="116" y="555" class="field">GENERATED_SOW</text>
+<text x="116" y="580" class="field">CONSULTANT_REPORT</text>
+<text x="116" y="605" class="field">CUSTOMER_REPORT</text>
+<text x="116" y="630" class="field">SOW_GENERATOR</text>
+<rect x="116" y="648" width="280" height="1" fill="#E5E7EB"/>
+<text x="116" y="668" class="type">4 components | Document generation</text>
+<text x="116" y="688" class="type">SOW, consultant &amp; customer reports</text>
+<text x="116" y="708" class="type">Rate card &amp; engagement configuration</text>
+
+<!-- PATHFINDER INTEGRATION (#3B82F6) -->
+<rect x="498" y="488" width="320" height="290" rx="8" fill="#E0E0E8" opacity="0.5"/>
+<rect x="496" y="486" width="320" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="496" y="486" width="320" height="40" rx="8" fill="#3B82F6"/>
+<rect x="496" y="510" width="320" height="16" fill="#3B82F6"/>
+<text x="656" y="512" text-anchor="middle" class="entity-name">PATHFINDER INTEGRATION</text>
+<text x="516" y="555" class="field">PATHFINDER_CONFIDENCE</text>
+<text x="516" y="580" class="field">COVERAGE_ANALYZER</text>
+<text x="516" y="605" class="field">DEPLOYMENT_RECOMMENDER</text>
+<text x="516" y="630" class="field">CONFIDENCE_INGESTER</text>
+<rect x="516" y="648" width="280" height="1" fill="#E5E7EB"/>
+<text x="516" y="668" class="type">4 components | Behavioral enrichment</text>
+<text x="516" y="688" class="type">eBPF/ETW confidence scoring</text>
+<text x="516" y="708" class="type">Coverage zones &amp; fusion findings</text>
+
+<!-- NETWORK EFFECTS (#EF4444) -->
+<rect x="898" y="488" width="320" height="290" rx="8" fill="#E0E0E8" opacity="0.5"/>
+<rect x="896" y="486" width="320" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+<rect x="896" y="486" width="320" height="40" rx="8" fill="#EF4444"/>
+<rect x="896" y="510" width="320" height="16" fill="#EF4444"/>
+<text x="1056" y="512" text-anchor="middle" class="entity-name">NETWORK EFFECTS</text>
+<text x="916" y="555" class="field">BENCHMARK_DATA</text>
+<text x="916" y="580" class="field">CALIBRATION_TRACKER</text>
+<text x="916" y="605" class="field">CONTINUOUS_MONITOR</text>
+<text x="916" y="630" class="field">COMPASS_SYNC</text>
+<rect x="916" y="648" width="280" height="1" fill="#E5E7EB"/>
+<text x="916" y="668" class="type">4 components | Cross-platform learning</text>
+<text x="916" y="688" class="type">Peer benchmarks &amp; calibration</text>
+<text x="916" y="708" class="type">Compass integration &amp; monitoring</text>
+
+<!-- Relationship Lines -->
+<!-- CORE → SCANNING -->
+<line x1="416" y1="261" x2="496" y2="261" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="456" y="253" text-anchor="middle" class="rel-label">triggers</text>
+
+<!-- SCANNING → SCORING -->
+<line x1="816" y1="261" x2="896" y2="261" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="856" y="253" text-anchor="middle" class="rel-label">feeds</text>
+
+<!-- SCORING → REPORTING -->
+<path d="M 896 350 Q 800 440 416 560" stroke="#9CA3AF" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="680" y="420" text-anchor="middle" class="rel-label">scores feed reports</text>
+
+<!-- PATHFINDER → SCORING -->
+<line x1="656" y1="486" x2="940" y2="406" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)" stroke-dasharray="6,3"/>
+<text x="820" y="436" text-anchor="middle" class="rel-label">confidence enriches</text>
+
+<!-- CORE → NETWORK EFFECTS -->
+<path d="M 350 406 Q 600 860 896 631" stroke="#9CA3AF" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="580" y="620" text-anchor="middle" class="rel-label">assessments feed benchmarks</text>
+
+<!-- REPORTING → NETWORK EFFECTS -->
+<line x1="416" y1="631" x2="896" y2="631" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="656" y="623" text-anchor="middle" class="rel-label">SOW feeds calibration</text>
+
+<!-- Legend -->
+<rect x="96" y="850" width="1120" height="70" rx="8" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1"/>
+<text x="116" y="875" class="section-label">LEGEND</text>
+<line x1="180" y1="870" x2="220" y2="870" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="230" y="875" class="rel-label">Data flow</text>
+<line x1="340" y1="870" x2="380" y2="870" stroke="#3B82F6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-blue)"/>
+<text x="390" y="875" class="rel-label">Enrichment feed</text>
+<rect x="520" y="858" width="16" height="16" rx="3" fill="#6366F1"/>
+<text x="542" y="873" class="rel-label">Core</text>
+<rect x="590" y="858" width="16" height="16" rx="3" fill="#10B981"/>
+<text x="612" y="873" class="rel-label">Scanning</text>
+<rect x="680" y="858" width="16" height="16" rx="3" fill="#F59E0B"/>
+<text x="702" y="873" class="rel-label">Scoring</text>
+<rect x="760" y="858" width="16" height="16" rx="3" fill="#8B5CF6"/>
+<text x="782" y="873" class="rel-label">Reporting</text>
+<rect x="850" y="858" width="16" height="16" rx="3" fill="#3B82F6"/>
+<text x="872" y="873" class="rel-label">Pathfinder</text>
+<rect x="950" y="858" width="16" height="16" rx="3" fill="#EF4444"/>
+<text x="972" y="873" class="rel-label">Network</text>
+
+<text x="116" y="900" class="note-text">All domains are multi-tenant via org_id. Data flows from ingestion through scanning, scoring, and reporting.</text>
+</svg>
