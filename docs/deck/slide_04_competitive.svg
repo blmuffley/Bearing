@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .slide-title { font-size: 42px; font-weight: 700; fill: #FFFFFF; }
+ .slide-subtitle { font-size: 24px; font-weight: 400; fill: #6B6B7B; }
+ .heading { font-size: 28px; font-weight: 600; fill: #FFFFFF; }
+ .body { font-size: 20px; font-weight: 400; fill: #CCCCCC; }
+ .body-bold { font-size: 20px; font-weight: 600; fill: #FFFFFF; }
+ .accent { font-size: 20px; font-weight: 600; fill: #CCFF00; }
+ .stat-number { font-size: 64px; font-weight: 800; fill: #CCFF00; }
+ .stat-label { font-size: 18px; font-weight: 400; fill: #6B6B7B; }
+ .small { font-size: 16px; font-weight: 400; fill: #6B6B7B; }
+ .table-header { font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+ .table-cell { font-size: 16px; font-weight: 400; fill: #CCCCCC; }
+ .table-cell-accent { font-size: 16px; font-weight: 600; fill: #CCFF00; }
+ .footer { font-size: 14px; font-weight: 400; fill: #4A4A5A; }
+</style>
+</defs>
+<rect width="1920" height="1080" fill="#1A1A2E"/>
+
+<!-- Title -->
+<text x="960" y="100" text-anchor="middle" class="slide-title">Why Nobody Else Can Do This</text>
+
+<!-- Table dimensions -->
+<!-- Col 1 (Capability): x=160..560 -->
+<!-- Col 2 (Bearing): x=560..860 — highlighted -->
+<!-- Col 3 (Manual): x=860..1160 -->
+<!-- Col 4 (SN Instance Scan): x=1160..1480 -->
+<!-- Col 5 (Generic Tools): x=1480..1760 -->
+
+<!-- Bearing column highlight -->
+<rect x="560" y="160" width="300" height="820" rx="0" fill="#CCFF00" opacity="0.05"/>
+<rect x="560" y="160" width="300" height="80" rx="0" fill="#CCFF00" opacity="0.12"/>
+
+<!-- Table header background -->
+<rect x="160" y="160" width="1600" height="80" rx="8" fill="#2D2D3D"/>
+<rect x="560" y="160" width="300" height="80" fill="#CCFF00" opacity="0.12"/>
+
+<!-- Header text -->
+<text x="360" y="208" text-anchor="middle" class="table-header">Capability</text>
+<text x="710" y="208" text-anchor="middle" font-size="18" font-weight="800" fill="#CCFF00">Bearing</text>
+<text x="1010" y="208" text-anchor="middle" class="table-header">Manual</text>
+<text x="1320" y="208" text-anchor="middle" class="table-header">SN Instance Scan</text>
+<text x="1620" y="208" text-anchor="middle" class="table-header">Generic Tools</text>
+
+<!-- Row dividers -->
+<line x1="160" y1="240" x2="1760" y2="240" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="160" y1="330" x2="1760" y2="330" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="160" y1="420" x2="1760" y2="420" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="160" y1="510" x2="1760" y2="510" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="160" y1="600" x2="1760" y2="600" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="160" y1="690" x2="1760" y2="690" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="160" y1="780" x2="1760" y2="780" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="160" y1="870" x2="1760" y2="870" stroke="#2D2D3D" stroke-width="1"/>
+
+<!-- Column dividers -->
+<line x1="560" y1="160" x2="560" y2="980" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="860" y1="160" x2="860" y2="980" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="1160" y1="160" x2="1160" y2="980" stroke="#2D2D3D" stroke-width="1"/>
+<line x1="1480" y1="160" x2="1480" y2="980" stroke="#2D2D3D" stroke-width="1"/>
+
+<!-- Row 1: Automated scanning -->
+<text x="360" y="293" text-anchor="middle" class="table-cell">Automated scanning</text>
+<text x="710" y="293" text-anchor="middle" font-size="24" fill="#22C55E">&#x2705;</text>
+<text x="1010" y="293" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1320" y="293" text-anchor="middle" font-size="24" fill="#F59E0B">&#x26A0;&#xFE0F;</text>
+<text x="1620" y="293" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+
+<!-- Row 2: Revenue calculation -->
+<text x="360" y="383" text-anchor="middle" class="table-cell">Revenue calculation</text>
+<text x="710" y="383" text-anchor="middle" font-size="24" fill="#22C55E">&#x2705;</text>
+<text x="1010" y="383" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1320" y="383" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1620" y="383" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+
+<!-- Row 3: SOW generation -->
+<text x="360" y="473" text-anchor="middle" class="table-cell">SOW generation</text>
+<text x="710" y="473" text-anchor="middle" font-size="24" fill="#22C55E">&#x2705;</text>
+<text x="1010" y="473" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1320" y="473" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1620" y="473" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+
+<!-- Row 4: Dual reports -->
+<text x="360" y="563" text-anchor="middle" class="table-cell">Dual reports</text>
+<text x="710" y="563" text-anchor="middle" font-size="24" fill="#22C55E">&#x2705;</text>
+<text x="1010" y="563" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1320" y="563" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1620" y="563" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+
+<!-- Row 5: Behavioral fusion -->
+<text x="360" y="653" text-anchor="middle" class="table-cell">Behavioral fusion</text>
+<text x="710" y="653" text-anchor="middle" font-size="24" fill="#22C55E">&#x2705;</text>
+<text x="1010" y="653" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1320" y="653" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1620" y="653" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+
+<!-- Row 6: Calibration loop -->
+<text x="360" y="743" text-anchor="middle" class="table-cell">Calibration loop</text>
+<text x="710" y="743" text-anchor="middle" font-size="24" fill="#22C55E">&#x2705;</text>
+<text x="1010" y="743" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1320" y="743" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+<text x="1620" y="743" text-anchor="middle" font-size="24" fill="#EF4444">&#x274C;</text>
+
+<!-- Row 7: Time to assess -->
+<rect x="160" y="870" width="1600" height="90" fill="#2D2D3D" opacity="0.5"/>
+<text x="360" y="923" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Time to assess</text>
+<text x="710" y="923" text-anchor="middle" font-size="18" font-weight="800" fill="#CCFF00">Minutes</text>
+<text x="1010" y="923" text-anchor="middle" class="table-cell">2-6 Weeks</text>
+<text x="1320" y="923" text-anchor="middle" class="table-cell">Hours</text>
+<text x="1620" y="923" text-anchor="middle" class="table-cell">N/A</text>
+
+<!-- Bearing column border -->
+<rect x="560" y="160" width="300" height="800" rx="0" fill="none" stroke="#CCFF00" stroke-width="2" opacity="0.4"/>
+
+<!-- Footer -->
+<text x="960" y="1060" text-anchor="middle" class="footer">AVENNORTH — CONFIDENTIAL</text>
+</svg>

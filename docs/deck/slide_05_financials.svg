@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .slide-title { font-size: 42px; font-weight: 700; fill: #FFFFFF; }
+ .slide-subtitle { font-size: 24px; font-weight: 400; fill: #6B6B7B; }
+ .heading { font-size: 28px; font-weight: 600; fill: #FFFFFF; }
+ .body { font-size: 20px; font-weight: 400; fill: #CCCCCC; }
+ .body-bold { font-size: 20px; font-weight: 600; fill: #FFFFFF; }
+ .accent { font-size: 20px; font-weight: 600; fill: #CCFF00; }
+ .stat-number { font-size: 64px; font-weight: 800; fill: #CCFF00; }
+ .stat-label { font-size: 18px; font-weight: 400; fill: #6B6B7B; }
+ .small { font-size: 16px; font-weight: 400; fill: #6B6B7B; }
+ .table-header { font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+ .table-cell { font-size: 16px; font-weight: 400; fill: #CCCCCC; }
+ .table-cell-accent { font-size: 16px; font-weight: 600; fill: #CCFF00; }
+ .footer { font-size: 14px; font-weight: 400; fill: #4A4A5A; }
+</style>
+</defs>
+<rect width="1920" height="1080" fill="#1A1A2E"/>
+
+<!-- Title -->
+<text x="960" y="80" text-anchor="middle" class="slide-title">Revenue Projections</text>
+<text x="960" y="120" text-anchor="middle" class="slide-subtitle">Path to profitability in Year 2</text>
+
+<!-- Chart area: x=200..1720, y=180..750 -->
+<!-- Y-axis baseline at y=720, max bar top around y=200 -->
+<!-- Bar width=200, gap between bars -->
+
+<!-- Y-axis line -->
+<line x1="260" y1="180" x2="260" y2="720" stroke="#2D2D3D" stroke-width="2"/>
+<!-- X-axis line -->
+<line x1="260" y1="720" x2="1720" y2="720" stroke="#2D2D3D" stroke-width="2"/>
+
+<!-- Y-axis labels -->
+<text x="240" y="720" text-anchor="end" class="small">$0</text>
+<text x="240" y="585" text-anchor="end" class="small">$5M</text>
+<text x="240" y="450" text-anchor="end" class="small">$10M</text>
+<text x="240" y="315" text-anchor="end" class="small">$15M</text>
+<text x="240" y="200" text-anchor="end" class="small">$25M</text>
+
+<!-- Grid lines -->
+<line x1="260" y1="585" x2="1720" y2="585" stroke="#2D2D3D" stroke-width="1" stroke-dasharray="6,4"/>
+<line x1="260" y1="450" x2="1720" y2="450" stroke="#2D2D3D" stroke-width="1" stroke-dasharray="6,4"/>
+<line x1="260" y1="315" x2="1720" y2="315" stroke="#2D2D3D" stroke-width="1" stroke-dasharray="6,4"/>
+<line x1="260" y1="200" x2="1720" y2="200" stroke="#2D2D3D" stroke-width="1" stroke-dasharray="6,4"/>
+
+<!-- Bar 1: Year 1 — $462K = ~1.8% of $25M => height ~10px, min visible 30 -->
+<!-- Scale: $25M = 520px height. $462K = 9.6px, use 30 for visibility -->
+<rect x="360" y="710" width="180" height="10" rx="4" fill="#CCFF00"/>
+<rect x="360" y="690" width="180" height="30" rx="4" fill="#CCFF00" opacity="0.9"/>
+<text x="450" y="678" text-anchor="middle" font-size="22" font-weight="700" fill="#CCFF00">$462K</text>
+<text x="450" y="755" text-anchor="middle" font-size="18" font-weight="600" fill="#FFFFFF">Year 1</text>
+
+<!-- Bar 2: Year 2 — $1.86M => ~38.7px, use 39 -->
+<rect x="620" y="681" width="180" height="39" rx="4" fill="#CCFF00" opacity="0.9"/>
+<text x="710" y="668" text-anchor="middle" font-size="22" font-weight="700" fill="#CCFF00">$1.86M</text>
+<text x="710" y="755" text-anchor="middle" font-size="18" font-weight="600" fill="#FFFFFF">Year 2</text>
+
+<!-- Bar 3: Year 3 — $5.4M => 112px -->
+<rect x="880" y="608" width="180" height="112" rx="4" fill="#CCFF00" opacity="0.9"/>
+<text x="970" y="595" text-anchor="middle" font-size="22" font-weight="700" fill="#CCFF00">$5.4M</text>
+<text x="970" y="755" text-anchor="middle" font-size="18" font-weight="600" fill="#FFFFFF">Year 3</text>
+
+<!-- Bar 4: Year 4 — $13.05M => 271px -->
+<rect x="1140" y="449" width="180" height="271" rx="4" fill="#CCFF00" opacity="0.9"/>
+<text x="1230" y="436" text-anchor="middle" font-size="22" font-weight="700" fill="#CCFF00">$13.05M</text>
+<text x="1230" y="755" text-anchor="middle" font-size="18" font-weight="600" fill="#FFFFFF">Year 4</text>
+
+<!-- Bar 5: Year 5 — $25.18M => 523px -->
+<rect x="1400" y="197" width="180" height="523" rx="4" fill="#CCFF00" opacity="0.9"/>
+<text x="1490" y="184" text-anchor="middle" font-size="22" font-weight="700" fill="#CCFF00">$25.18M</text>
+<text x="1490" y="755" text-anchor="middle" font-size="18" font-weight="600" fill="#FFFFFF">Year 5</text>
+
+<!-- Key metrics row -->
+<rect x="160" y="820" width="1600" height="120" rx="12" fill="#2D2D3D"/>
+
+<!-- Metric 1 -->
+<text x="360" y="870" text-anchor="middle" font-size="36" font-weight="800" fill="#CCFF00">800</text>
+<text x="360" y="905" text-anchor="middle" font-size="16" font-weight="400" fill="#6B6B7B">Target Orgs</text>
+
+<!-- Divider -->
+<line x1="560" y1="845" x2="560" y2="920" stroke="#3A3A4A" stroke-width="1"/>
+
+<!-- Metric 2 -->
+<text x="760" y="870" text-anchor="middle" font-size="36" font-weight="800" fill="#CCFF00">$25.2M</text>
+<text x="760" y="905" text-anchor="middle" font-size="16" font-weight="400" fill="#6B6B7B">ARR (Year 5)</text>
+
+<!-- Divider -->
+<line x1="960" y1="845" x2="960" y2="920" stroke="#3A3A4A" stroke-width="1"/>
+
+<!-- Metric 3 -->
+<text x="1160" y="870" text-anchor="middle" font-size="36" font-weight="800" fill="#CCFF00">82%</text>
+<text x="1160" y="905" text-anchor="middle" font-size="16" font-weight="400" fill="#6B6B7B">Net Margin</text>
+
+<!-- Divider -->
+<line x1="1360" y1="845" x2="1360" y2="920" stroke="#3A3A4A" stroke-width="1"/>
+
+<!-- Metric 4 -->
+<text x="1560" y="870" text-anchor="middle" font-size="36" font-weight="800" fill="#CCFF00">19.2x</text>
+<text x="1560" y="905" text-anchor="middle" font-size="16" font-weight="400" fill="#6B6B7B">LTV:CAC</text>
+
+<!-- Footer -->
+<text x="960" y="1060" text-anchor="middle" class="footer">AVENNORTH — CONFIDENTIAL</text>
+</svg>

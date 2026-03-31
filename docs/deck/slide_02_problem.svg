@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .slide-title { font-size: 42px; font-weight: 700; fill: #FFFFFF; }
+ .slide-subtitle { font-size: 24px; font-weight: 400; fill: #6B6B7B; }
+ .heading { font-size: 28px; font-weight: 600; fill: #FFFFFF; }
+ .body { font-size: 20px; font-weight: 400; fill: #CCCCCC; }
+ .body-bold { font-size: 20px; font-weight: 600; fill: #FFFFFF; }
+ .accent { font-size: 20px; font-weight: 600; fill: #CCFF00; }
+ .stat-number { font-size: 64px; font-weight: 800; fill: #CCFF00; }
+ .stat-label { font-size: 18px; font-weight: 400; fill: #6B6B7B; }
+ .small { font-size: 16px; font-weight: 400; fill: #6B6B7B; }
+ .table-header { font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+ .table-cell { font-size: 16px; font-weight: 400; fill: #CCCCCC; }
+ .table-cell-accent { font-size: 16px; font-weight: 600; fill: #CCFF00; }
+ .footer { font-size: 14px; font-weight: 400; fill: #4A4A5A; }
+</style>
+</defs>
+<rect width="1920" height="1080" fill="#1A1A2E"/>
+
+<!-- Title -->
+<text x="960" y="100" text-anchor="middle" class="slide-title">ServiceNow's $10B+ Ecosystem Has a Hidden Problem</text>
+
+<!-- Left side: 4 stat boxes -->
+<!-- Stat box 1 -->
+<rect x="120" y="180" width="680" height="160" rx="12" fill="#2D2D3D"/>
+<text x="460" y="255" text-anchor="middle" class="stat-number">8,100+</text>
+<text x="460" y="300" text-anchor="middle" class="stat-label">Enterprise Customers</text>
+
+<!-- Stat box 2 -->
+<rect x="120" y="360" width="680" height="160" rx="12" fill="#2D2D3D"/>
+<text x="460" y="435" text-anchor="middle" class="stat-number">$3-50M</text>
+<text x="460" y="480" text-anchor="middle" class="stat-label">Annual Platform Spend</text>
+
+<!-- Stat box 3 -->
+<rect x="120" y="540" width="680" height="160" rx="12" fill="#2D2D3D"/>
+<text x="460" y="615" text-anchor="middle" class="stat-number">2-6 Weeks</text>
+<text x="460" y="660" text-anchor="middle" class="stat-label">Manual Assessment Time</text>
+
+<!-- Stat box 4 — highlighted in lime -->
+<rect x="120" y="720" width="680" height="160" rx="12" fill="#2D2D3D" stroke="#CCFF00" stroke-width="2"/>
+<rect x="120" y="720" width="680" height="160" rx="12" fill="#CCFF00" opacity="0.08"/>
+<text x="460" y="795" text-anchor="middle" class="stat-number">0</text>
+<text x="460" y="840" text-anchor="middle" font-size="18" font-weight="600" fill="#CCFF00">Automated Assessment Platforms</text>
+
+<!-- Right side: bullet points describing problems -->
+<rect x="880" y="180" width="920" height="700" rx="12" fill="#2D2D3D"/>
+
+<!-- Bullet 1 -->
+<circle cx="930" cy="320" r="6" fill="#CCFF00"/>
+<text x="960" y="328" class="body">Technical debt compounds silently until upgrades fail</text>
+
+<!-- Bullet 2 -->
+<circle cx="930" cy="440" r="6" fill="#CCFF00"/>
+<text x="960" y="448" class="body">Manual assessments are inconsistent and expensive</text>
+
+<!-- Bullet 3 -->
+<circle cx="930" cy="560" r="6" fill="#CCFF00"/>
+<text x="960" y="568" class="body">No standard methodology for debt quantification</text>
+
+<!-- Bullet 4 -->
+<circle cx="930" cy="680" r="6" fill="#CCFF00"/>
+<text x="960" y="688" class="body">Consultants can't scale assessment capacity</text>
+
+<!-- Section label -->
+<text x="1340" y="230" text-anchor="middle" class="heading">The Pain Points</text>
+<line x1="930" y1="255" x2="1750" y2="255" stroke="#3A3A4A" stroke-width="1"/>
+
+<!-- Footer -->
+<text x="960" y="1060" text-anchor="middle" class="footer">AVENNORTH — CONFIDENTIAL</text>
+</svg>

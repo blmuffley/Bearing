@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .slide-title { font-size: 42px; font-weight: 700; fill: #FFFFFF; }
+ .slide-subtitle { font-size: 24px; font-weight: 400; fill: #6B6B7B; }
+ .heading { font-size: 28px; font-weight: 600; fill: #FFFFFF; }
+ .body { font-size: 20px; font-weight: 400; fill: #CCCCCC; }
+ .body-bold { font-size: 20px; font-weight: 600; fill: #FFFFFF; }
+ .accent { font-size: 20px; font-weight: 600; fill: #CCFF00; }
+ .stat-number { font-size: 64px; font-weight: 800; fill: #CCFF00; }
+ .stat-label { font-size: 18px; font-weight: 400; fill: #6B6B7B; }
+ .small { font-size: 16px; font-weight: 400; fill: #6B6B7B; }
+ .table-header { font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+ .table-cell { font-size: 16px; font-weight: 400; fill: #CCCCCC; }
+ .table-cell-accent { font-size: 16px; font-weight: 600; fill: #CCFF00; }
+ .footer { font-size: 14px; font-weight: 400; fill: #4A4A5A; }
+</style>
+</defs>
+<rect width="1920" height="1080" fill="#1A1A2E"/>
+
+<!-- Title -->
+<text x="960" y="90" text-anchor="middle" class="slide-title">Raising $1.5M Seed Round</text>
+
+<!-- Left column: Use of Funds -->
+<text x="480" y="170" text-anchor="middle" class="heading">Use of Funds</text>
+<line x1="160" y1="195" x2="800" y2="195" stroke="#2D2D3D" stroke-width="2"/>
+
+<!-- Fund bar 1: Engineering — $750K (50%) -->
+<text x="160" y="260" class="body-bold">Engineering</text>
+<text x="790" y="260" text-anchor="end" class="accent">$750K (50%)</text>
+<rect x="160" y="275" width="640" height="36" rx="6" fill="#2D2D3D"/>
+<rect x="160" y="275" width="320" height="36" rx="6" fill="#CCFF00"/>
+
+<!-- Fund bar 2: Sales & Marketing — $400K (27%) -->
+<text x="160" y="360" class="body-bold">Sales &amp; Marketing</text>
+<text x="790" y="360" text-anchor="end" class="accent">$400K (27%)</text>
+<rect x="160" y="375" width="640" height="36" rx="6" fill="#2D2D3D"/>
+<rect x="160" y="375" width="173" height="36" rx="6" fill="#3B82F6"/>
+
+<!-- Fund bar 3: Infrastructure — $100K (7%) -->
+<text x="160" y="460" class="body-bold">Infrastructure</text>
+<text x="790" y="460" text-anchor="end" font-size="20" font-weight="400" fill="#CCCCCC">$100K (7%)</text>
+<rect x="160" y="475" width="640" height="36" rx="6" fill="#2D2D3D"/>
+<rect x="160" y="475" width="45" height="36" rx="6" fill="#8B5CF6"/>
+
+<!-- Fund bar 4: Legal & Patents — $100K (7%) -->
+<text x="160" y="560" class="body-bold">Legal &amp; Patents</text>
+<text x="790" y="560" text-anchor="end" font-size="20" font-weight="400" fill="#CCCCCC">$100K (7%)</text>
+<rect x="160" y="575" width="640" height="36" rx="6" fill="#2D2D3D"/>
+<rect x="160" y="575" width="45" height="36" rx="6" fill="#F59E0B"/>
+
+<!-- Fund bar 5: G&A — $150K (10%) -->
+<text x="160" y="660" class="body-bold">G&amp;A</text>
+<text x="790" y="660" text-anchor="end" font-size="20" font-weight="400" fill="#CCCCCC">$150K (10%)</text>
+<rect x="160" y="675" width="640" height="36" rx="6" fill="#2D2D3D"/>
+<rect x="160" y="675" width="64" height="36" rx="6" fill="#6B6B7B"/>
+
+<!-- Pie summary below funds -->
+<text x="480" y="780" text-anchor="middle" class="small">Engineering-first allocation to accelerate product development</text>
+
+<!-- Right column: Key Milestones -->
+<text x="1360" y="170" text-anchor="middle" class="heading">Key Milestones</text>
+<line x1="1000" y1="195" x2="1720" y2="195" stroke="#2D2D3D" stroke-width="2"/>
+
+<!-- Milestone timeline -->
+<!-- Vertical timeline line -->
+<line x1="1060" y1="240" x2="1060" y2="740" stroke="#2D2D3D" stroke-width="3"/>
+
+<!-- Milestone 1 -->
+<circle cx="1060" cy="270" r="10" fill="#CCFF00"/>
+<text x="1100" y="268" font-size="16" font-weight="700" fill="#CCFF00">Month 3</text>
+<text x="1100" y="293" class="body">Production launch</text>
+
+<!-- Milestone 2 -->
+<circle cx="1060" cy="370" r="10" fill="#CCFF00" opacity="0.85"/>
+<text x="1100" y="368" font-size="16" font-weight="700" fill="#CCFF00">Month 6</text>
+<text x="1100" y="393" class="body">20 paying orgs</text>
+
+<!-- Milestone 3 -->
+<circle cx="1060" cy="470" r="10" fill="#CCFF00" opacity="0.7"/>
+<text x="1100" y="468" font-size="16" font-weight="700" fill="#CCFF00">Month 9</text>
+<text x="1100" y="493" class="body">50 paying orgs</text>
+
+<!-- Milestone 4 -->
+<circle cx="1060" cy="570" r="10" fill="#CCFF00" opacity="0.55"/>
+<text x="1100" y="568" font-size="16" font-weight="700" fill="#CCFF00">Month 12</text>
+<text x="1100" y="593" class="body">75 paying orgs</text>
+
+<!-- Milestone 5 -->
+<circle cx="1060" cy="640" r="10" fill="#CCFF00" opacity="0.4"/>
+<text x="1100" y="638" font-size="16" font-weight="700" fill="#CCFF00">Month 15</text>
+<text x="1100" y="663" class="body">Cash-flow positive</text>
+
+<!-- Milestone 6 -->
+<circle cx="1060" cy="710" r="10" fill="#CCFF00" opacity="0.3"/>
+<text x="1100" y="708" font-size="16" font-weight="700" fill="#CCFF00">Month 18</text>
+<text x="1100" y="733" class="body">$100K+ MRR</text>
+
+<!-- Bottom accent banner -->
+<rect x="160" y="870" width="1600" height="80" rx="12" fill="#CCFF00" opacity="0.08"/>
+<rect x="160" y="870" width="1600" height="80" rx="12" fill="none" stroke="#CCFF00" stroke-width="1.5" opacity="0.4"/>
+<text x="960" y="920" text-anchor="middle" font-size="22" font-weight="600" fill="#CCFF00">Bootstrapped to date — full platform built with zero external funding</text>
+
+<!-- Footer -->
+<text x="960" y="1060" text-anchor="middle" class="footer">AVENNORTH — CONFIDENTIAL</text>
+</svg>

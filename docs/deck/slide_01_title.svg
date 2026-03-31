@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .slide-title { font-size: 42px; font-weight: 700; fill: #FFFFFF; }
+ .slide-subtitle { font-size: 24px; font-weight: 400; fill: #6B6B7B; }
+ .heading { font-size: 28px; font-weight: 600; fill: #FFFFFF; }
+ .body { font-size: 20px; font-weight: 400; fill: #CCCCCC; }
+ .body-bold { font-size: 20px; font-weight: 600; fill: #FFFFFF; }
+ .accent { font-size: 20px; font-weight: 600; fill: #CCFF00; }
+ .stat-number { font-size: 64px; font-weight: 800; fill: #CCFF00; }
+ .stat-label { font-size: 18px; font-weight: 400; fill: #6B6B7B; }
+ .small { font-size: 16px; font-weight: 400; fill: #6B6B7B; }
+ .table-header { font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+ .table-cell { font-size: 16px; font-weight: 400; fill: #CCCCCC; }
+ .table-cell-accent { font-size: 16px; font-weight: 600; fill: #CCFF00; }
+ .footer { font-size: 14px; font-weight: 400; fill: #4A4A5A; }
+</style>
+</defs>
+<rect width="1920" height="1080" fill="#1A1A2E"/>
+
+<!-- Geometric accent: thin lime angle in top-right corner -->
+<line x1="1920" y1="0" x2="1720" y2="0" stroke="#CCFF00" stroke-width="3" opacity="0.6"/>
+<line x1="1920" y1="0" x2="1920" y2="200" stroke="#CCFF00" stroke-width="3" opacity="0.6"/>
+<line x1="1920" y1="0" x2="1770" y2="150" stroke="#CCFF00" stroke-width="1.5" opacity="0.3"/>
+
+<!-- Geometric accent: thin lime angle in bottom-left corner -->
+<line x1="0" y1="1080" x2="200" y2="1080" stroke="#CCFF00" stroke-width="3" opacity="0.6"/>
+<line x1="0" y1="1080" x2="0" y2="880" stroke="#CCFF00" stroke-width="3" opacity="0.6"/>
+<line x1="0" y1="1080" x2="150" y2="930" stroke="#CCFF00" stroke-width="1.5" opacity="0.3"/>
+
+<!-- Center: Bearing title -->
+<text x="960" y="420" text-anchor="middle" font-size="96" font-weight="800" fill="#CCFF00">Bearing</text>
+
+<!-- Subtitle -->
+<text x="960" y="490" text-anchor="middle" font-size="32" font-weight="400" fill="#FFFFFF">Turning ServiceNow Technical Debt Into Revenue</text>
+
+<!-- Divider line -->
+<line x1="760" y1="540" x2="1160" y2="540" stroke="#2D2D3D" stroke-width="2"/>
+
+<!-- Bottom: Avennorth -->
+<text x="960" y="620" text-anchor="middle" font-size="22" font-weight="600" fill="#6B6B7B">AVENNORTH</text>
+
+<!-- Tagline -->
+<text x="960" y="665" text-anchor="middle" font-size="18" font-weight="400" fill="#4A4A5A">Assess</text>
+<text x="960" y="665" text-anchor="middle" font-size="18" font-weight="400" fill="#6B6B7B">
+  <tspan fill="#CCFF00">Assess</tspan>
+  <tspan fill="#4A4A5A"> → </tspan>
+  <tspan fill="#CCFF00">Discover</tspan>
+  <tspan fill="#4A4A5A"> → </tspan>
+  <tspan fill="#CCFF00">Map</tspan>
+  <tspan fill="#4A4A5A"> → </tspan>
+  <tspan fill="#CCFF00">Respond</tspan>
+  <tspan fill="#4A4A5A"> → </tspan>
+  <tspan fill="#CCFF00">Guide</tspan>
+</text>
+
+<!-- Footer -->
+<text x="960" y="1060" text-anchor="middle" class="footer">AVENNORTH — CONFIDENTIAL</text>
+</svg>

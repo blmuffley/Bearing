@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Inter, -apple-system, sans-serif">
+<defs>
+<style>
+ .slide-title { font-size: 42px; font-weight: 700; fill: #FFFFFF; }
+ .slide-subtitle { font-size: 24px; font-weight: 400; fill: #6B6B7B; }
+ .heading { font-size: 28px; font-weight: 600; fill: #FFFFFF; }
+ .body { font-size: 20px; font-weight: 400; fill: #CCCCCC; }
+ .body-bold { font-size: 20px; font-weight: 600; fill: #FFFFFF; }
+ .accent { font-size: 20px; font-weight: 600; fill: #CCFF00; }
+ .stat-number { font-size: 64px; font-weight: 800; fill: #CCFF00; }
+ .stat-label { font-size: 18px; font-weight: 400; fill: #6B6B7B; }
+ .small { font-size: 16px; font-weight: 400; fill: #6B6B7B; }
+ .table-header { font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+ .table-cell { font-size: 16px; font-weight: 400; fill: #CCCCCC; }
+ .table-cell-accent { font-size: 16px; font-weight: 600; fill: #CCFF00; }
+ .footer { font-size: 14px; font-weight: 400; fill: #4A4A5A; }
+</style>
+</defs>
+<rect width="1920" height="1080" fill="#1A1A2E"/>
+
+<!-- Title -->
+<text x="960" y="100" text-anchor="middle" class="slide-title">From Raw Data to Revenue in Minutes</text>
+
+<!-- Arrow connectors between circles -->
+<line x1="370" y1="380" x2="510" y2="380" stroke="#CCFF00" stroke-width="3" marker-end="url(#arrowhead)"/>
+<line x1="810" y1="380" x2="950" y2="380" stroke="#CCFF00" stroke-width="3" marker-end="url(#arrowhead)"/>
+<line x1="1250" y1="380" x2="1390" y2="380" stroke="#CCFF00" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+<defs>
+<marker id="arrowhead" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+  <polygon points="0 0, 12 4, 0 8" fill="#CCFF00"/>
+</marker>
+</defs>
+
+<!-- Step 1: INGEST -->
+<circle cx="260" cy="380" r="110" fill="none" stroke="#3B82F6" stroke-width="4"/>
+<circle cx="260" cy="380" r="110" fill="#3B82F6" opacity="0.15"/>
+<text x="260" y="350" text-anchor="middle" font-size="48" font-weight="800" fill="#3B82F6">1</text>
+<text x="260" y="400" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">INGEST</text>
+
+<!-- Step 1 details -->
+<text x="260" y="540" text-anchor="middle" class="body">Upload export or</text>
+<text x="260" y="568" text-anchor="middle" class="body">connect via API</text>
+<text x="260" y="620" text-anchor="middle" class="small">XML / JSON imports</text>
+<text x="260" y="646" text-anchor="middle" class="small">Secure data handling</text>
+<text x="260" y="672" text-anchor="middle" class="small">Multi-instance support</text>
+
+<!-- Step 2: SCAN -->
+<circle cx="700" cy="380" r="110" fill="none" stroke="#10B981" stroke-width="4"/>
+<circle cx="700" cy="380" r="110" fill="#10B981" opacity="0.15"/>
+<text x="700" y="350" text-anchor="middle" font-size="48" font-weight="800" fill="#10B981">2</text>
+<text x="700" y="400" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">SCAN</text>
+
+<!-- Step 2 details -->
+<text x="700" y="540" text-anchor="middle" class="body">23 rules evaluate</text>
+<text x="700" y="568" text-anchor="middle" class="body">4 modules</text>
+<text x="700" y="620" text-anchor="middle" class="small">Deep configuration analysis</text>
+<text x="700" y="646" text-anchor="middle" class="small">Best-practice benchmarks</text>
+<text x="700" y="672" text-anchor="middle" class="small">Behavioral fusion engine</text>
+
+<!-- Step 3: SCORE -->
+<circle cx="1140" cy="380" r="110" fill="none" stroke="#F59E0B" stroke-width="4"/>
+<circle cx="1140" cy="380" r="110" fill="#F59E0B" opacity="0.15"/>
+<text x="1140" y="350" text-anchor="middle" font-size="48" font-weight="800" fill="#F59E0B">3</text>
+<text x="1140" y="400" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">SCORE</text>
+
+<!-- Step 3 details -->
+<text x="1140" y="540" text-anchor="middle" class="body">Severity × Effort × Risk</text>
+<text x="1140" y="620" text-anchor="middle" class="small">Weighted debt calculation</text>
+<text x="1140" y="646" text-anchor="middle" class="small">Revenue impact mapping</text>
+<text x="1140" y="672" text-anchor="middle" class="small">Priority ranking</text>
+
+<!-- Step 4: DELIVER -->
+<circle cx="1580" cy="380" r="110" fill="none" stroke="#8B5CF6" stroke-width="4"/>
+<circle cx="1580" cy="380" r="110" fill="#8B5CF6" opacity="0.15"/>
+<text x="1580" y="350" text-anchor="middle" font-size="48" font-weight="800" fill="#8B5CF6">4</text>
+<text x="1580" y="400" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">DELIVER</text>
+
+<!-- Step 4 details -->
+<text x="1580" y="540" text-anchor="middle" class="body">Dashboard + Reports</text>
+<text x="1580" y="568" text-anchor="middle" class="body">+ SOW</text>
+<text x="1580" y="620" text-anchor="middle" class="small">Executive summary report</text>
+<text x="1580" y="646" text-anchor="middle" class="small">Technical deep-dive report</text>
+<text x="1580" y="672" text-anchor="middle" class="small">Auto-generated SOW</text>
+
+<!-- Bottom accent bar -->
+<rect x="160" y="780" width="1600" height="4" rx="2" fill="#2D2D3D"/>
+<rect x="160" y="780" width="400" height="4" rx="2" fill="#3B82F6" opacity="0.7"/>
+<rect x="560" y="780" width="400" height="4" rx="2" fill="#10B981" opacity="0.7"/>
+<rect x="960" y="780" width="400" height="4" rx="2" fill="#F59E0B" opacity="0.7"/>
+<rect x="1360" y="780" width="400" height="4" rx="2" fill="#8B5CF6" opacity="0.7"/>
+
+<!-- Summary stats -->
+<text x="360" y="860" text-anchor="middle" font-size="36" font-weight="700" fill="#3B82F6">Seconds</text>
+<text x="360" y="895" text-anchor="middle" class="small">to ingest data</text>
+
+<text x="760" y="860" text-anchor="middle" font-size="36" font-weight="700" fill="#10B981">23 Rules</text>
+<text x="760" y="895" text-anchor="middle" class="small">across 4 modules</text>
+
+<text x="1160" y="860" text-anchor="middle" font-size="36" font-weight="700" fill="#F59E0B">3-Axis</text>
+<text x="1160" y="895" text-anchor="middle" class="small">scoring methodology</text>
+
+<text x="1560" y="860" text-anchor="middle" font-size="36" font-weight="700" fill="#8B5CF6">3 Outputs</text>
+<text x="1560" y="895" text-anchor="middle" class="small">dashboard, reports, SOW</text>
+
+<!-- Footer -->
+<text x="960" y="1060" text-anchor="middle" class="footer">AVENNORTH — CONFIDENTIAL</text>
+</svg>
