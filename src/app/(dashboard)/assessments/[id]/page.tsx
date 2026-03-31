@@ -8,6 +8,7 @@ import { RevenueSummary } from '@/components/dashboard/RevenueSummary';
 import { DomainScoreCards } from '@/components/dashboard/DomainScoreCards';
 import { FindingsTable } from '@/components/dashboard/FindingsTable';
 import { Card } from '@/components/ui/Card';
+import { ReportActions } from '@/components/reports/ReportActions';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -97,6 +98,9 @@ export default async function AssessmentDetailPage({ params }: PageProps) {
           {customerName}
         </h1>
       </div>
+
+      {/* Action buttons: Reports & SOW */}
+      <ReportActions assessmentId={id} />
 
       {/* Top section: Health Gauge + Revenue Summary */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

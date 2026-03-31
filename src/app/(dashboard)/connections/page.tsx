@@ -1,5 +1,6 @@
 import { createServerSupabaseClient } from '@/lib/supabase/server';
 import { Badge } from '@/components/ui/Badge';
+import Link from 'next/link';
 
 const statusVariant: Record<string, 'low' | 'info' | 'medium' | 'critical' | 'default'> = {
   active: 'low',
@@ -41,9 +42,9 @@ export default async function ConnectionsPage() {
         <h1 className="font-heading text-3xl font-bold text-white">
           Instance Connections
         </h1>
-        <button
+        <Link
+          href="/connections/new"
           className="inline-flex items-center gap-2 rounded-lg bg-lime px-4 py-2.5 text-sm font-semibold text-obsidian hover:bg-lime/90 transition-colors"
-          // TODO: Wire up to a modal or /connections/new route
         >
           <svg
             className="h-4 w-4"
@@ -59,7 +60,7 @@ export default async function ConnectionsPage() {
             />
           </svg>
           Add Connection
-        </button>
+        </Link>
       </div>
 
       {/* Connection cards or empty state */}
@@ -73,9 +74,10 @@ export default async function ConnectionsPage() {
               : 'Never';
 
             return (
-              <div
+              <Link
                 key={connection.id}
-                className="bg-dark-gray rounded-xl p-6 hover:ring-1 hover:ring-lime/30 transition-all"
+                href={`/connections/${connection.id}`}
+                className="block bg-dark-gray rounded-xl p-6 hover:ring-1 hover:ring-lime/30 transition-all"
               >
                 <div className="flex items-start justify-between mb-3">
                   <h2 className="font-heading text-lg font-semibold text-white">
@@ -106,7 +108,7 @@ export default async function ConnectionsPage() {
                     <span className="text-white">{assessmentCount}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

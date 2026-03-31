@@ -151,15 +151,13 @@ export default function NewAssessmentPage() {
               </p>
             </button>
 
-            {/* Connect Instance (disabled) */}
-            <div
-              className="relative rounded-2xl border border-dark-gray bg-dark-gray/30 p-8 text-left
-                         opacity-50 cursor-not-allowed"
+            {/* Connect Instance */}
+            <button
+              onClick={() => router.push('/connections/new')}
+              className="group rounded-2xl border border-dark-gray bg-dark-gray/50 p-8 text-left
+                         transition hover:border-lime focus:outline-none focus:ring-2 focus:ring-lime"
             >
-              <span className="absolute top-4 right-4 rounded-full bg-dark-gray px-3 py-1 text-xs font-mono text-medium-gray">
-                Coming in Phase 3
-              </span>
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-dark-gray text-medium-gray">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-dark-gray text-lime">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.1" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
@@ -171,7 +169,7 @@ export default function NewAssessmentPage() {
               <p className="text-sm text-medium-gray">
                 Connect directly to a ServiceNow instance via OAuth or basic auth.
               </p>
-            </div>
+            </button>
           </div>
         )}
 

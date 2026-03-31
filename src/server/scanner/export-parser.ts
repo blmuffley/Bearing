@@ -139,8 +139,35 @@ const incidentSchema = z.object({
   resolved_at: z.string().optional(),
 });
 
+const changeSchema = z.object({
+  sys_id: z.string(),
+  number: z.string(),
+  type: z.string(),
+  state: z.string(),
+  approval: z.string(),
+  backout_plan: z.string().optional(),
+  opened_at: z.string(),
+  closed_at: z.string().optional(),
+});
+
 const itsmModuleSchema = z.object({
   incidents: z.array(incidentSchema).optional(),
+  changes: z.array(changeSchema).optional(),
+});
+
+const hardwareAssetSchema = z.object({
+  sys_id: z.string(),
+  display_name: z.string(),
+  model: z.string(),
+  serial_number: z.string(),
+  ci: z.string().optional(),
+  install_status: z.string(),
+  warranty_expiration: z.string().optional(),
+  assigned_to: z.string().optional(),
+});
+
+const itamModuleSchema = z.object({
+  hardware_assets: z.array(hardwareAssetSchema).optional(),
 });
 
 // ---------------------------------------------------------------------------
@@ -158,6 +185,7 @@ const modulesSchema = z.object({
   core: coreModuleSchema.optional(),
   cmdb: cmdbModuleSchema.optional(),
   itsm: itsmModuleSchema.optional(),
+  itam: itamModuleSchema.optional(),
 });
 
 export const exportPayloadSchema = z.object({

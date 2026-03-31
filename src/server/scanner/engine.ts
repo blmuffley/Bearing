@@ -32,6 +32,21 @@ import {
   evaluateMissingDiscoverySource,
   evaluateDuplicateCIs,
 } from './modules/cmdb/data-quality';
+import {
+  evaluateUnassignedIncidents,
+  evaluateMiscategorizedIncidents,
+  evaluateAgedOpenIncidents,
+  evaluateIncidentReopens,
+} from './modules/itsm/incident-health';
+import {
+  evaluateEmergencyChangeRatio,
+  evaluateUnauthorizedChanges,
+  evaluateChangeBackoutMissing,
+} from './modules/itsm/change-health';
+import {
+  evaluateUnreconciledAssets,
+  evaluateExpiredWarrantyAssets,
+} from './modules/itam/ham-reconciliation';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -303,6 +318,108 @@ function buildCmdbRules(): EngineRule[] {
   ];
 }
 
+function buildItsmRules(): EngineRule[] {
+  return [
+    // --- Incident health rules ---
+    {
+      key: 'itsm_unassigned_incidents',
+      module: 'itsm',
+      enabled: true,
+      run(payload) {
+        const incidents = payload.modules.itsm?.incidents;
+        if (!incidents || incidents.length === 0) return [];
+        return evaluateUnassignedIncidents(incidents);
+      },
+    },
+    {
+      key: 'itsm_miscategorized_incidents',
+      module: 'itsm',
+      enabled: true,
+      run(payload) {
+        const incidents = payload.modules.itsm?.incidents;
+        if (!incidents || incidents.length === 0) return [];
+        return evaluateMiscategorizedIncidents(incidents);
+      },
+    },
+    {
+      key: 'itsm_aged_open_incidents',
+      module: 'itsm',
+      enabled: true,
+      run(payload) {
+        const incidents = payload.modules.itsm?.incidents;
+        if (!incidents || incidents.length === 0) return [];
+        return evaluateAgedOpenIncidents(incidents);
+      },
+    },
+    {
+      key: 'itsm_incident_reopens',
+      module: 'itsm',
+      enabled: true,
+      run(payload) {
+        const incidents = payload.modules.itsm?.incidents;
+        if (!incidents || incidents.length === 0) return [];
+        return evaluateIncidentReopens(incidents);
+      },
+    },
+    // --- Change health rules ---
+    {
+      key: 'itsm_emergency_change_ratio',
+      module: 'itsm',
+      enabled: true,
+      run(payload) {
+        const changes = payload.modules.itsm?.changes;
+        if (!changes || changes.length === 0) return [];
+        return evaluateEmergencyChangeRatio(changes);
+      },
+    },
+    {
+      key: 'itsm_unauthorized_changes',
+      module: 'itsm',
+      enabled: true,
+      run(payload) {
+        const changes = payload.modules.itsm?.changes;
+        if (!changes || changes.length === 0) return [];
+        return evaluateUnauthorizedChanges(changes);
+      },
+    },
+    {
+      key: 'itsm_change_backout_missing',
+      module: 'itsm',
+      enabled: true,
+      run(payload) {
+        const changes = payload.modules.itsm?.changes;
+        if (!changes || changes.length === 0) return [];
+        return evaluateChangeBackoutMissing(changes);
+      },
+    },
+  ];
+}
+
+function buildItamRules(): EngineRule[] {
+  return [
+    {
+      key: 'itam_unreconciled_assets',
+      module: 'itam',
+      enabled: true,
+      run(payload) {
+        const assets = payload.modules.itam?.hardware_assets;
+        if (!assets || assets.length === 0) return [];
+        return evaluateUnreconciledAssets(assets);
+      },
+    },
+    {
+      key: 'itam_expired_warranty_assets',
+      module: 'itam',
+      enabled: true,
+      run(payload) {
+        const assets = payload.modules.itam?.hardware_assets;
+        if (!assets || assets.length === 0) return [];
+        return evaluateExpiredWarrantyAssets(assets);
+      },
+    },
+  ];
+}
+
 // ---------------------------------------------------------------------------
 // ScanEngine class
 // ---------------------------------------------------------------------------
@@ -311,7 +428,12 @@ export class ScanEngine {
   private rules: EngineRule[];
 
   constructor() {
-    this.rules = [...buildCoreRules(), ...buildCmdbRules()];
+    this.rules = [
+      ...buildCoreRules(),
+      ...buildCmdbRules(),
+      ...buildItsmRules(),
+      ...buildItamRules(),
+    ];
   }
 
   /**
