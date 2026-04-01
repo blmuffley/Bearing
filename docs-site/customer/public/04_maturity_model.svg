@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Space+Mono&amp;display=swap');
+      .heading { font-family: 'Syne', sans-serif; font-weight: 700; }
+      .body { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+      .mono { font-family: 'Space Mono', monospace; }
+      .label { font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    </style>
+    <linearGradient id="level1Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF3B30;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#FF3B30;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="level2Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9500;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#FF9500;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="level3Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFCC00;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#FFCC00;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="level4Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#34C759;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#34C759;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="level5Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#39FF14;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0.08"/>
+    </linearGradient>
+    <marker id="arUp" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
+      <polygon points="0 6, 4 0, 8 6" fill="#39FF14"/>
+    </marker>
+    <marker id="arRight" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#39FF14"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1C1917"/>
+
+  <!-- Title -->
+  <text x="600" y="42" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="24">CMDB MATURITY MODEL</text>
+  <text x="600" y="65" text-anchor="middle" class="body" fill="#A8A29E" font-size="13">Five levels of CMDB health maturity with Avennorth product enablement</text>
+  <line x1="380" y1="75" x2="820" y2="75" stroke="#39FF14" stroke-width="1" opacity="0.5"/>
+
+  <!-- Ascending arrow baseline -->
+  <line x1="60" y1="640" x2="1140" y2="640" stroke="#A8A29E" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="640" x2="60" y2="110" stroke="#A8A29E" stroke-width="1" opacity="0.3"/>
+  <text x="45" y="380" text-anchor="middle" class="body" fill="#A8A29E" font-size="10" transform="rotate(-90,45,380)">MATURITY LEVEL</text>
+  <text x="600" y="660" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">PROGRESSION</text>
+
+  <!-- ============ LEVEL 1: AD-HOC ============ -->
+  <rect x="80" y="480" width="190" height="150" rx="10" fill="url(#level1Grad)" stroke="#FF3B30" stroke-width="2"/>
+  <rect x="80" y="480" width="190" height="32" rx="10" fill="#FF3B30" opacity="0.2"/>
+  <text x="100" y="502" class="heading" fill="#FF3B30" font-size="28" opacity="0.3">1</text>
+  <text x="130" y="502" class="heading" fill="#FF3B30" font-size="14">AD-HOC</text>
+  <text x="100" y="528" class="body" fill="#A8A29E" font-size="10">No governance</text>
+  <text x="100" y="544" class="body" fill="#A8A29E" font-size="10">Manual data entry</text>
+  <text x="100" y="560" class="body" fill="#A8A29E" font-size="10">No discovery tools</text>
+  <text x="100" y="576" class="body" fill="#A8A29E" font-size="10">Stale/orphaned CIs</text>
+  <text x="100" y="592" class="body" fill="#A8A29E" font-size="10">No CSDM alignment</text>
+  <!-- Score range -->
+  <rect x="100" y="606" width="150" height="18" rx="4" fill="#FF3B30" opacity="0.15"/>
+  <text x="175" y="619" text-anchor="middle" class="mono" fill="#FF3B30" font-size="10">Score: 0 - 20</text>
+
+  <!-- Transition arrow 1->2 -->
+  <line x1="275" y1="520" x2="300" y2="520" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arRight)"/>
+  <rect x="272" y="465" width="36" height="20" rx="4" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="290" y="478" text-anchor="middle" class="mono" fill="#39FF14" font-size="7">Bearing</text>
+
+  <!-- ============ LEVEL 2: REACTIVE ============ -->
+  <rect x="305" y="400" width="190" height="230" rx="10" fill="url(#level2Grad)" stroke="#FF9500" stroke-width="2"/>
+  <rect x="305" y="400" width="190" height="32" rx="10" fill="#FF9500" opacity="0.2"/>
+  <text x="325" y="422" class="heading" fill="#FF9500" font-size="28" opacity="0.3">2</text>
+  <text x="355" y="422" class="heading" fill="#FF9500" font-size="14">REACTIVE</text>
+  <text x="325" y="448" class="body" fill="#A8A29E" font-size="10">Basic discovery deployed</text>
+  <text x="325" y="464" class="body" fill="#A8A29E" font-size="10">Some automation</text>
+  <text x="325" y="480" class="body" fill="#A8A29E" font-size="10">Incident-driven updates</text>
+  <text x="325" y="496" class="body" fill="#A8A29E" font-size="10">Partial relationships</text>
+  <text x="325" y="512" class="body" fill="#A8A29E" font-size="10">High duplicate rate</text>
+  <rect x="325" y="526" width="150" height="18" rx="4" fill="#FF9500" opacity="0.15"/>
+  <text x="400" y="539" text-anchor="middle" class="mono" fill="#FF9500" font-size="10">Score: 21 - 40</text>
+
+  <!-- Transition arrow 2->3 -->
+  <line x1="500" y1="440" x2="525" y2="440" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arRight)"/>
+  <rect x="490" y="385" width="50" height="20" rx="4" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="515" y="398" text-anchor="middle" class="mono" fill="#39FF14" font-size="7">Pathfinder</text>
+
+  <!-- ============ LEVEL 3: DEFINED ============ -->
+  <rect x="530" y="310" width="190" height="320" rx="10" fill="url(#level3Grad)" stroke="#FFCC00" stroke-width="2"/>
+  <rect x="530" y="310" width="190" height="32" rx="10" fill="#FFCC00" opacity="0.2"/>
+  <text x="550" y="332" class="heading" fill="#FFCC00" font-size="28" opacity="0.3">3</text>
+  <text x="580" y="332" class="heading" fill="#FFCC00" font-size="14">DEFINED</text>
+  <text x="550" y="358" class="body" fill="#A8A29E" font-size="10">CSDM framework adopted</text>
+  <text x="550" y="374" class="body" fill="#A8A29E" font-size="10">Active discovery</text>
+  <text x="550" y="390" class="body" fill="#A8A29E" font-size="10">Governance processes</text>
+  <text x="550" y="406" class="body" fill="#A8A29E" font-size="10">Data quality monitoring</text>
+  <text x="550" y="422" class="body" fill="#A8A29E" font-size="10">Relationship mapping</text>
+  <text x="550" y="438" class="body" fill="#A8A29E" font-size="10">Service context emerging</text>
+  <rect x="550" y="452" width="150" height="18" rx="4" fill="#FFCC00" opacity="0.15"/>
+  <text x="625" y="465" text-anchor="middle" class="mono" fill="#FFCC00" font-size="10">Score: 41 - 60</text>
+
+  <!-- Transition arrow 3->4 -->
+  <line x1="725" y1="350" x2="750" y2="350" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arRight)"/>
+  <rect x="720" y="295" width="44" height="20" rx="4" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="742" y="308" text-anchor="middle" class="mono" fill="#39FF14" font-size="7">Contour</text>
+
+  <!-- ============ LEVEL 4: MANAGED ============ -->
+  <rect x="755" y="220" width="190" height="410" rx="10" fill="url(#level4Grad)" stroke="#34C759" stroke-width="2"/>
+  <rect x="755" y="220" width="190" height="32" rx="10" fill="#34C759" opacity="0.2"/>
+  <text x="775" y="242" class="heading" fill="#34C759" font-size="28" opacity="0.3">4</text>
+  <text x="805" y="242" class="heading" fill="#34C759" font-size="14">MANAGED</text>
+  <text x="775" y="268" class="body" fill="#A8A29E" font-size="10">Full CSDM compliance</text>
+  <text x="775" y="284" class="body" fill="#A8A29E" font-size="10">Automated reconciliation</text>
+  <text x="775" y="300" class="body" fill="#A8A29E" font-size="10">Service maps verified</text>
+  <text x="775" y="316" class="body" fill="#A8A29E" font-size="10">Behavioral validation</text>
+  <text x="775" y="332" class="body" fill="#A8A29E" font-size="10">KPIs tracked</text>
+  <text x="775" y="348" class="body" fill="#A8A29E" font-size="10">Low duplicate rate (&lt;2%)</text>
+  <rect x="775" y="362" width="150" height="18" rx="4" fill="#34C759" opacity="0.15"/>
+  <text x="850" y="375" text-anchor="middle" class="mono" fill="#34C759" font-size="10">Score: 61 - 80</text>
+
+  <!-- Transition arrow 4->5 -->
+  <line x1="950" y1="260" x2="975" y2="260" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arRight)"/>
+  <rect x="942" y="205" width="50" height="20" rx="4" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="967" y="218" text-anchor="middle" class="mono" fill="#39FF14" font-size="7">Vantage</text>
+
+  <!-- ============ LEVEL 5: OPTIMIZED ============ -->
+  <rect x="980" y="130" width="190" height="500" rx="10" fill="url(#level5Grad)" stroke="#39FF14" stroke-width="2"/>
+  <rect x="980" y="130" width="190" height="32" rx="10" fill="#39FF14" opacity="0.2"/>
+  <text x="1000" y="152" class="heading" fill="#39FF14" font-size="28" opacity="0.3">5</text>
+  <text x="1030" y="152" class="heading" fill="#39FF14" font-size="14">OPTIMIZED</text>
+  <text x="1000" y="178" class="body" fill="#A8A29E" font-size="10">Continuous improvement</text>
+  <text x="1000" y="194" class="body" fill="#A8A29E" font-size="10">AI-driven classification</text>
+  <text x="1000" y="210" class="body" fill="#A8A29E" font-size="10">Predictive analytics</text>
+  <text x="1000" y="226" class="body" fill="#A8A29E" font-size="10">Self-healing data</text>
+  <text x="1000" y="242" class="body" fill="#A8A29E" font-size="10">Full lifecycle automation</text>
+  <text x="1000" y="258" class="body" fill="#A8A29E" font-size="10">Zero shadow IT</text>
+  <rect x="1000" y="272" width="150" height="18" rx="4" fill="#39FF14" opacity="0.15"/>
+  <text x="1075" y="285" text-anchor="middle" class="mono" fill="#39FF14" font-size="10">Score: 81 - 100</text>
+
+  <!-- ============ PRODUCT ENABLEMENT BAR ============ -->
+  <rect x="80" y="680" width="1090" height="70" rx="10" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="120" y="704" class="label" fill="#39FF14" font-size="11">AVENNORTH PRODUCT ENABLEMENT</text>
+
+  <!-- Product pills -->
+  <rect x="100" y="715" width="80" height="24" rx="12" fill="#39FF14" opacity="0.15" stroke="#39FF14" stroke-width="1"/>
+  <text x="140" y="731" text-anchor="middle" class="label" fill="#39FF14" font-size="10">Bearing</text>
+  <text x="200" y="731" class="body" fill="#A8A29E" font-size="9">Assess current state</text>
+
+  <rect x="340" y="715" width="90" height="24" rx="12" fill="#39FF14" opacity="0.15" stroke="#39FF14" stroke-width="1"/>
+  <text x="385" y="731" text-anchor="middle" class="label" fill="#39FF14" font-size="10">Pathfinder</text>
+  <text x="448" y="731" class="body" fill="#A8A29E" font-size="9">Discover infrastructure</text>
+
+  <rect x="610" y="715" width="80" height="24" rx="12" fill="#39FF14" opacity="0.15" stroke="#39FF14" stroke-width="1"/>
+  <text x="650" y="731" text-anchor="middle" class="label" fill="#39FF14" font-size="10">Contour</text>
+  <text x="708" y="731" class="body" fill="#A8A29E" font-size="9">Map services</text>
+
+  <rect x="810" y="715" width="80" height="24" rx="12" fill="#39FF14" opacity="0.15" stroke="#39FF14" stroke-width="1"/>
+  <text x="850" y="731" text-anchor="middle" class="label" fill="#39FF14" font-size="10">Vantage</text>
+  <text x="908" y="731" class="body" fill="#A8A29E" font-size="9">Respond to incidents</text>
+
+  <rect x="1040" y="715" width="80" height="24" rx="12" fill="#39FF14" opacity="0.15" stroke="#39FF14" stroke-width="1"/>
+  <text x="1080" y="731" text-anchor="middle" class="label" fill="#39FF14" font-size="10">Compass</text>
+
+  <!-- Footer -->
+  <text x="30" y="785" class="body" fill="#A8A29E" font-size="9" opacity="0.6">AVENNORTH BEARING  |  CMDB Maturity Model  |  Confidential</text>
+</svg>

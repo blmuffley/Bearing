@@ -1,0 +1,266 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Space+Mono&amp;display=swap');
+      .heading { font-family: 'Syne', sans-serif; font-weight: 700; }
+      .body { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+      .mono { font-family: 'Space Mono', monospace; }
+      .label { font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    </style>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowLime" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#39FF14"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#A8A29E"/>
+    </marker>
+    <linearGradient id="limeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#39FF14;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1C1917"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="24">DEMO FLOW SCRIPTS</text>
+  <text x="600" y="63" text-anchor="middle" class="body" fill="#A8A29E" font-size="13">Three Engagement Levels</text>
+  <line x1="460" y1="73" x2="740" y2="73" stroke="#39FF14" stroke-width="1" opacity="0.5"/>
+
+  <!-- === PAGE ICONS (Shared reference row) === -->
+  <rect x="40" y="90" width="1120" height="60" rx="10" fill="url(#limeGrad)" stroke="#39FF14" stroke-width="1" opacity="0.6"/>
+  <text x="60" y="110" class="label" fill="#39FF14" font-size="10">PROTOTYPE PAGES</text>
+
+  <!-- Page icons -->
+  <rect x="60" y="118" width="95" height="24" rx="4" fill="#292524" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="107" y="134" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">1. Dashboard</text>
+
+  <rect x="165" y="118" width="95" height="24" rx="4" fill="#292524" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="212" y="134" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">2. Findings</text>
+
+  <rect x="270" y="118" width="120" height="24" rx="4" fill="#292524" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="330" y="134" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">3. Revenue/SOW</text>
+
+  <rect x="400" y="118" width="95" height="24" rx="4" fill="#292524" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="447" y="134" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">4. Pathfinder</text>
+
+  <rect x="505" y="118" width="120" height="24" rx="4" fill="#292524" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="565" y="134" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">5. Benchmarking</text>
+
+  <rect x="635" y="118" width="95" height="24" rx="4" fill="#292524" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="682" y="134" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">6. Reports</text>
+
+  <rect x="740" y="118" width="120" height="24" rx="4" fill="#292524" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="800" y="134" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">7. Architecture</text>
+
+  <rect x="870" y="118" width="95" height="24" rx="4" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="917" y="134" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">API Demo</text>
+
+  <rect x="975" y="118" width="95" height="24" rx="4" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="1022" y="134" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Chatbot</text>
+
+  <rect x="1080" y="118" width="70" height="24" rx="4" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="1115" y="134" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">SN Intg</text>
+
+  <!-- ================================================================ -->
+  <!-- === SWIM LANE 1: 10-MIN EXECUTIVE TOUR === -->
+  <!-- ================================================================ -->
+  <rect x="40" y="170" width="1120" height="170" rx="12" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <rect x="40" y="170" width="1120" height="32" rx="12" fill="#39FF14" opacity="0.1"/>
+
+  <!-- Lane header -->
+  <text x="70" y="192" class="heading" fill="#39FF14" font-size="15" filter="url(#glow)">10-MIN EXECUTIVE TOUR</text>
+  <text x="400" y="192" class="body" fill="#A8A29E" font-size="11">C-suite / VP audience  |  Focus: ROI &amp; business case</text>
+  <rect x="1060" y="177" width="80" height="20" rx="4" fill="#39FF14" opacity="0.15"/>
+  <text x="1100" y="191" text-anchor="middle" class="mono" fill="#39FF14" font-size="10">10 min</text>
+
+  <!-- Steps -->
+  <rect x="70" y="215" width="150" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="145" y="238" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">Dashboard</text>
+  <text x="145" y="256" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">Health gauge +</text>
+  <text x="145" y="270" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">domain scores</text>
+  <text x="145" y="302" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">2 min</text>
+
+  <line x1="222" y1="265" x2="268" y2="265" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+
+  <rect x="270" y="215" width="150" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="345" y="238" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">Revenue / SOW</text>
+  <text x="345" y="256" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">"The Money Slide"</text>
+  <text x="345" y="270" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">$537K addressable</text>
+  <text x="345" y="302" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">3 min</text>
+
+  <line x1="422" y1="265" x2="468" y2="265" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+
+  <rect x="470" y="215" width="150" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="545" y="238" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">Pathfinder Toggle</text>
+  <text x="545" y="256" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">Before/After with</text>
+  <text x="545" y="270" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">Pathfinder enrichment</text>
+  <text x="545" y="302" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">3 min</text>
+
+  <line x1="622" y1="265" x2="668" y2="265" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+
+  <rect x="670" y="215" width="150" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="745" y="238" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">Close</text>
+  <text x="745" y="256" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">Next steps, free</text>
+  <text x="745" y="270" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">assessment offer</text>
+  <text x="745" y="302" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">2 min</text>
+
+  <!-- Key message -->
+  <rect x="860" y="220" width="280" height="85" rx="8" fill="#1C1917" stroke="#A8A29E" stroke-width="0.5"/>
+  <text x="1000" y="242" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Key Messages</text>
+  <text x="880" y="262" class="body" fill="#A8A29E" font-size="9">- "Your SN instance has $537K in debt"</text>
+  <text x="880" y="278" class="body" fill="#A8A29E" font-size="9">- "Pathfinder finds what SN can't"</text>
+  <text x="880" y="294" class="body" fill="#A8A29E" font-size="9">- "Free assessment, no commitment"</text>
+
+  <!-- ================================================================ -->
+  <!-- === SWIM LANE 2: 30-MIN SOLUTION DEMO === -->
+  <!-- ================================================================ -->
+  <rect x="40" y="360" width="1120" height="170" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <rect x="40" y="360" width="1120" height="32" rx="12" fill="#39FF14" opacity="0.08"/>
+
+  <!-- Lane header -->
+  <text x="70" y="382" class="heading" fill="#39FF14" font-size="15">30-MIN SOLUTION DEMO</text>
+  <text x="400" y="382" class="body" fill="#A8A29E" font-size="11">Technical leads / managers  |  All 7 pages in sequence</text>
+  <rect x="1060" y="367" width="80" height="20" rx="4" fill="#39FF14" opacity="0.12"/>
+  <text x="1100" y="381" text-anchor="middle" class="mono" fill="#39FF14" font-size="10">30 min</text>
+
+  <!-- Steps - compact for 7 pages -->
+  <rect x="60" y="405" width="130" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="125" y="425" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Dashboard</text>
+  <text x="125" y="442" text-anchor="middle" class="body" fill="#A8A29E" font-size="8">Health overview</text>
+  <text x="125" y="495" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">4 min</text>
+
+  <line x1="192" y1="455" x2="208" y2="455" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="210" y="405" width="130" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="275" y="425" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Findings</text>
+  <text x="275" y="442" text-anchor="middle" class="body" fill="#A8A29E" font-size="8">Drill into debt</text>
+  <text x="275" y="495" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">5 min</text>
+
+  <line x1="342" y1="455" x2="358" y2="455" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="360" y="405" width="130" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="425" y="425" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Revenue/SOW</text>
+  <text x="425" y="442" text-anchor="middle" class="body" fill="#A8A29E" font-size="8">Money slide</text>
+  <text x="425" y="495" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">5 min</text>
+
+  <line x1="492" y1="455" x2="508" y2="455" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="510" y="405" width="130" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="575" y="425" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Pathfinder</text>
+  <text x="575" y="442" text-anchor="middle" class="body" fill="#A8A29E" font-size="8">Before/after</text>
+  <text x="575" y="495" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">5 min</text>
+
+  <line x1="642" y1="455" x2="658" y2="455" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="660" y="405" width="130" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="725" y="425" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Benchmarking</text>
+  <text x="725" y="442" text-anchor="middle" class="body" fill="#A8A29E" font-size="8">Peer comparison</text>
+  <text x="725" y="495" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">4 min</text>
+
+  <line x1="792" y1="455" x2="808" y2="455" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="810" y="405" width="130" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="875" y="425" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Reports</text>
+  <text x="875" y="442" text-anchor="middle" class="body" fill="#A8A29E" font-size="8">Dual report preview</text>
+  <text x="875" y="495" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">4 min</text>
+
+  <line x1="942" y1="455" x2="958" y2="455" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="960" y="405" width="130" height="100" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="1025" y="425" text-anchor="middle" class="label" fill="#FAFAF9" font-size="10">Architecture</text>
+  <text x="1025" y="442" text-anchor="middle" class="body" fill="#A8A29E" font-size="8">Tech credibility</text>
+  <text x="1025" y="495" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">3 min</text>
+
+  <!-- ================================================================ -->
+  <!-- === SWIM LANE 3: 50-MIN DEEP DIVE === -->
+  <!-- ================================================================ -->
+  <rect x="40" y="550" width="1120" height="170" rx="12" fill="#292524" stroke="#A8A29E" stroke-width="1.5"/>
+  <rect x="40" y="550" width="1120" height="32" rx="12" fill="#A8A29E" opacity="0.08"/>
+
+  <!-- Lane header -->
+  <text x="70" y="572" class="heading" fill="#FAFAF9" font-size="15">50-MIN DEEP DIVE</text>
+  <text x="360" y="572" class="body" fill="#A8A29E" font-size="11">Platform architects / SN admins  |  All pages + extended demos</text>
+  <rect x="1060" y="557" width="80" height="20" rx="4" fill="#A8A29E" opacity="0.15"/>
+  <text x="1100" y="571" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="10">50 min</text>
+
+  <!-- Two rows for all 10 steps -->
+  <!-- Row 1: Pages 1-5 (same as 30-min but with more time) -->
+  <rect x="60" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="0.6"/>
+  <text x="110" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Dashboard</text>
+  <text x="110" y="635" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">5 min</text>
+
+  <line x1="162" y1="620" x2="172" y2="620" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="174" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="0.6"/>
+  <text x="224" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Findings</text>
+  <text x="224" y="635" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">6 min</text>
+
+  <line x1="276" y1="620" x2="286" y2="620" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="288" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="0.6"/>
+  <text x="338" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Revenue/SOW</text>
+  <text x="338" y="635" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">5 min</text>
+
+  <line x1="390" y1="620" x2="400" y2="620" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="402" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="0.6"/>
+  <text x="452" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Pathfinder</text>
+  <text x="452" y="635" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">5 min</text>
+
+  <line x1="504" y1="620" x2="514" y2="620" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <rect x="516" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="0.6"/>
+  <text x="566" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Benchmarking</text>
+  <text x="566" y="635" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">4 min</text>
+
+  <line x1="618" y1="620" x2="628" y2="620" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <!-- Row 1 continued: Pages 6-7 -->
+  <rect x="630" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="0.6"/>
+  <text x="680" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Reports</text>
+  <text x="680" y="635" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">4 min</text>
+
+  <line x1="732" y1="620" x2="742" y2="620" stroke="#39FF14" stroke-width="1" marker-end="url(#arrowLime)"/>
+
+  <!-- Deep dive additions highlighted -->
+  <rect x="744" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#FAFAF9" stroke-width="1"/>
+  <text x="794" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Architecture</text>
+  <text x="794" y="635" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">5 min</text>
+
+  <line x1="846" y1="620" x2="856" y2="620" stroke="#FAFAF9" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <rect x="858" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#FAFAF9" stroke-width="1"/>
+  <text x="908" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">API Demo</text>
+  <text x="908" y="635" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">5 min</text>
+
+  <line x1="960" y1="620" x2="970" y2="620" stroke="#FAFAF9" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <rect x="972" y="595" width="100" height="50" rx="6" fill="#1C1917" stroke="#FAFAF9" stroke-width="1"/>
+  <text x="1022" y="615" text-anchor="middle" class="body" fill="#FAFAF9" font-size="9">Chatbot</text>
+  <text x="1022" y="635" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="8">4 min</text>
+
+  <!-- Extended label -->
+  <rect x="744" y="652" width="328" height="20" rx="4" fill="#FAFAF9" opacity="0.06"/>
+  <text x="908" y="666" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">Deep Dive additions (+20 min)</text>
+
+  <!-- SN Integration note -->
+  <rect x="60" y="660" width="660" height="46" rx="8" fill="#1C1917" stroke="#A8A29E" stroke-width="0.5"/>
+  <text x="80" y="680" class="label" fill="#FAFAF9" font-size="10">Deep Dive extras:</text>
+  <text x="80" y="696" class="body" fill="#A8A29E" font-size="9">Live API call to ServiceNow demo instance  |  Chatbot Q&amp;A session  |  Architecture walkthrough  |  SN integration patterns</text>
+
+  <!-- Legend -->
+  <rect x="40" y="740" width="15" height="15" rx="3" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="62" y="752" class="body" fill="#A8A29E" font-size="10">Core pages (all demos)</text>
+  <rect x="210" y="740" width="15" height="15" rx="3" fill="#1C1917" stroke="#FAFAF9" stroke-width="1"/>
+  <text x="232" y="752" class="body" fill="#A8A29E" font-size="10">Deep Dive only</text>
+  <line x1="370" y1="748" x2="400" y2="748" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+  <text x="408" y="752" class="body" fill="#A8A29E" font-size="10">Demo flow</text>
+
+  <!-- Branding footer -->
+  <text x="30" y="785" class="body" fill="#A8A29E" font-size="9" opacity="0.6">AVENNORTH BEARING  |  Demo Flow Scripts  |  Confidential</text>
+</svg>

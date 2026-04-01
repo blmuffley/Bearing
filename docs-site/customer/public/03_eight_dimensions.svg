@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Space+Mono&amp;display=swap');
+      .heading { font-family: 'Syne', sans-serif; font-weight: 700; }
+      .body { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+      .mono { font-family: 'Space Mono', monospace; }
+      .label { font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    </style>
+    <filter id="glowLime">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="radarGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#39FF14;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0.02"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1C1917"/>
+
+  <!-- Title -->
+  <text x="600" y="42" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="24">EIGHT QUALITY DIMENSIONS</text>
+  <text x="600" y="65" text-anchor="middle" class="body" fill="#A8A29E" font-size="13">CMDB Health Assessment Scoring Model</text>
+  <line x1="430" y1="75" x2="770" y2="75" stroke="#39FF14" stroke-width="1" opacity="0.5"/>
+
+  <!-- Center point of radar -->
+  <!-- cx=460, cy=430 -->
+
+  <!-- Radar grid rings -->
+  <circle cx="460" cy="430" r="260" fill="none" stroke="#A8A29E" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="460" cy="430" r="195" fill="none" stroke="#A8A29E" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="460" cy="430" r="130" fill="none" stroke="#A8A29E" stroke-width="0.5" opacity="0.1"/>
+  <circle cx="460" cy="430" r="65" fill="none" stroke="#A8A29E" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Ring labels -->
+  <text x="462" y="178" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8" opacity="0.5">100</text>
+  <text x="462" y="243" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8" opacity="0.5">75</text>
+  <text x="462" y="308" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8" opacity="0.5">50</text>
+  <text x="462" y="373" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8" opacity="0.5">25</text>
+
+  <!-- Radar center fill -->
+  <circle cx="460" cy="430" r="260" fill="url(#radarGrad)"/>
+
+  <!-- 8 Axis lines from center (evenly spaced at 45 degrees) -->
+  <!-- 0: top (Completeness), 45: top-right (Accuracy), 90: right (Currency), 135: bottom-right (Relationships) -->
+  <!-- 180: bottom (CSDM), 225: bottom-left (Classification), 270: left (Orphans), 315: top-left (Duplicates) -->
+
+  <!-- Axis lines -->
+  <line x1="460" y1="430" x2="460" y2="170" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+  <line x1="460" y1="430" x2="644" y2="246" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+  <line x1="460" y1="430" x2="720" y2="430" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+  <line x1="460" y1="430" x2="644" y2="614" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+  <line x1="460" y1="430" x2="460" y2="690" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+  <line x1="460" y1="430" x2="276" y2="614" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+  <line x1="460" y1="430" x2="200" y2="430" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+  <line x1="460" y1="430" x2="276" y2="246" stroke="#A8A29E" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Sample data polygon (example scores) -->
+  <polygon points="460,210 590,290 660,430 580,570 460,610 330,570 250,430 320,290"
+           fill="#39FF14" fill-opacity="0.12" stroke="#39FF14" stroke-width="2" filter="url(#glowLime)"/>
+
+  <!-- Data points -->
+  <circle cx="460" cy="210" r="5" fill="#39FF14"/>
+  <circle cx="590" cy="290" r="5" fill="#39FF14"/>
+  <circle cx="660" cy="430" r="5" fill="#39FF14"/>
+  <circle cx="580" cy="570" r="5" fill="#39FF14"/>
+  <circle cx="460" cy="610" r="5" fill="#39FF14"/>
+  <circle cx="330" cy="570" r="5" fill="#39FF14"/>
+  <circle cx="250" cy="430" r="5" fill="#39FF14"/>
+  <circle cx="320" cy="290" r="5" fill="#39FF14"/>
+
+  <!-- Center dot -->
+  <circle cx="460" cy="430" r="4" fill="#39FF14" opacity="0.5"/>
+
+  <!-- ============ DIMENSION LABELS (around the radar) ============ -->
+
+  <!-- 1. Completeness (top) -->
+  <text x="460" y="140" text-anchor="middle" class="label" fill="#39FF14" font-size="14">COMPLETENESS</text>
+  <text x="460" y="156" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="12">20%</text>
+
+  <!-- 2. Accuracy (top-right) -->
+  <text x="665" y="230" text-anchor="start" class="label" fill="#39FF14" font-size="14">ACCURACY</text>
+  <text x="665" y="246" text-anchor="start" class="mono" fill="#FAFAF9" font-size="12">15%</text>
+
+  <!-- 3. Currency (right) -->
+  <text x="735" y="425" text-anchor="start" class="label" fill="#39FF14" font-size="14">CURRENCY</text>
+  <text x="735" y="441" text-anchor="start" class="mono" fill="#FAFAF9" font-size="12">15%</text>
+
+  <!-- 4. Relationships (bottom-right) -->
+  <text x="660" y="630" text-anchor="start" class="label" fill="#39FF14" font-size="14">RELATIONSHIPS</text>
+  <text x="660" y="646" text-anchor="start" class="mono" fill="#FAFAF9" font-size="12">15%</text>
+
+  <!-- 5. CSDM (bottom) -->
+  <text x="460" y="720" text-anchor="middle" class="label" fill="#39FF14" font-size="14">CSDM ALIGNMENT</text>
+  <text x="460" y="736" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="12">10%</text>
+
+  <!-- 6. Classification (bottom-left) -->
+  <text x="255" y="630" text-anchor="end" class="label" fill="#39FF14" font-size="14">CLASSIFICATION</text>
+  <text x="255" y="646" text-anchor="end" class="mono" fill="#FAFAF9" font-size="12">10%</text>
+
+  <!-- 7. Orphans (left) -->
+  <text x="185" y="425" text-anchor="end" class="label" fill="#39FF14" font-size="14">ORPHANS</text>
+  <text x="185" y="441" text-anchor="end" class="mono" fill="#FAFAF9" font-size="12">10%</text>
+
+  <!-- 8. Duplicates (top-left) -->
+  <text x="255" y="230" text-anchor="end" class="label" fill="#39FF14" font-size="14">DUPLICATES</text>
+  <text x="255" y="246" text-anchor="end" class="mono" fill="#FAFAF9" font-size="12">5%</text>
+
+  <!-- ============ RIGHT PANEL: Dimension Details ============ -->
+
+  <rect x="830" y="100" width="340" height="600" rx="12" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="1000" y="132" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="15">DIMENSION DETAILS</text>
+  <line x1="850" y1="145" x2="1150" y2="145" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Detail rows -->
+  <!-- Completeness -->
+  <rect x="850" y="158" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="176" r="6" fill="#39FF14"/>
+  <text x="882" y="176" class="label" fill="#39FF14" font-size="11">Completeness</text>
+  <text x="1130" y="176" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">20%</text>
+  <text x="882" y="198" class="body" fill="#A8A29E" font-size="10">Required fields populated, mandatory attributes present</text>
+
+  <!-- Accuracy -->
+  <rect x="850" y="218" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="236" r="6" fill="#39FF14"/>
+  <text x="882" y="236" class="label" fill="#39FF14" font-size="11">Accuracy</text>
+  <text x="1130" y="236" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">15%</text>
+  <text x="882" y="258" class="body" fill="#A8A29E" font-size="10">Data matches reality, validated against sources</text>
+
+  <!-- Currency -->
+  <rect x="850" y="278" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="296" r="6" fill="#39FF14"/>
+  <text x="882" y="296" class="label" fill="#39FF14" font-size="11">Currency</text>
+  <text x="1130" y="296" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">15%</text>
+  <text x="882" y="318" class="body" fill="#A8A29E" font-size="10">Records updated within expected timeframes</text>
+
+  <!-- Relationships -->
+  <rect x="850" y="338" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="356" r="6" fill="#39FF14"/>
+  <text x="882" y="356" class="label" fill="#39FF14" font-size="11">Relationships</text>
+  <text x="1130" y="356" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">15%</text>
+  <text x="882" y="378" class="body" fill="#A8A29E" font-size="10">CI relationships mapped, dependency chains intact</text>
+
+  <!-- CSDM -->
+  <rect x="850" y="398" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="416" r="6" fill="#39FF14"/>
+  <text x="882" y="416" class="label" fill="#39FF14" font-size="11">CSDM Alignment</text>
+  <text x="1130" y="416" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">10%</text>
+  <text x="882" y="438" class="body" fill="#A8A29E" font-size="10">Adherence to Common Service Data Model</text>
+
+  <!-- Classification -->
+  <rect x="850" y="458" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="476" r="6" fill="#39FF14"/>
+  <text x="882" y="476" class="label" fill="#39FF14" font-size="11">Classification</text>
+  <text x="1130" y="476" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">10%</text>
+  <text x="882" y="498" class="body" fill="#A8A29E" font-size="10">CIs assigned to correct classes and categories</text>
+
+  <!-- Orphans -->
+  <rect x="850" y="518" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="536" r="6" fill="#39FF14"/>
+  <text x="882" y="536" class="label" fill="#39FF14" font-size="11">Orphans</text>
+  <text x="1130" y="536" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">10%</text>
+  <text x="882" y="558" class="body" fill="#A8A29E" font-size="10">CIs without relationships or service context</text>
+
+  <!-- Duplicates -->
+  <rect x="850" y="578" width="300" height="52" rx="6" fill="#1C1917"/>
+  <circle cx="868" cy="596" r="6" fill="#39FF14"/>
+  <text x="882" y="596" class="label" fill="#39FF14" font-size="11">Duplicates</text>
+  <text x="1130" y="596" text-anchor="end" class="mono" fill="#FAFAF9" font-size="11">5%</text>
+  <text x="882" y="618" class="body" fill="#A8A29E" font-size="10">Redundant CI records requiring merge/cleanup</text>
+
+  <!-- Total -->
+  <line x1="850" y1="645" x2="1150" y2="645" stroke="#39FF14" stroke-width="1"/>
+  <text x="882" y="670" class="label" fill="#FAFAF9" font-size="13">TOTAL WEIGHT</text>
+  <text x="1130" y="670" text-anchor="end" class="heading" fill="#39FF14" font-size="16">100%</text>
+
+  <!-- Formula note -->
+  <rect x="830" y="710" width="340" height="45" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="0.8"/>
+  <text x="1000" y="730" text-anchor="middle" class="mono" fill="#39FF14" font-size="10">health = SUM(dimension_score * weight)</text>
+  <text x="1000" y="746" text-anchor="middle" class="body" fill="#A8A29E" font-size="9">Each dimension scored 0-100, weighted sum yields composite</text>
+
+  <!-- Footer -->
+  <text x="30" y="780" class="body" fill="#A8A29E" font-size="9" opacity="0.6">AVENNORTH BEARING  |  Eight Quality Dimensions  |  Confidential</text>
+</svg>

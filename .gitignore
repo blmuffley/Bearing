@@ -35,10 +35,16 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# Node (prototype)
+# Node (prototype + doc sites)
 prototype/node_modules/
 prototype/dist/
 prototype/.vite/
+docs-site/customer/node_modules/
+docs-site/customer/.vitepress/cache/
+docs-site/customer/.vitepress/dist/
+docs-site/internal/node_modules/
+docs-site/internal/.vitepress/cache/
+docs-site/internal/.vitepress/dist/
 
 # Reports output
 *.pdf

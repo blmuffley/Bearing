@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Space+Mono&amp;display=swap');
+      .heading { font-family: 'Syne', sans-serif; font-weight: 700; }
+      .body { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+      .mono { font-family: 'Space Mono', monospace; }
+      .label { font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    </style>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowLime" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#39FF14"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#A8A29E"/>
+    </marker>
+    <linearGradient id="limeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#39FF14;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1C1917" rx="0"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="24">AVENNORTH BEARING</text>
+  <text x="600" y="68" text-anchor="middle" class="body" fill="#A8A29E" font-size="13">System Architecture</text>
+  <line x1="480" y1="78" x2="720" y2="78" stroke="#39FF14" stroke-width="1" opacity="0.5"/>
+
+  <!-- === EXTERNAL SYSTEMS (Top) === -->
+  <!-- ServiceNow -->
+  <rect x="60" y="100" width="200" height="70" rx="10" fill="none" stroke="#A8A29E" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="160" y="130" text-anchor="middle" class="label" fill="#FAFAF9" font-size="13">ServiceNow CMDB</text>
+  <text x="160" y="150" text-anchor="middle" class="mono" fill="#A8A29E" font-size="10">REST API / Table API</text>
+
+  <!-- Claude API -->
+  <rect x="500" y="100" width="200" height="70" rx="10" fill="none" stroke="#A8A29E" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="600" y="130" text-anchor="middle" class="label" fill="#FAFAF9" font-size="13">Claude API</text>
+  <text x="600" y="150" text-anchor="middle" class="mono" fill="#A8A29E" font-size="10">Anthropic LLM</text>
+
+  <!-- Pathfinder -->
+  <rect x="940" y="100" width="200" height="70" rx="10" fill="none" stroke="#A8A29E" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="1040" y="130" text-anchor="middle" class="label" fill="#FAFAF9" font-size="13">Pathfinder Gateway</text>
+  <text x="1040" y="150" text-anchor="middle" class="mono" fill="#A8A29E" font-size="10">eBPF/ETW Agents</text>
+
+  <!-- External label -->
+  <text x="20" y="118" class="body" fill="#A8A29E" font-size="10" transform="rotate(-90,20,118)">EXTERNAL</text>
+
+  <!-- === CORE SERVICES LAYER === -->
+  <rect x="40" y="200" width="1120" height="100" rx="12" fill="url(#limeGrad)" stroke="#39FF14" stroke-width="1" opacity="0.8"/>
+  <text x="60" y="222" class="label" fill="#39FF14" font-size="11">CORE SERVICES</text>
+
+  <!-- SN REST Client -->
+  <rect x="60" y="235" width="220" height="50" rx="8" fill="#292524" stroke="#39FF14" stroke-width="1"/>
+  <text x="170" y="258" text-anchor="middle" class="body" fill="#FAFAF9" font-size="12">SN REST Client</text>
+  <text x="170" y="274" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">OAuth 2.0 + Basic Auth</text>
+
+  <!-- Claude API Client -->
+  <rect x="310" y="235" width="220" height="50" rx="8" fill="#292524" stroke="#39FF14" stroke-width="1"/>
+  <text x="420" y="258" text-anchor="middle" class="body" fill="#FAFAF9" font-size="12">Claude API Client</text>
+  <text x="420" y="274" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">Analysis + Summaries</text>
+
+  <!-- Pathfinder Webhook -->
+  <rect x="560" y="235" width="220" height="50" rx="8" fill="#292524" stroke="#39FF14" stroke-width="1"/>
+  <text x="670" y="258" text-anchor="middle" class="body" fill="#FAFAF9" font-size="12">Pathfinder Webhook</text>
+  <text x="670" y="274" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">Confidence Feed Receiver</text>
+
+  <!-- Contour Webhook -->
+  <rect x="810" y="235" width="220" height="50" rx="8" fill="#292524" stroke="#39FF14" stroke-width="1"/>
+  <text x="920" y="258" text-anchor="middle" class="body" fill="#FAFAF9" font-size="12">Contour Webhook</text>
+  <text x="920" y="274" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">Service Map Intelligence</text>
+
+  <!-- Arrows from external to core services -->
+  <line x1="160" y1="170" x2="160" y2="232" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+  <line x1="600" y1="170" x2="420" y2="232" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="1040" y1="170" x2="750" y2="232" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+
+  <!-- === BEARING BACKEND (Center) === -->
+  <rect x="140" y="340" width="920" height="230" rx="14" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <rect x="140" y="340" width="920" height="36" rx="14" fill="#39FF14" opacity="0.1"/>
+  <text x="600" y="364" text-anchor="middle" class="heading" fill="#39FF14" font-size="16" filter="url(#glow)">BEARING BACKEND</text>
+
+  <!-- Assessment Engine -->
+  <rect x="170" y="395" width="260" height="150" rx="10" fill="#1C1917" stroke="#A8A29E" stroke-width="1"/>
+  <text x="300" y="420" text-anchor="middle" class="label" fill="#FAFAF9" font-size="13">Assessment Engine</text>
+  <line x1="200" y1="430" x2="400" y2="430" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="190" y="452" class="body" fill="#A8A29E" font-size="11">  Export Parser</text>
+  <text x="190" y="472" class="body" fill="#A8A29E" font-size="11">  Live Scan Engine</text>
+  <text x="190" y="492" class="body" fill="#A8A29E" font-size="11">  Instance Scan Importer</text>
+  <text x="190" y="512" class="body" fill="#A8A29E" font-size="11">  Module Scanners (12+)</text>
+  <text x="190" y="532" class="body" fill="#A8A29E" font-size="11">  Pathfinder Fusion</text>
+  <!-- Lime dots -->
+  <circle cx="185" cy="448" r="3" fill="#39FF14"/>
+  <circle cx="185" cy="468" r="3" fill="#39FF14"/>
+  <circle cx="185" cy="488" r="3" fill="#39FF14"/>
+  <circle cx="185" cy="508" r="3" fill="#39FF14"/>
+  <circle cx="185" cy="528" r="3" fill="#39FF14"/>
+
+  <!-- Scoring Engine -->
+  <rect x="470" y="395" width="260" height="150" rx="10" fill="#1C1917" stroke="#A8A29E" stroke-width="1"/>
+  <text x="600" y="420" text-anchor="middle" class="label" fill="#FAFAF9" font-size="13">Scoring Engine</text>
+  <line x1="500" y1="430" x2="700" y2="430" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="490" y="452" class="body" fill="#A8A29E" font-size="11">  Composite Scorer</text>
+  <text x="490" y="472" class="body" fill="#A8A29E" font-size="11">  Health Index (0-100)</text>
+  <text x="490" y="492" class="body" fill="#A8A29E" font-size="11">  Pathfinder Fusion Score</text>
+  <text x="490" y="512" class="body" fill="#A8A29E" font-size="11">  Benchmark Engine</text>
+  <text x="490" y="532" class="body" fill="#A8A29E" font-size="11">  Maturity Calculator</text>
+  <circle cx="485" cy="448" r="3" fill="#39FF14"/>
+  <circle cx="485" cy="468" r="3" fill="#39FF14"/>
+  <circle cx="485" cy="488" r="3" fill="#39FF14"/>
+  <circle cx="485" cy="508" r="3" fill="#39FF14"/>
+  <circle cx="485" cy="528" r="3" fill="#39FF14"/>
+
+  <!-- Report Generator -->
+  <rect x="770" y="395" width="260" height="150" rx="10" fill="#1C1917" stroke="#A8A29E" stroke-width="1"/>
+  <text x="900" y="420" text-anchor="middle" class="label" fill="#FAFAF9" font-size="13">Report Generator</text>
+  <line x1="800" y1="430" x2="1000" y2="430" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="790" y="452" class="body" fill="#A8A29E" font-size="11">  Revenue Calculator</text>
+  <text x="790" y="472" class="body" fill="#A8A29E" font-size="11">  Consultant Report</text>
+  <text x="790" y="492" class="body" fill="#A8A29E" font-size="11">  Customer Report</text>
+  <text x="790" y="512" class="body" fill="#A8A29E" font-size="11">  SOW Generator</text>
+  <text x="790" y="532" class="body" fill="#A8A29E" font-size="11">  Compass Pipeline Sync</text>
+  <circle cx="785" cy="448" r="3" fill="#39FF14"/>
+  <circle cx="785" cy="468" r="3" fill="#39FF14"/>
+  <circle cx="785" cy="488" r="3" fill="#39FF14"/>
+  <circle cx="785" cy="508" r="3" fill="#39FF14"/>
+  <circle cx="785" cy="528" r="3" fill="#39FF14"/>
+
+  <!-- Internal arrows -->
+  <line x1="432" y1="470" x2="468" y2="470" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+  <line x1="732" y1="470" x2="768" y2="470" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+
+  <!-- Core services to backend arrows -->
+  <line x1="170" y1="287" x2="300" y2="338" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+  <line x1="420" y1="287" x2="450" y2="338" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="670" y1="287" x2="600" y2="338" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+  <line x1="920" y1="287" x2="750" y2="338" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <!-- === API LAYER (Bottom) === -->
+  <rect x="40" y="610" width="1120" height="100" rx="12" fill="url(#limeGrad)" stroke="#39FF14" stroke-width="1" opacity="0.8"/>
+  <text x="60" y="632" class="label" fill="#39FF14" font-size="11">API ENDPOINTS</text>
+
+  <!-- Endpoint boxes -->
+  <rect x="60" y="645" width="145" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="132" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">POST</text>
+  <text x="132" y="680" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">/api/assessments</text>
+
+  <rect x="220" y="645" width="145" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="292" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">GET</text>
+  <text x="292" y="680" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">/api/assessments/:id</text>
+
+  <rect x="380" y="645" width="145" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="452" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">GET</text>
+  <text x="452" y="680" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">/api/findings</text>
+
+  <rect x="540" y="645" width="145" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="612" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">POST</text>
+  <text x="612" y="680" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">/api/reports</text>
+
+  <rect x="700" y="645" width="145" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="772" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">POST</text>
+  <text x="772" y="680" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">/api/sow/generate</text>
+
+  <rect x="860" y="645" width="145" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="932" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">POST</text>
+  <text x="932" y="680" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">/api/webhooks/pf</text>
+
+  <rect x="1020" y="645" width="120" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="1080" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">POST</text>
+  <text x="1080" y="680" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="9">/api/export</text>
+
+  <!-- Backend to API arrows -->
+  <line x1="300" y1="572" x2="300" y2="608" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="600" y1="572" x2="600" y2="608" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="900" y1="572" x2="900" y2="608" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <!-- Database icon (bottom right) -->
+  <rect x="1050" y="740" width="120" height="40" rx="6" fill="none" stroke="#A8A29E" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="1110" y="764" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Supabase (PG)</text>
+
+  <!-- Branding footer -->
+  <text x="30" y="780" class="body" fill="#A8A29E" font-size="9" opacity="0.6">AVENNORTH BEARING  |  System Architecture  |  Confidential</text>
+</svg>

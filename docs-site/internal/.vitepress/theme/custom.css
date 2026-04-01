@@ -1,0 +1,41 @@
+:root {
+  /* Avennorth brand: Obsidian #1A1A2E, Electric Lime #CCFF00 */
+  --vp-c-brand-1: #CCFF00;
+  --vp-c-brand-2: #b8e600;
+  --vp-c-brand-3: #a3cc00;
+  --vp-c-brand-soft: rgba(204, 255, 0, 0.14);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #CCFF00, #a3cc00);
+}
+
+.dark {
+  --vp-c-bg: #1A1A2E;
+  --vp-c-bg-alt: #2D2D3D;
+  --vp-c-bg-elv: #2D2D3D;
+  --vp-c-bg-soft: #2D2D3D;
+}
+
+/* Internal badge in nav */
+.VPNavBarTitle::after {
+  content: 'INTERNAL';
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #1A1A2E;
+  background: #CCFF00;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.VPButton.brand {
+  background-color: #CCFF00 !important;
+  color: #1A1A2E !important;
+  border-color: #CCFF00 !important;
+}
+
+.VPButton.brand:hover {
+  background-color: #b8e600 !important;
+  border-color: #b8e600 !important;
+}

@@ -1,4 +1,4 @@
-.PHONY: install dev test lint typecheck fmt run clean
+.PHONY: install dev test lint typecheck fmt run clean proto-install proto-dev proto-build docs-customer-install docs-internal-install docs-customer-dev docs-internal-dev docs-build
 
 install:
 	pip install -e .
@@ -34,3 +34,19 @@ proto-dev:
 
 proto-build:
 	cd prototype && npm run build
+
+docs-customer-install:
+	cd docs-site/customer && npm install
+
+docs-internal-install:
+	cd docs-site/internal && npm install
+
+docs-customer-dev:
+	cd docs-site/customer && npm run dev
+
+docs-internal-dev:
+	cd docs-site/internal && npm run dev
+
+docs-build:
+	cd docs-site/customer && npm run build
+	cd docs-site/internal && npm run build
