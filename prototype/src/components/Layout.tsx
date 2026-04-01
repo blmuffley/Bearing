@@ -1,7 +1,8 @@
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import { Sidebar } from './Sidebar'
 import { ThemeToggle } from './ThemeToggle'
 import { FusionToggle } from './FusionToggle'
+import { RunAssessmentModal } from './RunAssessmentModal'
 
 interface LayoutProps {
   children: ReactNode
@@ -12,6 +13,8 @@ interface LayoutProps {
 }
 
 export function Layout({ children, isDark, onToggleTheme, showPostPathfinder, onTogglePathfinder }: LayoutProps) {
+  const [showAssessment, setShowAssessment] = useState(false)
+
   return (
     <div className="flex h-screen" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <Sidebar showPathfinder={showPostPathfinder} />
@@ -25,7 +28,15 @@ export function Layout({ children, isDark, onToggleTheme, showPostPathfinder, on
               Mercy Health System
             </span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setShowAssessment(true)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-semibold transition-all hover:opacity-90"
+              style={{ backgroundColor: 'var(--color-accent)', color: '#000' }}
+            >
+              <span style={{ fontSize: 14 }}>&#9654;</span>
+              Run Assessment
+            </button>
             <FusionToggle enabled={showPostPathfinder} onToggle={onTogglePathfinder} />
             <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
           </div>
@@ -34,6 +45,7 @@ export function Layout({ children, isDark, onToggleTheme, showPostPathfinder, on
           {children}
         </main>
       </div>
+      <RunAssessmentModal open={showAssessment} onClose={() => setShowAssessment(false)} />
     </div>
   )
 }

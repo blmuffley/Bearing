@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom'
+import { AvennorthLogo } from './AvennorthLogo'
 
 const navItems = [
-  { path: '/dashboard', label: 'Dashboard', icon: '◉' },
-  { path: '/findings', label: 'Findings', icon: '⚑' },
-  { path: '/health-map', label: 'Health Map', icon: '▦' },
-  { path: '/maturity', label: 'Maturity Model', icon: '△' },
-  { path: '/reports', label: 'Reports', icon: '▤' },
-  { path: '/fusion', label: 'Fusion Findings', icon: '⬡' },
-  { path: '/before-after', label: 'Before / After', icon: '⇆' },
+  { path: '/dashboard', label: 'Dashboard', icon: '\u25C9' },
+  { path: '/findings', label: 'Findings', icon: '\u2691' },
+  { path: '/health-map', label: 'Health Map', icon: '\u25A6' },
+  { path: '/maturity', label: 'Maturity Model', icon: '\u25B3' },
+  { path: '/reports', label: 'Reports', icon: '\u25A4' },
+  { path: '/fusion', label: 'Fusion Findings', icon: '\u2B21' },
+  { path: '/before-after', label: 'Before / After', icon: '\u21C6' },
 ]
 
 interface SidebarProps {
@@ -20,12 +21,15 @@ export function Sidebar({ showPathfinder }: SidebarProps) {
       className="w-56 flex-shrink-0 flex flex-col py-4"
       style={{ backgroundColor: 'var(--color-bg-secondary)', borderRight: '1px solid var(--color-border)' }}
     >
-      <div className="px-4 mb-6">
-        <div className="font-heading font-bold text-xl" style={{ color: 'var(--color-accent)' }}>
-          AN
-        </div>
-        <div className="text-xs mt-1" style={{ color: 'var(--color-text-tertiary)' }}>
-          Avennorth Bearing
+      <div className="px-4 mb-6 flex items-center gap-3">
+        <AvennorthLogo size={36} />
+        <div>
+          <div className="font-heading font-bold text-sm" style={{ color: 'var(--color-accent)' }}>
+            Avennorth
+          </div>
+          <div className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
+            Bearing
+          </div>
         </div>
       </div>
 

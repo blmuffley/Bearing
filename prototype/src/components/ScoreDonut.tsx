@@ -1,5 +1,6 @@
 import { PieChart, Pie, Cell } from 'recharts'
 import { scoreColor, gradeLabel } from '../theme'
+import { useAnimatedNumber } from '../hooks/useAnimatedNumber'
 
 interface ScoreDonutProps {
   score: number
@@ -7,11 +8,12 @@ interface ScoreDonutProps {
 }
 
 export function ScoreDonut({ score, size = 200 }: ScoreDonutProps) {
+  const animatedScore = useAnimatedNumber(score, 800)
   const data = [
-    { value: score },
-    { value: 100 - score },
+    { value: animatedScore },
+    { value: 100 - animatedScore },
   ]
-  const color = scoreColor(score)
+  const color = scoreColor(animatedScore)
 
   return (
     <div className="relative inline-flex items-center justify-center">
@@ -24,6 +26,7 @@ export function ScoreDonut({ score, size = 200 }: ScoreDonutProps) {
           endAngle={-270}
           dataKey="value"
           stroke="none"
+          isAnimationActive={false}
         >
           <Cell fill={color} />
           <Cell fill="var(--color-bg-tertiary)" />
@@ -31,10 +34,10 @@ export function ScoreDonut({ score, size = 200 }: ScoreDonutProps) {
       </PieChart>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="font-heading font-bold" style={{ fontSize: size * 0.2, color }}>
-          {score}
+          {animatedScore}
         </span>
         <span className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
-          Grade: {gradeLabel(score)}
+          Grade: {gradeLabel(animatedScore)}
         </span>
       </div>
     </div>

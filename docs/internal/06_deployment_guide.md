@@ -1,272 +1,386 @@
-# Bearing -- Deployment Guide
+# Deployment Guide
 
-> **Internal Avennorth Document** -- Not for customer distribution.
-> Last updated: 2026-03-29
+**Internal Engineering Reference**
+Last updated: 2026-04-01 | Version: 0.1.0
 
 ---
 
-## Prerequisites
+## Overview
 
-| Requirement | Version | Notes |
-|-------------|---------|-------|
-| Node.js | 18+ | LTS recommended |
-| npm | 9+ | Ships with Node.js 18+ |
-| Supabase account | -- | Free tier works for development |
-| Vercel account | -- | Optional; for production deployment |
-| Git | -- | For cloning the repository |
+Bearing can be deployed in three modes:
+
+1. **Local development** -- Python venv with uvicorn hot-reload
+2. **Docker** -- Single container with docker-compose
+3. **Prototype UI** -- Vite dev server for the React prototype (port 4201)
 
 ---
 
 ## Local Development Setup
 
-### 1. Clone the Repository
+### Prerequisites
+
+- Python 3.9+ (tested on 3.11 and 3.12)
+- pip
+- Node.js 18+ (for prototype only)
+- A ServiceNow instance with API access (or plan to mock for tests)
+
+### Step 1: Clone and Set Up Virtual Environment
 
 ```bash
-git clone https://github.com/blmuffley/Bearing.git
-cd Bearing
+cd ~/Code/Bearing
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-### 2. Create Environment File
+### Step 2: Install Dependencies
 
 ```bash
-cp .env.example .env.local
+# Production dependencies only
+make install
+# OR: pip install -e .
+
+# Development dependencies (includes pytest, ruff, mypy, pre-commit)
+make dev
+# OR: pip install -e ".[dev]"
 ```
 
-Edit `.env.local` and fill in the values (see Environment Variables section below).
+Production dependencies (from `pyproject.toml`):
+- `fastapi>=0.115.0` -- Web framework
+- `uvicorn[standard]>=0.30.0` -- ASGI server
+- `pydantic>=2.9.0` -- Data validation
+- `pydantic-settings>=2.5.0` -- Environment configuration
+- `requests>=2.32.0` -- HTTP client for ServiceNow
+- `anthropic>=0.40.0` -- Claude AI SDK
+- `fpdf2>=2.8.0` -- PDF generation
+- `python-docx>=1.1.0` -- DOCX generation
+- `matplotlib>=3.9.0` -- Chart generation
+- `apscheduler>=3.10.0` -- Scheduled assessments
+- `httpx>=0.27.0` -- Async HTTP client
 
-### 3. Create Supabase Project
+Dev dependencies:
+- `pytest>=8.3.0`, `pytest-asyncio>=0.24.0`, `pytest-cov>=5.0.0` -- Testing
+- `ruff>=0.7.0` -- Linting and formatting
+- `mypy>=1.12.0`, `types-requests>=2.32.0` -- Type checking
+- `pre-commit>=4.0.0` -- Git hooks
 
-1. Go to [supabase.com](https://supabase.com) and create a new project
-2. Note the **Project URL** and **API keys** from Settings -> API
-3. Note the **Database connection string** from Settings -> Database
-
-### 4. Run Database Migration
-
-1. Open the Supabase SQL Editor (Dashboard -> SQL Editor)
-2. Copy the contents of `supabase/migrations/00001_initial_schema.sql`
-3. Paste into the SQL Editor and click **Run**
-
-This creates all 10 tables, RLS policies, and indexes.
-
-### 5. Run Seed Data
-
-1. In the Supabase SQL Editor, open a new query
-2. Copy the contents of `supabase/seed.sql`
-3. Paste and click **Run**
-
-This inserts:
-- 12 remediation patterns with SOW template language
-- 12 core platform scan rules with query configs
-
-### 6. Install Dependencies
+### Step 3: Configure Environment
 
 ```bash
-npm install
+cp .env.example .env
 ```
 
-### 7. Start Development Server
-
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:3000`.
-
----
-
-## Environment Variables
-
-### Required for Local Development
-
-| Variable | Where to Find | Example |
-|----------|---------------|---------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase Dashboard -> Settings -> API -> Project URL | `https://abcdefgh.supabase.co` |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase Dashboard -> Settings -> API -> anon/public key | `eyJhbGciOiJIUzI1NiIs...` |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase Dashboard -> Settings -> API -> service_role key | `eyJhbGciOiJIUzI1NiIs...` |
-| `NEXTAUTH_SECRET` | Generate: `openssl rand -base64 32` | `K7x9...` |
-| `NEXTAUTH_URL` | Your local dev URL | `http://localhost:3000` |
-
-### Required for ServiceNow Integration (Phase 3+)
-
-| Variable | Where to Find | Example |
-|----------|---------------|---------|
-| `SERVICENOW_CLIENT_ID` | ServiceNow instance -> System OAuth -> Application Registries | `abc123...` |
-| `SERVICENOW_CLIENT_SECRET` | Same location as client ID | `def456...` |
-| `SERVICENOW_REDIRECT_URI` | Must match registered redirect URI | `http://localhost:3000/api/auth/servicenow/callback` |
-
-### Required for Pathfinder Integration (Phase 4+)
-
-| Variable | Where to Find | Example |
-|----------|---------------|---------|
-| `PATHFINDER_WEBHOOK_SECRET` | Shared with Pathfinder team | `whsec_...` |
-
-### Required for Production
-
-| Variable | Where to Find | Example |
-|----------|---------------|---------|
-| `ENCRYPTION_KEY` | Generate: `openssl rand -hex 32` | `a1b2c3...` (64 hex chars) |
-| `REPORTS_STORAGE_BUCKET` | Supabase Storage bucket name or S3 bucket | `bearing-reports` |
-| `COMPASS_URL` | Compass deployment URL | `https://compass.avennorth.com` |
-| `COMPASS_API_KEY` | Compass admin panel | `ck_live_...` |
-
-### Feature Flags
-
-| Variable | Default | When to Enable |
-|----------|---------|----------------|
-| `ENABLE_PATHFINDER_INTEGRATION` | `false` | When Pathfinder is deployed and sending data |
-| `ENABLE_BENCHMARKING` | `false` | When 10+ assessments exist across orgs |
-| `ENABLE_CONTINUOUS_MONITORING` | `false` | When recurring scan scheduler is ready |
-
-### Full .env.local Template
+Edit `.env` with your values:
 
 ```env
-# Database
-DATABASE_URL=
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
+# ServiceNow Connection (REQUIRED)
+BEARING_SN_INSTANCE=https://your-instance.service-now.com
+BEARING_SN_USERNAME=bearing_service_account
+BEARING_SN_PASSWORD=your_password
 
-# Auth
-NEXTAUTH_SECRET=
-NEXTAUTH_URL=http://localhost:3000
+# OAuth2 (optional -- overrides basic auth when both are set)
+BEARING_SN_CLIENT_ID=
+BEARING_SN_CLIENT_SECRET=
 
-# ServiceNow OAuth (Phase 3+)
-SERVICENOW_CLIENT_ID=
-SERVICENOW_CLIENT_SECRET=
-SERVICENOW_REDIRECT_URI=
+# Claude AI Analysis (optional -- enables AI executive summaries)
+ANTHROPIC_API_KEY=
 
-# Pathfinder Integration (Phase 4+)
-PATHFINDER_WEBHOOK_SECRET=
+# Webhook Security (required for Pathfinder/Contour integration)
+BEARING_API_KEY=your-webhook-key
 
-# Encryption (production only)
-ENCRYPTION_KEY=
-
-# Document Generation
-REPORTS_STORAGE_BUCKET=
-
-# Compass Integration
-COMPASS_URL=
-COMPASS_API_KEY=
-
-# Feature Flags
-ENABLE_PATHFINDER_INTEGRATION=false
-ENABLE_BENCHMARKING=false
-ENABLE_CONTINUOUS_MONITORING=false
+# Optional
+BEARING_PORT=8080
+BEARING_LOG_LEVEL=INFO
+BEARING_SCHEDULE_CRON=
 ```
 
----
+Authentication auto-detection priority:
+1. If `SN_CLIENT_ID` and `SN_CLIENT_SECRET` are set: OAuth2
+2. If `SN_USERNAME` and `SN_PASSWORD` are set: Basic auth
+3. Neither: No auth (will fail on first ServiceNow API call)
 
-## Vercel Deployment
+### Step 4: Run the Server
 
-### 1. Connect Repository
-
-1. Go to [vercel.com](https://vercel.com) and create a new project
-2. Import the GitHub repository `blmuffley/Bearing`
-3. Vercel auto-detects the Next.js framework
-
-### 2. Set Environment Variables
-
-In the Vercel project settings -> Environment Variables, add all variables from the section above. Make sure to:
-
-- Set `NEXTAUTH_URL` to your production domain (e.g., `https://bearing.avennorth.com`)
-- Use production Supabase project credentials (not dev)
-- Generate a unique `NEXTAUTH_SECRET` for production
-- Generate a unique `ENCRYPTION_KEY` for production
-
-### 3. Deploy
-
-Click **Deploy**. Vercel will:
-1. Install dependencies (`npm install`)
-2. Build the project (`npm run build`)
-3. Deploy to the Vercel edge network
-
-Subsequent pushes to `main` trigger automatic deployments.
-
-### Build Commands
-
-| Command | Purpose |
-|---------|---------|
-| `npm run dev` | Start development server with hot reload |
-| `npm run build` | Production build |
-| `npm run start` | Start production server locally |
-| `npm run lint` | Run ESLint |
-
----
-
-## Supabase Configuration
-
-### Enable RLS on All Tables
-
-RLS is enabled in the migration script for all tenant-scoped tables. Verify in the Supabase Dashboard:
-
-1. Go to Table Editor
-2. For each table listed below, confirm RLS is enabled (lock icon visible):
-   - users
-   - instance_connections
-   - assessments
-   - findings
-   - pathfinder_confidence
-   - generated_sows
-
-### RLS Policies
-
-Each tenant-scoped table has one policy created by the migration:
-
-```sql
-CREATE POLICY org_isolation ON {table_name}
-  USING (org_id = current_setting('app.current_org_id')::uuid);
+```bash
+make run
+# OR: uvicorn bearing.main:app --reload --port 8080
 ```
 
-This ensures every query is automatically filtered to the authenticated user's organization.
+Server starts at `http://localhost:8080`:
+- API docs: `http://localhost:8080/docs`
+- ReDoc: `http://localhost:8080/redoc`
+- Health check: `http://localhost:8080/api/v1/health`
 
-**Important:** The `app.current_org_id` session variable must be set from the authenticated user's JWT before any database queries. This is handled by the tRPC context (`src/server/trpc/context.ts`).
+### Make Commands Reference
 
-### Tables Without RLS
-
-These are global reference tables:
-- `organizations` -- org_id IS the id; access controlled at application layer
-- `scan_rules` -- shared rule library, read-only for all orgs
-- `remediation_patterns` -- shared pattern library (calibration_factor updated globally)
-- `benchmark_data` -- anonymized aggregate data
-
-### Auth Providers
-
-Configure in Supabase Dashboard -> Authentication -> Providers:
-
-1. **Email/Password** -- Enable for development and basic setup
-2. **Magic Link** -- Optional, for passwordless auth
-3. **OAuth providers** -- Configure as needed (Google, Microsoft for enterprise SSO)
-
-### Storage (for Generated Reports)
-
-1. Go to Supabase Dashboard -> Storage
-2. Create a bucket named to match your `REPORTS_STORAGE_BUCKET` environment variable
-3. Set access policies to restrict to authenticated users within their org
+| Command | Description |
+|---|---|
+| `make install` | Install Bearing in editable mode |
+| `make dev` | Install with dev dependencies |
+| `make run` | Start server with hot-reload on port 8080 |
+| `make test` | Run tests with coverage report |
+| `make lint` | Run ruff linter |
+| `make typecheck` | Run mypy type checker |
+| `make fmt` | Format code and fix lint issues |
+| `make clean` | Remove build artifacts, caches, pycache |
+| `make proto-install` | Install prototype npm dependencies |
+| `make proto-dev` | Start prototype Vite dev server (port 4201) |
+| `make proto-build` | Build prototype for production |
 
 ---
 
-## Post-Deployment Verification
+## Docker Deployment
 
-After deploying, verify these endpoints work:
+### Dockerfile Walkthrough
 
-| Check | How to Test |
-|-------|-------------|
-| App loads | Visit the deployment URL |
-| Supabase connection | Navigate to any authenticated page |
-| Export upload | Upload a test JSON file at `/assessments/new` |
-| Report generation | Generate a consultant or customer report from an assessment |
-| Pathfinder webhook | `curl -X POST {url}/api/webhooks/pathfinder -H "X-Bearing-API-Key: {secret}" -H "Content-Type: application/json" -d '{...}'` |
+The Dockerfile uses a multi-stage build optimized for small image size and security:
+
+**Stage 1 (`base`)**: Python 3.11 slim. Installs `libfreetype6-dev` (required by matplotlib for font rendering). Cleans apt cache.
+
+**Stage 2 (`builder`)**: Copies `pyproject.toml` and installs all Python packages. This layer is cached and only rebuilds when `pyproject.toml` changes.
+
+**Stage 3 (`runtime`)**: Creates a non-root `bearing` user (security best practice). Copies installed packages from builder and application source from host. Does NOT include build tools, pip, or dev dependencies.
+
+```
+Final image size: ~350MB (mostly matplotlib/numpy)
+Runtime user: bearing (non-root)
+Exposed port: 8080
+Entry point: uvicorn bearing.main:app
+```
+
+### docker-compose.yml
+
+```yaml
+services:
+  bearing:
+    build: .
+    ports:
+      - "${BEARING_PORT:-8080}:8080"
+    env_file:
+      - .env
+    restart: unless-stopped
+```
+
+### Build and Run
+
+```bash
+# Build
+docker compose build
+
+# Run foreground (see logs)
+docker compose up
+
+# Run background
+docker compose up -d
+
+# View logs
+docker compose logs -f bearing
+
+# Stop
+docker compose down
+
+# Rebuild after code changes
+docker compose build --no-cache && docker compose up -d
+```
+
+### Custom Port
+
+Override the port via environment variable:
+```bash
+BEARING_PORT=9090 docker compose up
+```
+
+### Environment in Docker
+
+The `.env` file in the project root is read by docker-compose via `env_file: .env`. All `BEARING_*` and `ANTHROPIC_API_KEY` variables are passed into the container.
+
+For production, consider:
+- Docker secrets or a secrets manager instead of `.env` files
+- Environment variables set via orchestrator (Kubernetes, ECS)
 
 ---
 
-## Troubleshooting
+## Prototype Deployment
 
-| Issue | Likely Cause | Fix |
-|-------|-------------|-----|
-| "relation does not exist" | Migration not run | Run `00001_initial_schema.sql` in Supabase SQL Editor |
-| "No rows returned" on scan | Seed data not loaded | Run `seed.sql` in Supabase SQL Editor |
-| 401 on tRPC calls | Missing or invalid Supabase keys | Check `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` |
-| 401 on Pathfinder webhook | Wrong API key | Check `PATHFINDER_WEBHOOK_SECRET` matches what Pathfinder sends |
-| "Failed to persist" on upload | Service role key wrong | Check `SUPABASE_SERVICE_ROLE_KEY` |
-| Build fails on Vercel | Missing env vars | Verify all required env vars are set in Vercel project settings |
-| RLS blocking queries | org_id not set in session | Check tRPC context is setting `app.current_org_id` |
+The React/Vite prototype is independent from the Python backend. It uses static demo data and does NOT connect to the Bearing API.
+
+### Setup and Run
+
+```bash
+make proto-install   # npm install in prototype/
+make proto-dev       # Starts at http://localhost:4201
+```
+
+### Production Build
+
+```bash
+make proto-build     # Outputs to prototype/dist/
+```
+
+Serve the static build:
+```bash
+cd prototype && npx serve dist -p 4201
+```
+
+### Prototype Stack
+
+| Library | Version | Purpose |
+|---|---|---|
+| React | 18.3+ | UI framework |
+| React Router | 6.27+ | Client-side routing |
+| Recharts | 2.13+ | Charts and visualizations |
+| Tailwind CSS | 3.4+ | Styling |
+| Vite | 6.0+ | Build tool and dev server |
+| TypeScript | 5.6+ | Type safety |
+
+### Demo Data Files
+
+- `src/data/demo-pre-pathfinder.ts` -- Assessment without Pathfinder data
+- `src/data/demo-post-pathfinder.ts` -- Assessment with fusion findings
+- `src/data/demo-data.json` -- Raw JSON demo data
+
+The prototype's fusion toggle switches between pre- and post-Pathfinder datasets to demonstrate the before/after experience.
+
+---
+
+## CI/CD Pipeline
+
+### GitHub Actions: CI Workflow
+
+**File**: `.github/workflows/ci.yml`
+**Triggers**: Push to `main`, pull requests targeting `main`
+**Matrix**: Python 3.11, Python 3.12
+
+Pipeline steps:
+1. Checkout code
+2. Set up Python (matrix version)
+3. Install dependencies: `pip install -e ".[dev]"`
+4. **Lint**: `ruff check src/` -- Enforces code style and catches common errors
+5. **Type check**: `mypy src/bearing/` -- Strict mode type checking
+6. **Test**: `pytest --cov=bearing --cov-report=term-missing` -- Tests with 80% coverage threshold
+
+All three gates must pass for a green build.
+
+### GitHub Actions: Release Workflow
+
+**File**: `.github/workflows/release.yml`
+**Triggers**: Push of tags matching `v*` pattern
+
+Steps:
+1. Checkout code
+2. Build Docker image tagged with the Git tag name
+
+To create a release:
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+### Code Quality Tools Configuration
+
+**Ruff** (`pyproject.toml`):
+- Target: Python 3.9
+- Line length: 100
+- Rules: E (errors), F (pyflakes), I (isort), N (naming), W (warnings), UP (pyupgrade), B (bugbear), A (builtins), SIM (simplify), TCH (type checking)
+
+**Mypy** (`pyproject.toml`):
+- Strict mode enabled
+- Pydantic plugin for model validation
+
+**pytest** (`pyproject.toml`):
+- Test path: `src/tests/`
+- asyncio_mode: `auto`
+- Coverage source: `bearing`
+- Coverage fail threshold: 80%
+
+---
+
+## Monitoring and Health Checks
+
+### Health Endpoint
+
+```bash
+curl http://localhost:8080/api/v1/health
+# {"status": "healthy", "version": "0.1.0"}
+```
+
+Use for:
+- Load balancer health probes
+- Container liveness/readiness checks
+- Uptime monitoring (Pingdom, UptimeRobot, etc.)
+
+### Recommended Docker Health Check
+
+Add to `docker-compose.yml`:
+```yaml
+services:
+  bearing:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+```
+
+### Logging
+
+Format: `%(asctime)s [%(levelname)s] %(name)s: %(message)s`
+Level: Configurable via `BEARING_LOG_LEVEL` (default: INFO)
+
+Key log messages to monitor:
+
+| Log Level | Message Pattern | Meaning |
+|---|---|---|
+| INFO | "Starting assessment {id}" | Assessment began |
+| INFO | "Fetched {n} records from {table}" | ServiceNow query completed |
+| INFO | "Assessment {id} complete: score={n}" | Assessment succeeded |
+| INFO | "Ingested {n} CI confidence records" | Pathfinder feed processed |
+| WARNING | "Failed to write results to ServiceNow" | SN write failed (results in memory) |
+| WARNING | "Token refresh failed" | OAuth token issue |
+| ERROR | "Assessment {id} failed" | Assessment crashed |
+
+---
+
+## Production Considerations
+
+### Multi-Worker Deployment
+
+uvicorn runs a single worker by default. For production throughput:
+
+```bash
+# Option 1: uvicorn workers
+uvicorn bearing.main:app --host 0.0.0.0 --port 8080 --workers 4
+
+# Option 2: gunicorn with uvicorn workers
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker bearing.main:app
+```
+
+**Important**: In-memory state (assessments, Pathfinder confidence store) is per-worker. Multiple workers each have independent state. For shared state, add a database backend (PostgreSQL, Redis).
+
+### HTTPS/TLS
+
+uvicorn does not terminate TLS. Options:
+- Reverse proxy: nginx, Caddy, Traefik
+- Cloud load balancer: AWS ALB, GCP Load Balancer
+- Kubernetes ingress controller
+
+### Secrets Management
+
+Never commit `.env` files. Production options:
+- AWS Secrets Manager
+- HashiCorp Vault
+- Kubernetes secrets
+- Docker secrets
+
+### API Rate Limiting
+
+Not currently implemented. For public-facing deployments, add `slowapi` middleware or use reverse proxy rate limiting.
+
+### CORS
+
+Not configured. If the prototype or other browser-based clients need to call the API, add FastAPI CORS middleware in `main.py`:
+
+```python
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:4201"], ...)
+```
