@@ -2,23 +2,22 @@
 
 Screenshots of the Bearing prototype dashboard page.
 
-## Overall Health Dashboard
+## Pre-Remediation Dashboard
 
-<!-- Place screenshot here: prototype running on localhost:4201, main dashboard view -->
-<!-- Capture: Health gauge, dimension cards, overall score, recent assessments -->
+The default dashboard view showing initial assessment results with health gauge, dimension cards, and overall score.
 
-::: tip Screenshot needed
-Run the prototype with `make proto-dev` and capture the main dashboard at `http://localhost:4201/`.
-:::
+![Dashboard Pre-Remediation](/screenshots/01_dashboard_pre.png)
 
-## Health Score Gauge
+## Post-Remediation Dashboard
 
-<!-- Close-up of the 0-100 health gauge component -->
+The dashboard after remediation work has been applied, showing improved health scores across all dimensions.
 
-## Dimension Score Cards
+![Dashboard Post-Remediation](/screenshots/07_dashboard_post.png)
 
-<!-- Grid of eight dimension score cards showing individual scores -->
+## Key Elements
 
-## Assessment History
-
-<!-- Table/list of previous assessment runs with dates and scores -->
+- **Health Gauge** -- 0-100 score prominently displayed at top
+- **Dimension Score Cards** -- Grid of eight dimension scores with color-coded status
+- **Technical Debt Estimate** -- Dollar value of addressable remediation
+- **Assessment History** -- Table of previous assessment runs with dates and scores
+- **Maturity Level** -- Current maturity level with progression indicator

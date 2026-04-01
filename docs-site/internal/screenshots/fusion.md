@@ -2,18 +2,17 @@
 
 Screenshots of the Bearing prototype Pathfinder fusion page.
 
-## Fusion Dashboard
+## Fusion Findings Dashboard
 
-<!-- Place screenshot here: fusion findings and Pathfinder confidence overlay -->
+The fusion findings view showing findings that combine Bearing CMDB assessment data with Pathfinder behavioral confidence data.
 
-::: tip Screenshot needed
-Run the prototype with `make proto-dev` and capture the fusion view at `http://localhost:4201/fusion`.
-:::
+![Fusion Findings](/screenshots/08_fusion_findings.png)
 
-## Fusion Findings
+## Key Elements
 
-<!-- List of findings that combine Bearing assessment + Pathfinder behavioral data -->
-
-## Coverage Zone Map
-
-<!-- Four-zone visualization: Fully Covered, Pathfinder-Only, Discovery-Only, Dark -->
+- **Fusion-only findings** -- Findings detectable only when both Bearing and Pathfinder data are available
+- **Shadow IT detection** -- Active hosts with no CMDB record
+- **Ghost CI detection** -- Operational CIs with no observed traffic
+- **Class mismatch detection** -- Behavioral classification disagrees with CMDB
+- **Relationship confirmation** -- CMDB relationships not backed by observed traffic
+- **Coverage zone map** -- Four zones: Fully Covered, Pathfinder-Only, Discovery-Only, Dark

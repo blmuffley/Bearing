@@ -14,6 +14,18 @@ if (existsSync(diagramsDir)) {
   }
 }
 
+// Copy screenshots from docs/screenshots to public/screenshots/ at config load time
+const screenshotsDir = resolve(__dirname, '../../../docs/screenshots')
+const publicScreenshotsDir = resolve(publicDir, 'screenshots')
+if (!existsSync(publicScreenshotsDir)) mkdirSync(publicScreenshotsDir, { recursive: true })
+if (existsSync(screenshotsDir)) {
+  for (const file of readdirSync(screenshotsDir)) {
+    if (file.endsWith('.png')) {
+      copyFileSync(resolve(screenshotsDir, file), resolve(publicScreenshotsDir, file))
+    }
+  }
+}
+
 export default defineConfig({
   title: 'Bearing Engineering Docs',
   description: 'Internal engineering documentation for Avennorth Bearing',
@@ -69,6 +81,15 @@ export default defineConfig({
         text: 'Consulting',
         items: [
           { text: 'Consulting Playbook', link: '/consulting-playbook' },
+        ],
+      },
+      {
+        text: 'Operations',
+        items: [
+          { text: 'Known Issues', link: '/known-issues' },
+          { text: 'Workarounds', link: '/workarounds' },
+          { text: 'Support Guide', link: '/support-guide' },
+          { text: 'Changelog', link: '/changelog' },
         ],
       },
       {

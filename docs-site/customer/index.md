@@ -40,3 +40,9 @@ Bearing connects to your ServiceNow instance, scans configuration metadata acros
 4. **Report** — Receive detailed findings, maturity assessment, and remediation roadmap
 
 Ready to see what Bearing can do for your CMDB? [Get Started](/getting-started).
+
+## See It in Action
+
+![Bearing Dashboard](/screenshots/01_dashboard_pre.png)
+
+*The Bearing dashboard provides an at-a-glance view of your CMDB health score, dimension breakdowns, and technical debt across all eight quality dimensions.*

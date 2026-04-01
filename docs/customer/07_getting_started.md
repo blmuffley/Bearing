@@ -146,6 +146,10 @@ Navigate to **Assessments** and click on your completed assessment. The dashboar
 - **Dimension scores** -- individual scores for each of the eight quality dimensions
 - **Findings explorer** -- a searchable, filterable table of every finding
 
+![Bearing Dashboard](/screenshots/01_dashboard_pre.png)
+
+*The assessment dashboard displays your health score, dimension breakdowns, maturity level, and technical debt estimate in a single view.*
+
 Use the dimension scores to identify your weakest areas. Click into individual findings to see the specific CIs affected and the recommended remediation for each.
 
 ### The Findings Explorer

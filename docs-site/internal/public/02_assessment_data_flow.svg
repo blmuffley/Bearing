@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Space+Mono&amp;display=swap');
+      .heading { font-family: 'Syne', sans-serif; font-weight: 700; }
+      .body { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+      .mono { font-family: 'Space Mono', monospace; }
+      .label { font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    </style>
+    <marker id="arrowR" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#39FF14"/>
+    </marker>
+    <marker id="arrowD" markerWidth="7" markerHeight="10" refX="3.5" refY="10" orient="auto">
+      <polygon points="0 0, 7 0, 3.5 10" fill="#39FF14"/>
+    </marker>
+    <marker id="arrowGr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#A8A29E"/>
+    </marker>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#39FF14;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0.02"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1C1917"/>
+
+  <!-- Title -->
+  <text x="600" y="42" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="24">ASSESSMENT DATA FLOW</text>
+  <text x="600" y="65" text-anchor="middle" class="body" fill="#A8A29E" font-size="13">From trigger to actionable results</text>
+  <line x1="450" y1="75" x2="750" y2="75" stroke="#39FF14" stroke-width="1" opacity="0.5"/>
+
+  <!-- ============ ROW 1: Steps 1-4 ============ -->
+
+  <!-- Step 1: Trigger -->
+  <rect x="40" y="110" width="230" height="130" rx="12" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <circle cx="70" cy="130" r="14" fill="#39FF14"/>
+  <text x="70" y="135" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">1</text>
+  <text x="155" y="135" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">TRIGGER</text>
+  <line x1="60" y1="148" x2="250" y2="148" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="60" y="170" class="body" fill="#A8A29E" font-size="11">JSON Export Upload</text>
+  <text x="60" y="188" class="body" fill="#A8A29E" font-size="11">Live API Connection</text>
+  <text x="60" y="206" class="body" fill="#A8A29E" font-size="11">Instance Scan Import</text>
+  <text x="60" y="224" class="body" fill="#A8A29E" font-size="11">Scheduled Re-scan</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="272" y1="175" x2="318" y2="175" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <!-- Step 2: Fetch -->
+  <rect x="320" y="110" width="230" height="130" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <circle cx="350" cy="130" r="14" fill="#39FF14"/>
+  <text x="350" y="135" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">2</text>
+  <text x="435" y="135" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">FETCH DATA</text>
+  <line x1="340" y1="148" x2="530" y2="148" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="340" y="170" class="body" fill="#A8A29E" font-size="11">Query ServiceNow Tables</text>
+  <text x="340" y="188" class="body" fill="#A8A29E" font-size="11">Parse Export Payload</text>
+  <text x="340" y="206" class="body" fill="#A8A29E" font-size="11">Paginate Large Datasets</text>
+  <text x="340" y="224" class="body" fill="#A8A29E" font-size="11">Validate Schema</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="552" y1="175" x2="598" y2="175" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <!-- Step 3: Score 8 Dimensions -->
+  <rect x="600" y="110" width="230" height="130" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <circle cx="630" cy="130" r="14" fill="#39FF14"/>
+  <text x="630" y="135" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">3</text>
+  <text x="715" y="135" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">SCORE DIMENSIONS</text>
+  <line x1="620" y1="148" x2="810" y2="148" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="620" y="170" class="body" fill="#A8A29E" font-size="11">8 Quality Dimensions</text>
+  <text x="620" y="188" class="body" fill="#A8A29E" font-size="11">Weighted Scoring (0-100)</text>
+  <text x="620" y="206" class="body" fill="#A8A29E" font-size="11">Per-Module Analysis</text>
+  <text x="620" y="224" class="body" fill="#A8A29E" font-size="11">Generate Findings</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="832" y1="175" x2="878" y2="175" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <!-- Step 4: Decision Diamond - Pathfinder Data? -->
+  <polygon points="993,110 1130,175 993,240 856,175" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <text x="993" y="168" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">Pathfinder</text>
+  <text x="993" y="184" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">data available?</text>
+  <circle cx="886" cy="158" r="14" fill="#39FF14"/>
+  <text x="886" y="163" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">4</text>
+
+  <!-- ============ BRANCHING PATHS ============ -->
+
+  <!-- YES path (down-right) -->
+  <line x1="993" y1="242" x2="993" y2="290" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)" transform="rotate(0)"/>
+  <line x1="993" y1="242" x2="993" y2="288" stroke="#39FF14" stroke-width="2"/>
+  <circle cx="993" cy="300" r="4" fill="#39FF14"/>
+  <text x="1010" y="270" class="label" fill="#39FF14" font-size="11">YES</text>
+
+  <!-- Fusion Findings box -->
+  <rect x="870" y="310" width="250" height="90" rx="10" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <rect x="870" y="310" width="250" height="28" rx="10" fill="#39FF14" opacity="0.15"/>
+  <text x="995" y="330" text-anchor="middle" class="label" fill="#39FF14" font-size="12">FUSION FINDINGS</text>
+  <text x="890" y="355" class="body" fill="#A8A29E" font-size="10">Blend CMDB + behavioral data</text>
+  <text x="890" y="372" class="body" fill="#A8A29E" font-size="10">Detect status mismatches</text>
+  <text x="890" y="389" class="body" fill="#A8A29E" font-size="10">Shadow IT identification</text>
+
+  <!-- NO path (down-left) -->
+  <line x1="856" y1="175" x2="856" y2="175" stroke="#A8A29E" stroke-width="1"/>
+  <text x="1100" y="195" class="label" fill="#A8A29E" font-size="11">NO</text>
+  <path d="M 1130 175 L 1160 175 L 1160 380 L 1122 380" fill="none" stroke="#A8A29E" stroke-width="1.5" marker-end="url(#arrowGr)" stroke-dasharray="6,3"/>
+  <text x="1165" y="280" class="body" fill="#A8A29E" font-size="10" transform="rotate(90,1165,280)">Skip fusion</text>
+
+  <!-- Merge point -->
+  <line x1="993" y1="402" x2="993" y2="440" stroke="#39FF14" stroke-width="2"/>
+
+  <!-- ============ ROW 2: Steps 5-6 ============ -->
+
+  <!-- Step 5: Composite Score -->
+  <rect x="40" y="460" width="260" height="120" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <circle cx="70" cy="480" r="14" fill="#39FF14"/>
+  <text x="70" y="485" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">5</text>
+  <text x="170" y="485" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">COMPOSITE SCORE</text>
+  <line x1="60" y1="498" x2="280" y2="498" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="60" y="520" class="mono" fill="#39FF14" font-size="10">severity * 0.4</text>
+  <text x="60" y="537" class="mono" fill="#39FF14" font-size="10">+ effort_inv * 0.3</text>
+  <text x="60" y="554" class="mono" fill="#39FF14" font-size="10">+ risk * 0.3</text>
+  <text x="60" y="572" class="body" fill="#A8A29E" font-size="10">Priority ranking per finding</text>
+
+  <!-- Arrow 5->6 -->
+  <line x1="302" y1="520" x2="348" y2="520" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <!-- Step 6: Maturity Level -->
+  <rect x="350" y="460" width="260" height="120" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <circle cx="380" cy="480" r="14" fill="#39FF14"/>
+  <text x="380" y="485" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">6</text>
+  <text x="480" y="485" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">MATURITY LEVEL</text>
+  <line x1="370" y1="498" x2="590" y2="498" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="370" y="520" class="body" fill="#A8A29E" font-size="11">Map score to Level 1-5</text>
+  <text x="370" y="538" class="body" fill="#A8A29E" font-size="11">Peer benchmarking</text>
+  <text x="370" y="556" class="body" fill="#A8A29E" font-size="11">Industry comparison</text>
+  <text x="370" y="574" class="body" fill="#A8A29E" font-size="11">Trend analysis</text>
+
+  <!-- Arrow 6->7 -->
+  <line x1="612" y1="520" x2="658" y2="520" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <!-- Step 7: Technical Debt -->
+  <rect x="660" y="460" width="260" height="120" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <circle cx="690" cy="480" r="14" fill="#39FF14"/>
+  <text x="690" y="485" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">7</text>
+  <text x="790" y="485" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">TECHNICAL DEBT $</text>
+  <line x1="680" y1="498" x2="900" y2="498" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="680" y="520" class="body" fill="#A8A29E" font-size="11">Apply rate card</text>
+  <text x="680" y="538" class="body" fill="#A8A29E" font-size="11">Hours x Blended Rate</text>
+  <text x="680" y="556" class="body" fill="#A8A29E" font-size="11">Revenue by module</text>
+  <text x="680" y="574" class="body" fill="#A8A29E" font-size="11">Quick wins identification</text>
+
+  <!-- Connect row 1 to row 2 -->
+  <path d="M 993 440 L 993 450 L 170 450 L 170 458" fill="none" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)" transform="rotate(0)"/>
+  <line x1="170" y1="442" x2="170" y2="458" stroke="#39FF14" stroke-width="2"/>
+  <path d="M 993 440 C 993 450, 170 450, 170 458" fill="none" stroke="#39FF14" stroke-width="1.5"/>
+
+  <!-- ============ ROW 3: Steps 8-9 ============ -->
+
+  <!-- Arrow 7 down -->
+  <line x1="790" y1="582" x2="790" y2="620" stroke="#39FF14" stroke-width="2"/>
+
+  <!-- Step 8: Write to SN -->
+  <rect x="350" y="630" width="260" height="110" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <circle cx="380" cy="650" r="14" fill="#39FF14"/>
+  <text x="380" y="655" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">8</text>
+  <text x="480" y="655" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">WRITE TO SN</text>
+  <line x1="370" y1="668" x2="590" y2="668" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="370" y="690" class="body" fill="#A8A29E" font-size="11">Store findings in CMDB</text>
+  <text x="370" y="708" class="body" fill="#A8A29E" font-size="11">Update assessment record</text>
+  <text x="370" y="726" class="body" fill="#A8A29E" font-size="11">Benchmark data (anonymized)</text>
+
+  <!-- Arrow 8->9 -->
+  <line x1="612" y1="685" x2="658" y2="685" stroke="#39FF14" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <!-- Step 9: Generate Reports -->
+  <rect x="660" y="630" width="260" height="110" rx="12" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <circle cx="690" cy="650" r="14" fill="#39FF14"/>
+  <text x="690" y="655" text-anchor="middle" class="heading" fill="#1C1917" font-size="14">9</text>
+  <text x="790" y="655" text-anchor="middle" class="label" fill="#FAFAF9" font-size="14">GENERATE REPORTS</text>
+  <line x1="680" y1="668" x2="900" y2="668" stroke="#A8A29E" stroke-width="0.5" opacity="0.3"/>
+  <text x="680" y="690" class="body" fill="#39FF14" font-size="11">Consultant Report (w/ pricing)</text>
+  <text x="680" y="708" class="body" fill="#39FF14" font-size="11">Customer Report (white-label)</text>
+  <text x="680" y="726" class="body" fill="#39FF14" font-size="11">SOW Document (DOCX)</text>
+
+  <!-- Connect step 7 down to step 8 -->
+  <path d="M 790 620 L 790 625 L 612 625 L 612 628" fill="none" stroke="#39FF14" stroke-width="1.5"/>
+
+  <!-- Output arrows from step 9 -->
+  <line x1="922" y1="660" x2="970" y2="660" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowR)"/>
+  <line x1="922" y1="690" x2="970" y2="690" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowR)"/>
+  <line x1="922" y1="720" x2="970" y2="720" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowR)"/>
+
+  <!-- Output labels -->
+  <rect x="975" y="645" width="180" height="30" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="1065" y="664" text-anchor="middle" class="mono" fill="#39FF14" font-size="10">DOCX + Dashboard</text>
+
+  <rect x="975" y="676" width="180" height="30" rx="6" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="1065" y="695" text-anchor="middle" class="mono" fill="#39FF14" font-size="10">PDF (White-labeled)</text>
+
+  <rect x="975" y="707" width="180" height="30" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="1"/>
+  <text x="1065" y="726" text-anchor="middle" class="mono" fill="#FAFAF9" font-size="10">Compass Pipeline</text>
+
+  <!-- Footer -->
+  <text x="30" y="780" class="body" fill="#A8A29E" font-size="9" opacity="0.6">AVENNORTH BEARING  |  Assessment Data Flow  |  Confidential</text>
+</svg>

@@ -4,21 +4,20 @@ Screenshots of the Bearing prototype findings page.
 
 ## Findings Table
 
-<!-- Place screenshot here: full findings table with sorting and filtering -->
-<!-- Capture: Sortable columns, severity badges, effort indicators -->
+The full findings table with sortable columns, severity badges, effort indicators, and filtering controls.
 
-::: tip Screenshot needed
-Run the prototype with `make proto-dev` and capture the findings page at `http://localhost:4201/findings`.
-:::
+![Findings Table](/screenshots/02_findings.png)
 
 ## Finding Detail
 
-<!-- Expanded finding showing evidence, remediation, and effort estimate -->
+Expanded view of a single finding showing evidence, remediation guidance, effort estimate, and Avennorth product recommendation.
 
-## Findings by Severity
+![Finding Detail](/screenshots/12_finding_detail.png)
 
-<!-- Filtered view showing only critical/high findings -->
+## Key Elements
 
-## Findings by Dimension
-
-<!-- Filtered view grouped by scoring dimension -->
+- **Sortable columns** -- Sort by severity, dimension, effort, or composite score
+- **Severity badges** -- Color-coded Critical / High / Medium / Low / Info
+- **Effort indicators** -- T-shirt sizing (XS through XL) with hour ranges
+- **Fusion source tags** -- Indicates whether finding is CMDB-only, Pathfinder-only, or Fusion
+- **Remediation guidance** -- Actionable steps for each finding

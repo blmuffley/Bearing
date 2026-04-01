@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Space+Mono&amp;display=swap');
+      .heading { font-family: 'Syne', sans-serif; font-weight: 700; }
+      .body { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+      .mono { font-family: 'Space Mono', monospace; }
+      .label { font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    </style>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowLime" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#39FF14"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#A8A29E"/>
+    </marker>
+    <linearGradient id="limeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#39FF14;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0.05"/>
+    </linearGradient>
+    <linearGradient id="futureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A8A29E;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#A8A29E;stop-opacity:0.04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1C1917"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="24">AI CHATBOT ASSISTANT</text>
+  <text x="600" y="68" text-anchor="middle" class="body" fill="#A8A29E" font-size="13">Conversational Intelligence Architecture</text>
+  <line x1="440" y1="78" x2="760" y2="78" stroke="#39FF14" stroke-width="1" opacity="0.5"/>
+
+  <!-- === CHATBOT UI (Left) === -->
+  <rect x="40" y="110" width="320" height="440" rx="14" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <rect x="40" y="110" width="320" height="36" rx="14" fill="#39FF14" opacity="0.1"/>
+  <text x="200" y="134" text-anchor="middle" class="heading" fill="#39FF14" font-size="14" filter="url(#glow)">CHATBOT UI COMPONENT</text>
+  <text x="200" y="158" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Bottom-left floating panel</text>
+
+  <!-- Chat bubble mockup -->
+  <rect x="60" y="175" width="280" height="360" rx="10" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <rect x="70" y="185" width="260" height="30" rx="6" fill="#292524" stroke="#39FF14" stroke-width="0.5"/>
+  <text x="82" y="205" class="label" fill="#39FF14" font-size="11">Bearing AI Assistant</text>
+  <circle cx="310" cy="200" r="6" fill="#39FF14" opacity="0.6"/>
+
+  <!-- Chat messages -->
+  <rect x="80" y="225" width="200" height="28" rx="6" fill="#39FF14" opacity="0.08"/>
+  <text x="90" y="243" class="body" fill="#A8A29E" font-size="10">What should we fix first?</text>
+
+  <rect x="120" y="260" width="210" height="40" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.5"/>
+  <text x="130" y="278" class="body" fill="#FAFAF9" font-size="9">Based on your assessment, focus on</text>
+  <text x="130" y="292" class="body" fill="#39FF14" font-size="9">23 critical hard-coded sys_ids...</text>
+
+  <!-- Canned question buttons -->
+  <text x="90" y="320" class="label" fill="#FAFAF9" font-size="10">Quick Questions:</text>
+  <rect x="80" y="330" width="120" height="24" rx="4" fill="#39FF14" opacity="0.12" stroke="#39FF14" stroke-width="0.5"/>
+  <text x="140" y="346" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">Health Score</text>
+
+  <rect x="210" y="330" width="120" height="24" rx="4" fill="#39FF14" opacity="0.12" stroke="#39FF14" stroke-width="0.5"/>
+  <text x="270" y="346" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">Remediation Focus</text>
+
+  <rect x="80" y="360" width="120" height="24" rx="4" fill="#39FF14" opacity="0.12" stroke="#39FF14" stroke-width="0.5"/>
+  <text x="140" y="376" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">Technical Debt</text>
+
+  <rect x="210" y="360" width="120" height="24" rx="4" fill="#39FF14" opacity="0.12" stroke="#39FF14" stroke-width="0.5"/>
+  <text x="270" y="376" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">Pathfinder Value</text>
+
+  <rect x="80" y="390" width="120" height="24" rx="4" fill="#39FF14" opacity="0.12" stroke="#39FF14" stroke-width="0.5"/>
+  <text x="140" y="406" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">Peer Benchmarking</text>
+
+  <rect x="210" y="390" width="120" height="24" rx="4" fill="#39FF14" opacity="0.12" stroke="#39FF14" stroke-width="0.5"/>
+  <text x="270" y="406" text-anchor="middle" class="mono" fill="#39FF14" font-size="8">Remediation Roadmap</text>
+
+  <!-- Input field -->
+  <rect x="80" y="425" width="240" height="30" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.5"/>
+  <text x="95" y="444" class="body" fill="#A8A29E" font-size="10" opacity="0.5">Ask about your assessment...</text>
+  <rect x="296" y="428" width="24" height="24" rx="4" fill="#39FF14" opacity="0.3"/>
+  <text x="308" y="444" text-anchor="middle" class="body" fill="#1C1917" font-size="12">&#x2192;</text>
+
+  <!-- Status -->
+  <text x="200" y="480" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">6 categories | Keyword matching</text>
+  <text x="200" y="496" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">Instant responses, no API latency</text>
+
+  <!-- === KEYWORD MATCHING ENGINE (Center) === -->
+  <rect x="400" y="110" width="380" height="260" rx="14" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <rect x="400" y="110" width="380" height="36" rx="14" fill="#39FF14" opacity="0.1"/>
+  <text x="590" y="134" text-anchor="middle" class="heading" fill="#39FF14" font-size="14" filter="url(#glow)">KEYWORD MATCHING ENGINE</text>
+
+  <!-- Category boxes -->
+  <rect x="420" y="160" width="165" height="38" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <circle cx="433" cy="179" r="4" fill="#39FF14"/>
+  <text x="442" y="175" class="mono" fill="#FAFAF9" font-size="9">health | score | grade</text>
+  <text x="442" y="189" class="mono" fill="#39FF14" font-size="8">&#x2192; Health Score response</text>
+
+  <rect x="595" y="160" width="165" height="38" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <circle cx="608" cy="179" r="4" fill="#39FF14"/>
+  <text x="617" y="175" class="mono" fill="#FAFAF9" font-size="9">fix | remediat | priori</text>
+  <text x="617" y="189" class="mono" fill="#39FF14" font-size="8">&#x2192; Remediation Focus</text>
+
+  <rect x="420" y="208" width="165" height="38" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <circle cx="433" cy="227" r="4" fill="#39FF14"/>
+  <text x="442" y="223" class="mono" fill="#FAFAF9" font-size="9">debt | script | custom</text>
+  <text x="442" y="237" class="mono" fill="#39FF14" font-size="8">&#x2192; Technical Debt</text>
+
+  <rect x="595" y="208" width="165" height="38" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <circle cx="608" cy="227" r="4" fill="#39FF14"/>
+  <text x="617" y="223" class="mono" fill="#FAFAF9" font-size="9">pathfinder | discover</text>
+  <text x="617" y="237" class="mono" fill="#39FF14" font-size="8">&#x2192; Pathfinder Value</text>
+
+  <rect x="420" y="256" width="165" height="38" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <circle cx="433" cy="275" r="4" fill="#39FF14"/>
+  <text x="442" y="271" class="mono" fill="#FAFAF9" font-size="9">benchmark | compare</text>
+  <text x="442" y="285" class="mono" fill="#39FF14" font-size="8">&#x2192; Peer Benchmarking</text>
+
+  <rect x="595" y="256" width="165" height="38" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <circle cx="608" cy="275" r="4" fill="#39FF14"/>
+  <text x="617" y="271" class="mono" fill="#FAFAF9" font-size="9">roadmap | plan | phase</text>
+  <text x="617" y="285" class="mono" fill="#39FF14" font-size="8">&#x2192; Remediation Roadmap</text>
+
+  <!-- Matching flow -->
+  <text x="590" y="318" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">User input &#x2192; lowercase &#x2192; keyword scan &#x2192; best match &#x2192; canned response</text>
+  <text x="590" y="336" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">Fallback: "I can help with these topics..."</text>
+  <rect x="415" y="345" width="350" height="14" rx="2" fill="#39FF14" opacity="0.06"/>
+  <text x="590" y="355" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">Confidence threshold: keyword presence check</text>
+
+  <!-- Arrow from chatbot to engine -->
+  <line x1="360" y1="250" x2="398" y2="250" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+  <text x="379" y="242" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">input</text>
+
+  <!-- === INLINE HELPER (Top Right) === -->
+  <rect x="820" y="110" width="340" height="180" rx="14" fill="#292524" stroke="#39FF14" stroke-width="2"/>
+  <rect x="820" y="110" width="340" height="36" rx="14" fill="#39FF14" opacity="0.1"/>
+  <text x="990" y="134" text-anchor="middle" class="heading" fill="#39FF14" font-size="14" filter="url(#glow)">INLINE HELPER</text>
+  <text x="990" y="158" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Top-right contextual tips</text>
+
+  <!-- Helper popup mockup -->
+  <rect x="840" y="170" width="300" height="100" rx="8" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <circle cx="860" cy="190" r="8" fill="#39FF14" opacity="0.3"/>
+  <text x="862" y="194" text-anchor="middle" class="body" fill="#39FF14" font-size="10">?</text>
+  <text x="878" y="194" class="label" fill="#FAFAF9" font-size="11">Page Guide</text>
+  <line x1="850" y1="202" x2="1130" y2="202" stroke="#A8A29E" stroke-width="0.3" opacity="0.3"/>
+  <text x="855" y="220" class="body" fill="#A8A29E" font-size="10">This dashboard shows your instance</text>
+  <text x="855" y="236" class="body" fill="#A8A29E" font-size="10">health score with revenue impact.</text>
+  <text x="855" y="256" class="body" fill="#39FF14" font-size="10">Tip: Click any module card to drill</text>
+  <text x="855" y="268" class="body" fill="#39FF14" font-size="10">into category-level findings.</text>
+
+  <!-- Arrow connecting helper concept -->
+  <text x="990" y="304" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">Content changes per page context</text>
+
+  <!-- === FUTURE STATE: CLAUDE API (Center Bottom) === -->
+  <rect x="400" y="400" width="380" height="200" rx="14" fill="url(#futureGrad)" stroke="#A8A29E" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="400" y="400" width="380" height="36" rx="14" fill="#A8A29E" opacity="0.08"/>
+  <text x="590" y="424" text-anchor="middle" class="heading" fill="#A8A29E" font-size="14">FUTURE: CLAUDE API INTEGRATION</text>
+  <text x="590" y="448" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Dynamic AI-powered responses</text>
+
+  <!-- Future flow items -->
+  <rect x="420" y="465" width="155" height="45" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <text x="497" y="485" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Context Builder</text>
+  <text x="497" y="500" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Assessment + Findings</text>
+
+  <rect x="420" y="520" width="155" height="45" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <text x="497" y="540" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Prompt Template</text>
+  <text x="497" y="555" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Domain-specific prompts</text>
+
+  <rect x="605" y="465" width="155" height="45" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <text x="682" y="485" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Claude API Call</text>
+  <text x="682" y="500" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Anthropic LLM</text>
+
+  <rect x="605" y="520" width="155" height="45" rx="6" fill="#1C1917" stroke="#A8A29E" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <text x="682" y="540" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">Response Streaming</text>
+  <text x="682" y="555" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Real-time chat output</text>
+
+  <!-- Arrows between future components -->
+  <line x1="577" y1="488" x2="603" y2="488" stroke="#A8A29E" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGray)"/>
+  <line x1="577" y1="543" x2="603" y2="543" stroke="#A8A29E" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGray)"/>
+  <line x1="497" y1="512" x2="497" y2="518" stroke="#A8A29E" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGray)"/>
+  <line x1="682" y1="512" x2="682" y2="518" stroke="#A8A29E" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGray)"/>
+
+  <!-- Dashed arrow from engine to future -->
+  <line x1="590" y1="370" x2="590" y2="398" stroke="#A8A29E" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowGray)"/>
+  <text x="625" y="390" class="mono" fill="#A8A29E" font-size="8">future upgrade path</text>
+
+  <!-- === DATA SOURCES (Bottom) === -->
+  <rect x="40" y="610" width="1120" height="100" rx="12" fill="url(#limeGrad)" stroke="#39FF14" stroke-width="1" opacity="0.8"/>
+  <text x="60" y="632" class="label" fill="#39FF14" font-size="11">RESPONSE DATA SOURCES</text>
+
+  <rect x="60" y="645" width="170" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="145" y="665" text-anchor="middle" class="body" fill="#FAFAF9" font-size="10">Assessment Data</text>
+  <text x="145" y="680" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Health score, findings</text>
+
+  <rect x="250" y="645" width="170" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="335" y="665" text-anchor="middle" class="body" fill="#FAFAF9" font-size="10">Scoring Engine</text>
+  <text x="335" y="680" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Composite, severity</text>
+
+  <rect x="440" y="645" width="170" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="525" y="665" text-anchor="middle" class="body" fill="#FAFAF9" font-size="10">Revenue Calculator</text>
+  <text x="525" y="680" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Dollar projections</text>
+
+  <rect x="630" y="645" width="170" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="715" y="665" text-anchor="middle" class="body" fill="#FAFAF9" font-size="10">Pathfinder Data</text>
+  <text x="715" y="680" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Confidence, coverage</text>
+
+  <rect x="820" y="645" width="170" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="905" y="665" text-anchor="middle" class="body" fill="#FAFAF9" font-size="10">Benchmark Data</text>
+  <text x="905" y="680" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Peer comparisons</text>
+
+  <rect x="1010" y="645" width="130" height="48" rx="6" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="1075" y="665" text-anchor="middle" class="body" fill="#FAFAF9" font-size="10">Remediation Lib</text>
+  <text x="1075" y="680" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Patterns, SOW data</text>
+
+  <!-- Arrows from data sources up to keyword engine -->
+  <line x1="335" y1="643" x2="500" y2="602" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="525" y1="643" x2="560" y2="602" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="715" y1="643" x2="630" y2="602" stroke="#A8A29E" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <!-- Response flow back to chatbot -->
+  <path d="M 400 350 Q 370 380 200 550 Q 200 560 200 555" fill="none" stroke="#39FF14" stroke-width="1.5" marker-end="url(#arrowLime)"/>
+  <text x="280" y="445" class="mono" fill="#39FF14" font-size="8" transform="rotate(-40,280,445)">formatted response</text>
+
+  <!-- === ARCHITECTURE NOTES === -->
+  <rect x="820" y="320" width="340" height="270" rx="10" fill="#1C1917" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="990" y="345" text-anchor="middle" class="label" fill="#FAFAF9" font-size="12">Architecture Notes</text>
+  <line x1="840" y1="355" x2="1140" y2="355" stroke="#A8A29E" stroke-width="0.3" opacity="0.3"/>
+
+  <circle cx="845" cy="378" r="3" fill="#39FF14"/>
+  <text x="857" y="382" class="body" fill="#A8A29E" font-size="10">Zero API latency (canned responses)</text>
+
+  <circle cx="845" cy="402" r="3" fill="#39FF14"/>
+  <text x="857" y="406" class="body" fill="#A8A29E" font-size="10">6 categories cover 90%+ of questions</text>
+
+  <circle cx="845" cy="426" r="3" fill="#39FF14"/>
+  <text x="857" y="430" class="body" fill="#A8A29E" font-size="10">Responses populated from live data</text>
+
+  <circle cx="845" cy="450" r="3" fill="#39FF14"/>
+  <text x="857" y="454" class="body" fill="#A8A29E" font-size="10">Inline helper = page-aware tooltips</text>
+
+  <circle cx="845" cy="474" r="3" fill="#39FF14"/>
+  <text x="857" y="478" class="body" fill="#A8A29E" font-size="10">Future Claude API adds free-form Q&amp;A</text>
+
+  <circle cx="845" cy="498" r="3" fill="#39FF14"/>
+  <text x="857" y="502" class="body" fill="#A8A29E" font-size="10">Context injection: assessment + page state</text>
+
+  <circle cx="845" cy="522" r="3" fill="#A8A29E"/>
+  <text x="857" y="526" class="body" fill="#A8A29E" font-size="10" opacity="0.6">Claude integration = Phase 3+ feature</text>
+
+  <circle cx="845" cy="546" r="3" fill="#A8A29E"/>
+  <text x="857" y="550" class="body" fill="#A8A29E" font-size="10" opacity="0.6">Requires API key + rate limiting setup</text>
+
+  <circle cx="845" cy="570" r="3" fill="#A8A29E"/>
+  <text x="857" y="574" class="body" fill="#A8A29E" font-size="10" opacity="0.6">Streaming responses for UX quality</text>
+
+  <!-- Legend -->
+  <rect x="40" y="740" width="15" height="15" rx="3" fill="#39FF14" opacity="0.3"/>
+  <text x="62" y="752" class="body" fill="#A8A29E" font-size="10">Current (Prototype)</text>
+  <rect x="180" y="740" width="15" height="15" rx="3" fill="none" stroke="#A8A29E" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="202" y="752" class="body" fill="#A8A29E" font-size="10">Future State</text>
+  <line x1="320" y1="748" x2="350" y2="748" stroke="#39FF14" stroke-width="1.5"/>
+  <text x="358" y="752" class="body" fill="#A8A29E" font-size="10">Data Flow</text>
+  <line x1="430" y1="748" x2="460" y2="748" stroke="#A8A29E" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="468" y="752" class="body" fill="#A8A29E" font-size="10">Future Flow</text>
+
+  <!-- Branding footer -->
+  <text x="30" y="785" class="body" fill="#A8A29E" font-size="9" opacity="0.6">AVENNORTH BEARING  |  AI Chatbot Architecture  |  Confidential</text>
+</svg>

@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Space+Mono&amp;display=swap');
+      .heading { font-family: 'Syne', sans-serif; font-weight: 700; }
+      .body { font-family: 'DM Sans', sans-serif; font-weight: 500; }
+      .mono { font-family: 'Space Mono', monospace; }
+      .label { font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    </style>
+    <filter id="glowG">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="leftCircleClip">
+      <circle cx="380" cy="380" r="200"/>
+    </clipPath>
+    <clipPath id="rightCircleClip">
+      <circle cx="580" cy="380" r="200"/>
+    </clipPath>
+    <clipPath id="overlapClip">
+      <rect x="380" y="180" width="200" height="400"/>
+    </clipPath>
+    <marker id="fArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#39FF14"/>
+    </marker>
+    <marker id="gArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#A8A29E"/>
+    </marker>
+    <radialGradient id="overlapGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#39FF14;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0.05"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1C1917"/>
+
+  <!-- Title -->
+  <text x="600" y="42" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="24">PATHFINDER FUSION FINDINGS</text>
+  <text x="600" y="65" text-anchor="middle" class="body" fill="#A8A29E" font-size="13">Insights only possible when CMDB assessment meets behavioral observation</text>
+  <line x1="370" y1="75" x2="830" y2="75" stroke="#39FF14" stroke-width="1" opacity="0.5"/>
+
+  <!-- ============ VENN DIAGRAM ============ -->
+
+  <!-- Left circle: CMDB Assessment -->
+  <circle cx="370" cy="380" r="200" fill="none" stroke="#A8A29E" stroke-width="2" opacity="0.6"/>
+  <circle cx="370" cy="380" r="200" fill="#A8A29E" opacity="0.04"/>
+
+  <!-- Right circle: Pathfinder Behavioral -->
+  <circle cx="580" cy="380" r="200" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.6"/>
+  <circle cx="580" cy="380" r="200" fill="#39FF14" opacity="0.04"/>
+
+  <!-- Overlap region highlight -->
+  <!-- Using two overlapping semi-transparent fills to create the intersection effect -->
+  <path d="M 475 198 A 200 200 0 0 1 475 562 A 200 200 0 0 1 475 198 Z" fill="#39FF14" opacity="0.0"/>
+  <!-- Actual overlap: intersection of two circles -->
+  <!-- Circle 1 center (370,380) r=200, Circle 2 center (580,380) r=200 -->
+  <!-- Intersection points approximately at x=475, y=198 and x=475, y=562 -->
+  <path d="M 475 196 A 200 200 0 0 1 475 564 A 200 200 0 0 0 475 196 Z" fill="url(#overlapGlow)" filter="url(#glowG)"/>
+
+  <!-- Left circle labels -->
+  <text x="280" y="260" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="16">CMDB</text>
+  <text x="280" y="280" text-anchor="middle" class="heading" fill="#FAFAF9" font-size="16">ASSESSMENT</text>
+  <text x="280" y="310" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">(Bearing Static Analysis)</text>
+
+  <text x="240" y="345" class="body" fill="#A8A29E" font-size="10">CI completeness</text>
+  <text x="240" y="365" class="body" fill="#A8A29E" font-size="10">Data accuracy</text>
+  <text x="240" y="385" class="body" fill="#A8A29E" font-size="10">Relationship integrity</text>
+  <text x="240" y="405" class="body" fill="#A8A29E" font-size="10">CSDM alignment</text>
+  <text x="240" y="425" class="body" fill="#A8A29E" font-size="10">Orphan detection</text>
+  <text x="240" y="445" class="body" fill="#A8A29E" font-size="10">Duplicate analysis</text>
+
+  <!-- Right circle labels -->
+  <text x="670" y="260" text-anchor="middle" class="heading" fill="#39FF14" font-size="16">PATHFINDER</text>
+  <text x="670" y="280" text-anchor="middle" class="heading" fill="#39FF14" font-size="16">BEHAVIORAL</text>
+  <text x="670" y="310" text-anchor="middle" class="body" fill="#A8A29E" font-size="10">(eBPF/ETW Observation)</text>
+
+  <text x="630" y="345" class="body" fill="#A8A29E" font-size="10">Traffic patterns</text>
+  <text x="630" y="365" class="body" fill="#A8A29E" font-size="10">Active/idle state</text>
+  <text x="630" y="385" class="body" fill="#A8A29E" font-size="10">Protocol analysis</text>
+  <text x="630" y="405" class="body" fill="#A8A29E" font-size="10">Comm. partners</text>
+  <text x="630" y="425" class="body" fill="#A8A29E" font-size="10">Class suggestion</text>
+  <text x="630" y="445" class="body" fill="#A8A29E" font-size="10">Subnet coverage</text>
+
+  <!-- Overlap label -->
+  <text x="475" y="345" text-anchor="middle" class="heading" fill="#39FF14" font-size="13" filter="url(#glowG)">FUSION</text>
+  <text x="475" y="365" text-anchor="middle" class="heading" fill="#39FF14" font-size="13" filter="url(#glowG)">FINDINGS</text>
+  <text x="475" y="385" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">5 types</text>
+
+  <!-- ============ FUSION FINDING TYPES (Right panel) ============ -->
+
+  <rect x="810" y="100" width="360" height="510" rx="12" fill="#292524" stroke="#39FF14" stroke-width="1.5"/>
+  <rect x="810" y="100" width="360" height="38" rx="12" fill="#39FF14" opacity="0.1"/>
+  <text x="990" y="125" text-anchor="middle" class="heading" fill="#39FF14" font-size="15">FUSION FINDING TYPES</text>
+
+  <!-- Finding 1 -->
+  <rect x="830" y="152" width="320" height="72" rx="8" fill="#1C1917" stroke="#FF3B30" stroke-width="1"/>
+  <rect x="830" y="152" width="6" height="72" rx="3" fill="#FF3B30"/>
+  <text x="848" y="172" class="mono" fill="#FF3B30" font-size="9">CRITICAL</text>
+  <text x="848" y="190" class="label" fill="#FAFAF9" font-size="12">Active in CMDB, Idle in Pathfinder</text>
+  <text x="848" y="210" class="body" fill="#A8A29E" font-size="10">CI marked Operational but no observed traffic.</text>
+  <text x="848" y="222" class="body" fill="#A8A29E" font-size="10">CMDB record may be inaccurate.</text>
+
+  <!-- Finding 2 -->
+  <rect x="830" y="234" width="320" height="72" rx="8" fill="#1C1917" stroke="#FF9500" stroke-width="1"/>
+  <rect x="830" y="234" width="6" height="72" rx="3" fill="#FF9500"/>
+  <text x="848" y="254" class="mono" fill="#FF9500" font-size="9">HIGH</text>
+  <text x="848" y="272" class="label" fill="#FAFAF9" font-size="12">Retired in CMDB, Active in Pathfinder</text>
+  <text x="848" y="292" class="body" fill="#A8A29E" font-size="10">CI marked Retired but active traffic observed.</text>
+  <text x="848" y="304" class="body" fill="#A8A29E" font-size="10">Still in use despite decommission status.</text>
+
+  <!-- Finding 3 -->
+  <rect x="830" y="316" width="320" height="72" rx="8" fill="#1C1917" stroke="#FF9500" stroke-width="1"/>
+  <rect x="830" y="316" width="6" height="72" rx="3" fill="#FF9500"/>
+  <text x="848" y="336" class="mono" fill="#FF9500" font-size="9">HIGH</text>
+  <text x="848" y="354" class="label" fill="#FAFAF9" font-size="12">CSDM Class Mismatch</text>
+  <text x="848" y="374" class="body" fill="#A8A29E" font-size="10">Behavioral analysis suggests different CI class.</text>
+  <text x="848" y="386" class="body" fill="#A8A29E" font-size="10">Confidence &gt;75% from traffic patterns.</text>
+
+  <!-- Finding 4 -->
+  <rect x="830" y="398" width="320" height="72" rx="8" fill="#1C1917" stroke="#FF3B30" stroke-width="1"/>
+  <rect x="830" y="398" width="6" height="72" rx="3" fill="#FF3B30"/>
+  <text x="848" y="418" class="mono" fill="#FF3B30" font-size="9">CRITICAL</text>
+  <text x="848" y="436" class="label" fill="#FAFAF9" font-size="12">Shadow IT Detection</text>
+  <text x="848" y="456" class="body" fill="#A8A29E" font-size="10">Active traffic with no CMDB record.</text>
+  <text x="848" y="468" class="body" fill="#A8A29E" font-size="10">Undocumented infrastructure detected.</text>
+
+  <!-- Finding 5 -->
+  <rect x="830" y="480" width="320" height="72" rx="8" fill="#1C1917" stroke="#FFCC00" stroke-width="1"/>
+  <rect x="830" y="480" width="6" height="72" rx="3" fill="#FFCC00"/>
+  <text x="848" y="500" class="mono" fill="#FFCC00" font-size="9">MEDIUM</text>
+  <text x="848" y="518" class="label" fill="#FAFAF9" font-size="12">Unconfirmed Relationship</text>
+  <text x="848" y="538" class="body" fill="#A8A29E" font-size="10">CMDB relationship exists but no traffic between</text>
+  <text x="848" y="550" class="body" fill="#A8A29E" font-size="10">CIs observed. Relationship may be stale.</text>
+
+  <!-- Severity legend -->
+  <rect x="830" y="566" width="320" height="30" rx="6" fill="#1C1917"/>
+  <circle cx="860" cy="581" r="5" fill="#FF3B30"/>
+  <text x="872" y="585" class="mono" fill="#A8A29E" font-size="8">Critical</text>
+  <circle cx="935" cy="581" r="5" fill="#FF9500"/>
+  <text x="947" y="585" class="mono" fill="#A8A29E" font-size="8">High</text>
+  <circle cx="1000" cy="581" r="5" fill="#FFCC00"/>
+  <text x="1012" y="585" class="mono" fill="#A8A29E" font-size="8">Medium</text>
+
+  <!-- ============ WEBHOOK DATA FLOW (Bottom) ============ -->
+
+  <rect x="60" y="630" width="1080" height="120" rx="12" fill="#292524" stroke="#A8A29E" stroke-width="0.8"/>
+  <text x="100" y="654" class="label" fill="#39FF14" font-size="12">WEBHOOK DATA FLOW</text>
+
+  <!-- Pathfinder Agent -->
+  <rect x="90" y="670" width="150" height="60" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="1"/>
+  <text x="165" y="695" text-anchor="middle" class="label" fill="#39FF14" font-size="11">Pathfinder Agent</text>
+  <text x="165" y="715" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">eBPF/ETW Observer</text>
+
+  <!-- Arrow -->
+  <line x1="242" y1="700" x2="308" y2="700" stroke="#39FF14" stroke-width="1.5" marker-end="url(#fArrow)"/>
+  <text x="275" y="692" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">POST</text>
+
+  <!-- Confidence Feed -->
+  <rect x="310" y="670" width="180" height="60" rx="8" fill="#1C1917" stroke="#A8A29E" stroke-width="1"/>
+  <text x="400" y="695" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">Confidence Feed</text>
+  <text x="400" y="715" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">ci_confidence_records[]</text>
+
+  <!-- Arrow -->
+  <line x1="492" y1="700" x2="548" y2="700" stroke="#39FF14" stroke-width="1.5" marker-end="url(#fArrow)"/>
+  <text x="520" y="692" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Validate</text>
+
+  <!-- Bearing Webhook -->
+  <rect x="550" y="670" width="180" height="60" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="1.5"/>
+  <text x="640" y="690" text-anchor="middle" class="mono" fill="#39FF14" font-size="9">/api/webhooks/pathfinder</text>
+  <text x="640" y="710" text-anchor="middle" class="label" fill="#FAFAF9" font-size="11">Bearing Receiver</text>
+  <text x="640" y="725" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">X-Bearing-API-Key auth</text>
+
+  <!-- Arrow -->
+  <line x1="732" y1="700" x2="788" y2="700" stroke="#39FF14" stroke-width="1.5" marker-end="url(#fArrow)"/>
+  <text x="760" y="692" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Store</text>
+
+  <!-- Fusion Engine -->
+  <rect x="790" y="670" width="160" height="60" rx="8" fill="#1C1917" stroke="#39FF14" stroke-width="1.5"/>
+  <text x="870" y="695" text-anchor="middle" class="label" fill="#39FF14" font-size="11">Fusion Engine</text>
+  <text x="870" y="715" text-anchor="middle" class="mono" fill="#A8A29E" font-size="9">CMDB + Behavioral</text>
+
+  <!-- Arrow -->
+  <line x1="952" y1="700" x2="1008" y2="700" stroke="#39FF14" stroke-width="1.5" marker-end="url(#fArrow)"/>
+  <text x="980" y="692" text-anchor="middle" class="mono" fill="#A8A29E" font-size="8">Emit</text>
+
+  <!-- Fusion Findings Output -->
+  <rect x="1010" y="670" width="110" height="60" rx="8" fill="#39FF14" opacity="0.15" stroke="#39FF14" stroke-width="1.5"/>
+  <text x="1065" y="695" text-anchor="middle" class="heading" fill="#39FF14" font-size="12">FUSION</text>
+  <text x="1065" y="715" text-anchor="middle" class="heading" fill="#39FF14" font-size="12">FINDINGS</text>
+
+  <!-- Footer -->
+  <text x="30" y="785" class="body" fill="#A8A29E" font-size="9" opacity="0.6">AVENNORTH BEARING  |  Pathfinder Fusion Findings  |  Confidential</text>
+</svg>

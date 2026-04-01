@@ -4,16 +4,13 @@ Screenshots of the Bearing prototype reports page.
 
 ## Report Generation UI
 
-<!-- Place screenshot here: report configuration and generation interface -->
+The report configuration and generation interface, showing options for PDF and DOCX output with branding configuration.
 
-::: tip Screenshot needed
-Run the prototype with `make proto-dev` and capture the reports page at `http://localhost:4201/reports`.
-:::
+![Executive Reports](/screenshots/05_executive_reports.png)
 
-## Report Preview
+## Key Elements
 
-<!-- In-browser preview of a generated report -->
-
-## Report Download Options
-
-<!-- UI showing DOCX/PDF download options and branding configuration -->
+- **Report types** -- Health Scorecard (single page), Full Assessment (detailed), Executive Summary
+- **Output formats** -- PDF and DOCX generation
+- **Branding configuration** -- Organization logo, colors, and legal boilerplate
+- **Dual-report model** -- Consultant report (with pricing) and customer report (white-labeled, no pricing) from single scan

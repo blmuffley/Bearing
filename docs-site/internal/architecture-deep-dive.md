@@ -11,3 +11,7 @@ outline: deep
 ## Assessment Data Flow
 
 ![Assessment Data Flow](/02_assessment_data_flow.svg)
+
+## Deployment Options
+
+![Deployment Options](/09_deployment_options.svg)
