@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_object">
+    <sys_db_object>
+        <name>x_avnth_bearing_assessment</name>
+        <label>Bearing Assessment</label>
+        <super_class>task</super_class>
+        <is_extendable>false</is_extendable>
+        <access>public</access>
+        <sys_scope display_value="Avennorth">x_avnth</sys_scope>
+    </sys_db_object>
+
+    <!-- Fields -->
+    <sys_dictionary>
+        <element>u_assessment_id</element>
+        <column_label>Assessment ID</column_label>
+        <internal_type>string</internal_type>
+        <max_length>36</max_length>
+        <mandatory>true</mandatory>
+        <unique>true</unique>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_name</element>
+        <column_label>Assessment Name</column_label>
+        <internal_type>string</internal_type>
+        <max_length>200</max_length>
+        <mandatory>true</mandatory>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_scope</element>
+        <column_label>Scope</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>full,targeted,incremental</choice_list>
+        <default_value>full</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_target_scope</element>
+        <column_label>Target Scope</column_label>
+        <internal_type>string</internal_type>
+        <max_length>500</max_length>
+        <comments>CI query filter — empty means full CMDB</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_overall_score</element>
+        <column_label>Overall Score</column_label>
+        <internal_type>integer</internal_type>
+        <default_value>0</default_value>
+        <comments>Weighted composite health score 0-100</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_maturity_level</element>
+        <column_label>Maturity Level</column_label>
+        <internal_type>integer</internal_type>
+        <default_value>1</default_value>
+        <comments>1-5 maturity level</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_maturity_label</element>
+        <column_label>Maturity Label</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>Ad-hoc,Managed,Defined,Measured,Optimized</choice_list>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_findings_count</element>
+        <column_label>Findings Count</column_label>
+        <internal_type>integer</internal_type>
+        <default_value>0</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_critical_findings</element>
+        <column_label>Critical Findings</column_label>
+        <internal_type>integer</internal_type>
+        <default_value>0</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_technical_debt_estimate</element>
+        <column_label>Technical Debt Estimate</column_label>
+        <internal_type>currency</internal_type>
+        <comments>Dollar estimate of total technical debt</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_ci_count_assessed</element>
+        <column_label>CIs Assessed</column_label>
+        <internal_type>integer</internal_type>
+        <default_value>0</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_has_pathfinder_data</element>
+        <column_label>Has Pathfinder Data</column_label>
+        <internal_type>boolean</internal_type>
+        <default_value>false</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_has_contour_data</element>
+        <column_label>Has Contour Data</column_label>
+        <internal_type>boolean</internal_type>
+        <default_value>false</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_status</element>
+        <column_label>Assessment Status</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>pending,running,completed,failed</choice_list>
+        <default_value>pending</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_ai_summary</element>
+        <column_label>AI Summary</column_label>
+        <internal_type>string</internal_type>
+        <max_length>8000</max_length>
+        <comments>Claude-generated executive summary</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_triggered_by</element>
+        <column_label>Triggered By</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>manual,scheduled,api,corex</choice_list>
+        <default_value>manual</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_run_date</element>
+        <column_label>Run Date</column_label>
+        <internal_type>glide_date_time</internal_type>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_completed_date</element>
+        <column_label>Completed Date</column_label>
+        <internal_type>glide_date_time</internal_type>
+    </sys_dictionary>
+</record_update>

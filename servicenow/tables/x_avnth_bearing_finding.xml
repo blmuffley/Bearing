@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_object">
+    <sys_db_object>
+        <name>x_avnth_bearing_finding</name>
+        <label>Bearing Finding</label>
+        <is_extendable>false</is_extendable>
+        <access>public</access>
+        <sys_scope display_value="Avennorth">x_avnth</sys_scope>
+    </sys_db_object>
+
+    <sys_dictionary>
+        <element>u_finding_id</element>
+        <column_label>Finding ID</column_label>
+        <internal_type>string</internal_type>
+        <max_length>36</max_length>
+        <mandatory>true</mandatory>
+        <unique>true</unique>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_assessment</element>
+        <column_label>Assessment</column_label>
+        <internal_type>reference</internal_type>
+        <reference>x_avnth_bearing_assessment</reference>
+        <mandatory>true</mandatory>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_finding_type</element>
+        <column_label>Finding Type</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>gap,risk,recommendation,positive,fusion</choice_list>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_severity</element>
+        <column_label>Severity</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>critical,high,medium,low,info</choice_list>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_dimension</element>
+        <column_label>Dimension</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>completeness,accuracy,currency,relationships,csdm,classification,orphans,duplicates</choice_list>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_category</element>
+        <column_label>Category</column_label>
+        <internal_type>string</internal_type>
+        <max_length>200</max_length>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_title</element>
+        <column_label>Title</column_label>
+        <internal_type>string</internal_type>
+        <max_length>500</max_length>
+        <mandatory>true</mandatory>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_description</element>
+        <column_label>Description</column_label>
+        <internal_type>string</internal_type>
+        <max_length>4000</max_length>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_affected_ci</element>
+        <column_label>Affected CI</column_label>
+        <internal_type>reference</internal_type>
+        <reference>cmdb_ci</reference>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_affected_ci_class</element>
+        <column_label>Affected CI Class</column_label>
+        <internal_type>string</internal_type>
+        <max_length>200</max_length>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_affected_count</element>
+        <column_label>Affected Count</column_label>
+        <internal_type>integer</internal_type>
+        <default_value>1</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_remediation</element>
+        <column_label>Remediation</column_label>
+        <internal_type>string</internal_type>
+        <max_length>2000</max_length>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_estimated_effort_hours</element>
+        <column_label>Estimated Effort Hours</column_label>
+        <internal_type>decimal</internal_type>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_estimated_cost</element>
+        <column_label>Estimated Cost</column_label>
+        <internal_type>currency</internal_type>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_avennorth_product</element>
+        <column_label>Avennorth Product</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>none,pathfinder,contour,pathfinder+contour</choice_list>
+        <default_value>none</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_automation_potential</element>
+        <column_label>Automation Potential</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>full,partial,manual</choice_list>
+        <default_value>manual</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_fusion_source</element>
+        <column_label>Fusion Source</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>cmdb_only,pathfinder_only,fusion</choice_list>
+        <default_value>cmdb_only</default_value>
+    </sys_dictionary>
+</record_update>

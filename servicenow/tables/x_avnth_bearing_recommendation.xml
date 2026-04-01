@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_object">
+    <sys_db_object>
+        <name>x_avnth_bearing_recommendation</name>
+        <label>Bearing Recommendation</label>
+        <is_extendable>false</is_extendable>
+        <access>public</access>
+        <sys_scope display_value="Avennorth">x_avnth</sys_scope>
+        <comments>Prioritized remediation recommendations per assessment.</comments>
+    </sys_db_object>
+
+    <sys_dictionary>
+        <element>u_recommendation_id</element>
+        <column_label>Recommendation ID</column_label>
+        <internal_type>string</internal_type>
+        <max_length>36</max_length>
+        <unique>true</unique>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_assessment</element>
+        <column_label>Assessment</column_label>
+        <internal_type>reference</internal_type>
+        <reference>x_avnth_bearing_assessment</reference>
+        <mandatory>true</mandatory>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_priority</element>
+        <column_label>Priority</column_label>
+        <internal_type>integer</internal_type>
+        <mandatory>true</mandatory>
+        <comments>Rank order (1 = highest priority)</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_title</element>
+        <column_label>Title</column_label>
+        <internal_type>string</internal_type>
+        <max_length>500</max_length>
+        <mandatory>true</mandatory>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_description</element>
+        <column_label>Description</column_label>
+        <internal_type>string</internal_type>
+        <max_length>4000</max_length>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_dimension</element>
+        <column_label>Dimension</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>completeness,accuracy,currency,relationships,csdm,classification,orphans,duplicates</choice_list>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_impact_score</element>
+        <column_label>Impact Score</column_label>
+        <internal_type>integer</internal_type>
+        <comments>Expected impact on health score (1-10)</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_effort</element>
+        <column_label>Effort</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>low,medium,high</choice_list>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_estimated_hours</element>
+        <column_label>Estimated Hours</column_label>
+        <internal_type>decimal</internal_type>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_estimated_cost_savings</element>
+        <column_label>Estimated Cost Savings</column_label>
+        <internal_type>currency</internal_type>
+        <comments>Annual savings if implemented</comments>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_avennorth_product</element>
+        <column_label>Avennorth Product</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>none,pathfinder,contour,pathfinder+contour</choice_list>
+        <default_value>none</default_value>
+    </sys_dictionary>
+
+    <sys_dictionary>
+        <element>u_automation_potential</element>
+        <column_label>Automation Potential</column_label>
+        <internal_type>choice</internal_type>
+        <max_length>40</max_length>
+        <choice_list>full,partial,manual</choice_list>
+        <default_value>manual</default_value>
+    </sys_dictionary>
+</record_update>
